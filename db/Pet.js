@@ -1,6 +1,5 @@
 const mongoose = require("./connectDataBase");
 const { nanoid } = require("nanoid");
-const { getHash } = require("../utils/crypt");
 
 let petSchema = mongoose.Schema({
   id: {
@@ -13,7 +12,7 @@ let petSchema = mongoose.Schema({
     required: true,
   },
   age: {
-    type: String,
+    type: int,
     required: true,
   },
   temperment: {
@@ -41,11 +40,11 @@ let petSchema = mongoose.Schema({
     required: true,
   },
   castrated: {
-    type: int,
+    type: Boolean,
     required: true,
   },
   vaccinated: {
-    type: int,
+    type: Boolean,
     required: true,
   },
   image: {
@@ -63,3 +62,26 @@ petSchema.statics.addPet = async (pet) => {
   pet.id = nanoid();
   let petToAdd = Pet(pet);
 };
+module.exports={Pet};
+
+async function savePetManually(){
+  let newPet={
+    id:nanoid(),
+    animal:"Cat",
+    age:7,
+    temperment:"calm",
+    color:orange,
+    size:"Big",
+    breed:"idk",
+    gender:0,
+    health:"healthy",
+    castrated:true,
+    vaccinated:false,
+    image:"https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
+    description:"Wholesome boi"
+  }
+  let petToSave=Pet(newPet);
+  let resp=await petToSave.save();
+  console.log(resp);
+}
+savePetManually();
