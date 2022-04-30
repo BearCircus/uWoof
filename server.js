@@ -1,7 +1,10 @@
+
+require("dotenv").config();
 const express = require("express");
 const { mongoose } = require("./db/connectDataBase");
 const app = express();
 const port = 3000;
+// console.log(process.env.DB_USER);
 // const user = require("./Woof_route");
 
 app.use(express.json());
