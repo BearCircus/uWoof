@@ -6,7 +6,6 @@ function getHash(password){
             if(hash){
                 resolve(hash)
             }
-
             if(err){
                 reject(err)
             }
