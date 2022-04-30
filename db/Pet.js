@@ -57,3 +57,9 @@ let petSchema = mongoose.Schema({
     required: true,
   },
 });
+const Pet = mongoose.model("Pet", petSchema);
+
+petSchema.statics.addPet = async (pet) => {
+  pet.id = nanoid();
+  let petToAdd = Pet(pet);
+};
