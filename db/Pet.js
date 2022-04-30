@@ -97,8 +97,8 @@ async function savePetManually() {
 }
 // savePetManually();
 
-async function getPetsManually(){
-    let pets=await Pet.find({},{name:1, animal:1});//add tags you want to see
-    console.log(pets);
+async function getPetsManually() {
+  let pets = await Pet.find({}, { name: 1, animal: 1 }); //add tags you want to see
+  console.log(pets);
 }
-getPetsManually();
+// getPetsManually();
