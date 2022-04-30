@@ -2,116 +2,160 @@ const express = require("express");
 const { User } = require("../db/User");
 const router = express.Router();
 
-router.get('/',async (req,res)=>{
-    let {name, lastname, username, password, phone, email, city, country, zip, state} = req.query;
-    let query = {};
-    
-    if(name){
-        query.name = new RegExp(name, 'i');
-    }
-    if(lastname){
-        query.name = new RegExp(lastname, 'i');
-    }
-    if(username){ 
-        query.username = new RegExp(username, 'i');
-    }
-    if(password){
-        query.password = new RegExp(password, 'i');
-    }
-    if(phone){
-        query.phone = new RegExp(phone, 'i');
-    }
-    if(email){
-        query.email = new RegExp(email, 'i');
-    }
-    if(city){
-        query.city = new RegExp(city, 'i');
-    }
-    if(country){
-        query.country = new RegExp(country, 'i');
-    }
-    if(zip){
-        query.zip = new RegExp(zip, 'i');
-    }
-    if(state){
-        query.state = new RegExp(state, 'i') ;
-    }
+router.get("/", async (req, res) => {
+  let {
+    name,
+    lastname,
+    username,
+    password,
+    phone,
+    email,
+    city,
+    country,
+    zip,
+    state,
+  } = req.query;
+  let query = {};
 
-    let usuarios = await User.getUsers(query);
+  if (name) {
+    query.name = new RegExp(name, "i");
+  }
+  if (lastname) {
+    query.lastname = new RegExp(lastname, "i");
+  }
+  if (username) {
+    query.username = new RegExp(username, "i");
+  }
+  if (password) {
+    query.password = new RegExp(password, "i");
+  }
+  if (phone) {
+    query.phone = new RegExp(phone, "i");
+  }
+  if (email) {
+    query.email = new RegExp(email, "i");
+  }
+  if (city) {
+    query.city = new RegExp(city, "i");
+  }
+  if (country) {
+    query.country = new RegExp(country, "i");
+  }
+  if (zip) {
+    query.zip = new RegExp(zip, "i");
+  }
+  if (state) {
+    query.state = new RegExp(state, "i");
+  }
 
-    res.send(usuarios)
-})
+  let usuarios = await User.getUsers(query);
 
-router.post('/',async (req,res)=>{
-    console.log("POST-USERS")
-    let newUser = {};
-    let {name, lastname, username, password, phone, email, city, country, zip, state} = req.body;
+  res.send(usuarios);
+});
 
-    if(name && lastname && username && password && phone && email && city && country && zip && state){
-        //newUser.id = null;
-        newUser.name = name;
-        newUser.lastname = lastname;
-        newUser.username = username;
-        newUser.password = password;
-        newUser.phone = phone;
-        newUser.email = email;
-        newUser.city = city;
-        newUser.country = country;
-        newUser.zip = zip;
-        newUser.state = state;
+router.post("/", async (req, res) => {
+  // console.log("POST-USERS");
+  let {
+    name,
+    lastname,
+    username,
+    password,
+    phone,
+    email,
+    city,
+    country,
+    zip,
+    state,
+  } = req.body;
 
-        console.log(newUser);
-        let doc = await User.saveUser(newUser)
-        res.status(201).send(doc);
-    }else{
-        res.status(400).send("Faltan datos de usuario");
-    }
-})
+  if (
+    name &&
+    lastname &&
+    username &&
+    password &&
+    phone &&
+    email &&
+    city &&
+    country &&
+    zip &&
+    state
+  ) {
+    let newUser = {
+      name,
+      lastname,
+      password,
+      phone,
+      email,
+      city,
+      country,
+      zip,
+      state,
+    };
+    console.log(newUser);
+    let doc = await User.saveUser(newUser);
+    res.status(201).send(doc);
+    return;
+  } else {
+    res.status(400).send("Faltan datos de usuario");
+    return;
+  }
+});
 
-
-router.get('/:id',async (req,res)=>{
-    let user = await User.getUserId(req.params.id);
-    if(user){
-        res.send(user);
-    }else{
-        res.status(404).send({error: "Id de usuario no encontrado"});
-    }
-})
+router.get("/:id", async (req, res) => {
+  let user = await User.getUserId(req.params.id);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+});
 //User.getUserId("UmG8sKmXmdW3MN0OEubn6");
 
+router.delete("/:id", async (req, res) => {
+  let doc = await User.deleteUser(req.params.id);
 
-router.delete('/:id',async (req,res)=>{
-    let doc = await User.deleteUser(req.params.id);
+  if (doc) {
+    res.send(doc);
+    return;
+  }
 
-    if(doc){
-        res.send(doc);
-        return;
-    }
+  res.status(404).send({ error: "El usuario no fue encontrado" });
+});
 
-    res.status(404).send({error: "El usuario no fue encontrado"});
-})
+router.put("/:id", async (req, res) => {
+  let user = await User.getUserId(req.params.id);
+  let {
+    name,
+    lastname,
+    username,
+    password,
+    phone,
+    email,
+    city,
+    country,
+    zip,
+    state,
+  } = req.body;
 
-router.put('/:id',async (req,res)=>{
-    let user = await User.getUserId(req.params.id);
-    let {name, lastname, username, password, phone, email, city, country, zip, state} = req.body;
+  if (user) {
+    user.name = name ? name : user.name;
+    user.lastname = lastname ? lastname : user.lastname;
+    user.username = username ? username : user.username;
+    user.password = password ? password : user.password;
+    user.phone = phone ? phone : user.phone;
+    user.email = email ? email : user.email;
+    user.city = city ? city : user.city;
+    user.country = country ? country : user.country;
+    user.zip = zip ? zip : user.zip;
+    user.state = state ? state : user.state;
 
-    if(user){
-        user.name = name? name: user.name;
-        user.lastname = lastname? lastname: user.lastname;
-        user.username = username? username: user.username;
-        user.password = password? password: user.password;
-        user.phone = phone? phone: user.phone;
-        user.email = email? email: user.email;
-        user.city = city? city: user.city;
-        user.country = country? country: user.country;
-        user.zip = zip? zip: user.zip;
-        user.state = state? state: user.state;
-
-        let doc = await User.updateUser(user);
-        res.send(doc);
-    }else{
-        res.status(404).send({error: "El usuario no se encontro, y no se pudo actualizar"});
-    }
-})
+    let doc = await User.updateUser(user);
+    res.send(doc);
+  } else {
+    res
+      .status(404)
+      .send({ error: "El usuario no se encontro, y no se pudo actualizar" });
+  }
+});
 
 module.exports = router;

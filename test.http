@@ -47,3 +47,7 @@ Content-Type: application/json
     "state": "Jalisco",
 }
 
+//pets
+###
+GET {{host}}/api/pets
+

@@ -1,5 +1,6 @@
 const { mongoose } = require("./connectDataBase");
 const { nanoid } = require("nanoid");
+const { User } = require("./User");
 
 let petSchema = mongoose.Schema({
   id: {
@@ -64,13 +65,27 @@ let petSchema = mongoose.Schema({
     required: true,
   },
 });
-const Pet = mongoose.model("Pet", petSchema);
 
 petSchema.statics.addPet = async (pet) => {
   pet.id = nanoid();
   let petToAdd = Pet(pet);
 };
-module.exports = { Pet };
+
+petSchema.statics.getPet = async (filter) => {
+  let props = Object.keys(filter);
+  props = props.map((p) => ({ [p]: filter[p] }));
+  let search = { $or: props };
+  if (props.length == 0) {
+    search = {};
+  }
+  return await Pet.find(search);
+};
+petSchema.statics.savePet = async (pet) => {
+  pet.id = nanoid();
+  let petToSave = Pet(pet);
+
+  return await petToSave.save();
+};
 
 async function savePetManually() {
   let newPet = {
@@ -102,3 +117,5 @@ async function getPetsManually() {
   console.log(pets);
 }
 // getPetsManually();
+const Pet = mongoose.model("Pet", petSchema);
+module.exports = { Pet };
