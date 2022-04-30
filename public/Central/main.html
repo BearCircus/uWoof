@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+
+    <title>Woof</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/styles.css">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+
+       
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body style="background-image: url('https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2017/10/30/15093416326666.jpg');">
+    
+    
+    <!-- Barra navegadora -->
+    <!-- <nav class="navbar navbar-expand-sm ">
+        <a class="navbar-brand navbar-brand-logo" href="#">
+                <div class="logo">
+                  <img class="image_logo" src="./images/logo.png" />
+                </div>
+              </a>
+              <div class="brand mt-2"><i>Woof</i></div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            
+            
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 tools">
+                <li class="nav-item active mt-3">
+                    <a class="nav-link " href="#">Sign Up<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active mt-3">
+                    <a class="nav-link" data-toggle="modal" data-target="#ingreso" href="#">Log in<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active mt-3">
+                    <a class="nav-link" href="#">"@user"<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mt-3" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My account</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">My profile</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">My pets</a>
+                        <a class="dropdown-item" href="#">My posts</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link feed mt-2" href="#">My feed<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 search_bar">
+                <div class="container h-100">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div style="margin-right: 6px" class="logo">
+                <a href=""><img class="image_logo" src="./images/logo.png" />
+              </div>
+            <a class="navbar-brand" href="#">Woof</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Proyecto/public/Register/RegisterAnimal/bootstrap-wizard-master/index.html">Rehome pet</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My account</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="../Profile/profile.html">Profile</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#ingreso">Login</a>
+                        </div>
+                    </li>
+                    <li style="font-size: 25px; display: block; padding-left: 5px">
+                        <a style="color: black" href="/Proyecto/Chat/messages.html"><i data-target="modelId" class="fa fa-comment" aria-hidden="true"></i></a>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 search_bar">
+                <div class="container h-100">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </nav>
+
+        
+    <!-- Content -->
+
+    <div class="container" id="cards">
+        <div class="row">
+            <!-- Primera tarjeta -->
+            
+                <div class="col-lg2 mb-4 ml-1">
+                    <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                        <div class="line"> </div>
+                        <div class="username mb-2" title="user1">Offered by: <a href="../Profile/profile.html">@user1</a></i>
+                            <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                        </div>
+                        <a href="../Post/PublicaciónJessica/post.html">
+                        <br>
+                        <img class="card-img-top cardImage" src="../Post/PublicaciónJessica/images/mochi.jpg" alt="Card image cap">
+                        </a>
+                          <h5 class="card-title">Fabulous Cat</h5>
+                          <p class="card-text ml-1">"I'm Mochi, the best cat in the world, just look at my fluffiness, I'm all you need."</div>        
+                </div>
+            
+            <div class="col-lg2 mb-4 ml-1">
+                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                    <div class="line"> </div>
+                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
+                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Post/PublicaciónJessica/post.html">
+                    <br>
+                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
+                    </a>
+                      <h5 class="card-title">Small Good Boi</h5>
+                    
+                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
+                </div>        
+            </div>
+            <div class="col-lg2 mb-4 ml-1">
+                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                    <div class="line"> </div>
+                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
+                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Post/PublicaciónJessica/post.html">
+                    <br>
+                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
+                    </a>
+                      <h5 class="card-title">Small Good Boi</h5>
+                    
+                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
+                </div>        
+            </div>
+            <div class="col-lg2 mb-4 ml-1">
+                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                    <div class="line"> </div>
+                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
+                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Post/PublicaciónJessica/post.html">
+                    <br>
+                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
+                    </a>
+                      <h5 class="card-title">Small Good Boi</h5>
+                    
+                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
+                </div>        
+            </div>
+            <div class="col-lg2 mb-4 ml-1">
+                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                    <div class="line"> </div>
+                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
+                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Post/PublicaciónJessica/post.html">
+                    <br>
+                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
+                    </a>
+                      <h5 class="card-title">Small Good Boi</h5>
+                    
+                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
+                </div>        
+            </div>
+            <div class="col-lg2 mb-4 ml-1">
+                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
+                    <div class="line"> </div>
+                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
+                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Post/PublicaciónJessica/post.html">
+                    <br>
+                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
+                    </a>
+                      <h5 class="card-title">Small Good Boi</h5>
+                    
+                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
+                </div>        
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <script>
+        $('#exampleModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+            
+        });
+    </script>
+    <!-- Modal de ingreso-->
+    <div class="modal fade" id="ingreso" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content mb-7">
+                <div class="modal-header content-modal">
+                    <h5 class="modal-title">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body"> 
+                    <form action="">
+                    <label for="">Email</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="user" pattern="[a-zA-z0-9.-_%+-]+@[a-zA-z0-9.-]+\.[a-z]{2,}$" required minlength="4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bordIcon" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;" ><i class="fas fa-user"></i></span>
+                            </div>
+                        </div>
+                          <label for="">Password</label>
+                          <div class="input-group mb-3">
+                            <input type="password" class="form-control" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" minlength="6" required>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"><i class="fas fa-key"></i></i></span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="justify-content-end">
+                                    <button type="submit" class="btn btn-primary btnLogIn">Log in</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex flex-row-reverse">
+                                <div class="p-2"><p>Don't have an account? <a href="../Register/RegisterUser/bootstrap-wizard-master/index.html">Join us</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

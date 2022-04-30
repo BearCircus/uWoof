@@ -1,0 +1,138 @@
+.article {
+  margin: 15px;
+}
+
+.carousel-inner {
+  height: 400px;
+}
+.item.active {
+  height: 400px !important;
+}
+.item img {
+  object-fit: cover;
+  height: 100%;
+}
+.navbar {
+  background-color: #e8dcca;
+  background-color: rgba(232, 220, 202, 0.98);
+}
+
+#boton {
+  color: white;
+  border-color: white;
+  size-adjust: 100%;
+}
+#boton:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+.dropdown {
+  color: burlywood;
+  border-color: burlywood;
+}
+#drop {
+  position: relative;
+  left: 715px;
+}
+.container {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+#crd {
+  width: 320px;
+  height: 600px;
+}
+.cardImage {
+  width: 100%;
+  height: 400px;
+}
+.input-group-text {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btnLogIn {
+  width: 360px;
+  background-color: cornflowerblue;
+}
+.card:hover {
+  background-color: azure;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 20px 20px;
+  transform: translate3d(0px, -1px, 0px);
+  border-color: burlywood;
+}
+.username {
+  font-style: italic;
+  align-self: left;
+  font-size: larger;
+}
+
+.feed {
+  margin-left: 410px;
+  font-size: x-large;
+  font-style: oblique;
+  font-family: cursive;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: red;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: white;
+  color: brown;
+}
+.searchbar {
+  background-color: wheat;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+.image_logo {
+  border-radius: 50%;
+}
+.tools {
+  margin-left: 15px;
+}
+.nav-link {
+  color: brown;
+}
+.nav-link:hover {
+  color: burlywood;
+}
+.brand {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

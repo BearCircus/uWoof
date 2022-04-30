@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Profile</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./profile_style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Barra navegadora -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div style="margin-right: 6px" class="logo">
+            <a href="/Proyecto/Central/main.html"><img class="image_logo" src="./Resources/Logo.png" /></a>
+          </div>
+        <a class="navbar-brand" href="/Proyecto/Central/main.html">Woof</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Proyecto/Central/main.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My account</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 search_bar">
+                <div class="container h-100">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">  
+            <div class="col-lg-4">
+                <div class="profile-card-4 z-depth-3">
+                    <div class="card">
+                        <div class="card-body text-center bg-colour rounded-top">
+                            <div class="user-box">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar">
+                            </div>
+                            <h5 class="mb-1 text-white">John Doe</h5> <!--Nombre usuario-->
+                            <h6 class="text-light">Es un gran ayudante</h6><!--Pequeña frase descriptiva-->
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group shadow-none">
+                                <li class="list-group-item">
+                                    <div class="list-details">
+                                        <small>Mobile Number: </small>
+                                        <span>+52 33 1974 5420</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="list-details">
+                                        <small>Email Address: </small>
+                                        <span>john.doe@iteso.mx</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="list-details">
+                                        <small>Ubication: </small>
+                                        <span>Jalisco, Mexico</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Aqui puedes poner redes sociales debajo de la info de usuario izq.-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card z-depth-3">
+                    <div class="card-body">
+                        <ul class="nav nav-pills nav-pills-primary nav-justified">
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">Profile</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#posts" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Posts</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#saved" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Saved</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
+                            </li>
+                        </ul>
+
+                        <!--profile info starts-->
+                        <div class="tab-content p-3">
+                            <div class="tab-pane active show" id="profile">
+                                <h5 class="mb-3">User Profile</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Description</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus doloremque cumque corporis. Reprehenderit voluptas autem, quia ea odit soluta nemo!
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h6>Favorite Animal Tags</h6>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">dog</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">cat</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">cute</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">femenine</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">protective</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">playful</a>
+                                        <a href="javascript:void();" class="badge badge-colour badge-pill">energetic</a>
+                                        <!--Aqui se pueden agregar mas TAGS-->
+                                    </div>
+                                </div>
+                            <!--/row-->
+                            </div>
+                            
+                            <!--Posts starts-->
+                        <div class="tab-pane" id="posts">   
+                            <table class="table table-hover table-striped">
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                           <!--Aqui va una card-->
+                                           <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Mochi</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam necessitatibus nostrum molestias aliquam labore, distinctio illo facilis magnam non.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Ramon</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis harum dolor tenetur cupiditate, ut ratione?</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Firulais</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores dolor facilis sed aperiam placeat iste, nostrum vel quas porro cumque quidem eveniet voluptates praesentium?</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--Aqui se pueden agregar mas posts a la tabla-->
+                                </tbody> 
+                            </table>
+                        </div>
+                        <!--Posts ends-->
+
+                        <!--Saved Posts starts-->
+                        <div class="tab-pane" id="saved">   
+                            <table class="table table-hover table-striped">
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                           <!--Aqui va una card-->
+                                           <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Motociclon</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam sed quod, nobis quibusdam dolorum voluptatum autem quae distinctio.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <div class="post-animal-tags">
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
+                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
+                                                    </div>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <a href="#" class="btn btn-style">Go to post</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody> 
+                            </table>
+                        </div>
+                        <!--Saved Posts ends-->
+
+                        <!--profile edit starts-->
+                        <div class="tab-pane" id="edit">
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" pattern="[a-zA-z ]+" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" pattern="[a-zA-z ]+" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email"  pattern="[a-zA-z0-9.-_%+-]+@[a-zA-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Change profile</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="file">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" value="" placeholder="Country" required>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input class="form-control" type="text" value="" placeholder="State" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" value="" placeholder="City" required>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input class="form-control" type="text" value="" placeholder="Zip Code" required>
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" placeholder="Username" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">
+                                        <input type="reset" class="btn cancel-colour" value="Cancel">
+                                        <input type="button" class="btn save-colour" value="Save Changes">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--profile edit ends-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

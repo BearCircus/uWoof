@@ -1,0 +1,226 @@
+:root {
+  --pink: #e9a8b1;
+  --azul1: #2e4957;
+  --azul2: #375261;
+  --azul3: #415c6b;
+  --azul4: #54707f;
+}
+
+body {
+  background-image: url(https://cdn.hovia.com/app/uploads/Grey-and-White-Bulldog-and-Sausage-Dog-Pattern-Pet-Wallpaper-Mural-Plain-820x532.jpg);
+}
+
+/* .container{
+    margin-top: 30px;
+} */
+
+/* User Cards */
+.user-box {
+  width: 110px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/*Esto es para editar la imagen del usuario*/
+.user-box img {
+  width: 100%;
+  border-radius: 50%;
+  padding: 3px;
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+/*********************************************/
+
+/*Nav Tabs & Pills */
+.nav-tabs .nav-link {
+  color: #223035;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 2px;
+  margin-bottom: 0;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover {
+  border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link i {
+  margin-right: 2px;
+  font-weight: 600;
+}
+
+.top-icon.nav-tabs .nav-link i {
+  margin: 0px;
+  font-weight: 500;
+  display: block;
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.tabs-vertical .nav-tabs .nav-link {
+  color: #223035;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 2px;
+  margin-right: -1px;
+  padding: 12px 1px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+  color: #223035;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 3px;
+  padding: 12px 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #f4f5fa;
+}
+
+.nav-pills .nav-link i {
+  margin-right: 2px;
+  font-weight: 600;
+}
+
+.top-icon.nav-pills .nav-link i {
+  margin: 0px;
+  font-weight: 500;
+  display: block;
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: rgba(15, 31, 77, 0.795); /*Color de los subtemas*/
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(231, 20, 73, 0.5);
+}
+
+.card .tab-content {
+  padding: 1rem 0 0 0;
+}
+
+.z-depth-3 {
+  -webkit-box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19),
+    0 13px 25px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card .bg-colour {
+  background: rgba(15, 31, 77, 0.795);
+}
+
+/*Color de los tags de toda la pagina*/
+.badge-colour {
+  background: var(--pink);
+  color: #fff;
+}
+
+/*Estilo de los botones*/
+.btn-style {
+  background: rgba(15, 31, 77, 0.795);
+  color: #fff;
+}
+
+.btn-style:hover {
+  background: #fff;
+  border: 1px solid rgba(15, 31, 77, 0.795);
+}
+
+.save-colour {
+  background: var(--pink);
+}
+
+.save-colour:hover {
+  background: #fff;
+  border: 1px solid var(--pink);
+}
+
+.cancel-colour {
+  background: var(--azul1);
+  color: #fff;
+}
+
+.cancel-colour:hover {
+  background: #fff;
+  border: 1px solid var(--azul1);
+}
+/*****************************/
+
+.list-details {
+  display: inline-block;
+}
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: black;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: red;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: white;
+  color: brown;
+}
+.searchbar {
+  background-color: wheat;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
