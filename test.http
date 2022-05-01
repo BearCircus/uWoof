@@ -14,20 +14,20 @@ POST {{host}}/api/users
 Content-Type: application/json
 
 {
-    "name": "Jessica",
-    "lastname": "Donley",
-    "username": "Jess",
-    "password": "ingsistemaswoof",
-    "phone": "3371610571",
-    "email": "jessica@test.com",
-    "city": "San Pedro Tlaquepaque",
+    "name": "Jaime",
+    "lastname": "Escobedo",
+    "username": "jrev",
+    "password": "passwordJWoof",
+    "phone": "3371026574",
+    "email": "jaime@test.com",
+    "city": "Guadalajara",
     "country": "Mexico",
-    "zip": "45604 ",
+    "zip": "44360",
     "state": "Jalisco"
 }
 
 ###
-DELETE {{host}}/api/users/EiZv5UaVWK2dM1Ny-V9Li
+DELETE {{host}}/api/users/cQpqT_3EGJqTpv4jOfke5
 
 
 ###
