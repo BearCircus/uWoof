@@ -79,3 +79,6 @@ Content-Type: application/json
     "date": "30-04-2022"
 }
 
+###
+DELETE {{host}}/api/pets/wGBTF-6JoI4PTXAlZNXj5
+
