@@ -3,18 +3,7 @@ const { User } = require("../db/User");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let {
-    name,
-    lastname,
-    username,
-    password,
-    phone,
-    email,
-    city,
-    country,
-    zip,
-    state,
-  } = req.query;
+  let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.query;
   let query = {};
 
   if (name) {
@@ -55,34 +44,13 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // console.log("POST-USERS");
-  let {
-    name,
-    lastname,
-    username,
-    password,
-    phone,
-    email,
-    city,
-    country,
-    zip,
-    state,
-  } = req.body;
+  let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
 
-  if (
-    name &&
-    lastname &&
-    username &&
-    password &&
-    phone &&
-    email &&
-    city &&
-    country &&
-    zip &&
-    state
-  ) {
+  if (name && lastname && username && password && phone && email && city && country && zip && state) {
     let newUser = {
       name,
       lastname,
+      username,
       password,
       phone,
       email,
