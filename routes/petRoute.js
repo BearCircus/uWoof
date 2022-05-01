@@ -65,23 +65,124 @@ router.get("/", async (req, res) => {
 
   res.send(pets);
 });
-router.post("/",async (req,res)=>{
-    let {
-      name,
-      animal,
-      age,
-      temperment,
-      color,
-      size,
-      breed,
-      gender,
-      health,
-      castrated,
-      vaccinated,
-      image,
-      description,
-      date,
-    } = req.query;
-})
+router.get("/:id", async (req, res) => {
+  let pet = await Pet.getPetById(req.params.id);
+  if (pet) {
+    res.status(200).send(pet);
+  } else {
+    res.status(404).send({ error: "Id not found" });
+  }
+});
+router.get("/", async (req, res) => {
+  let {
+    name,
+    animal,
+    age,
+    temperment,
+    color,
+    size,
+    breed,
+    gender,
+    health,
+    castrated,
+    vaccinated,
+  } = req.query;
+  let queries = pets.slice();
+  if (name) {
+    queries = queries.filter((p) =>
+      p.name.toUpperCase().includes(name.toUpperCase())
+    );
+  }
+  if (animal) {
+    queries = queries.filter((p) =>
+      p.animal.toUpperCase().includes(animal.toUpperCase())
+    );
+  }
+  if (age) {
+    console.log(age);
+    queries = queries.filter((p) => p.age == age);
+  }
+  if (temperment) {
+    queries = queries.filter((p) =>
+      p.temperment.toUpperCase().includes(temperment.toUpperCase())
+    );
+  }
+  if (color) {
+    queries = queries.filter((p) =>
+      p.color.toUpperCase().includes(color.toUpperCase())
+    );
+  }
+  if (size) {
+    queries = queries.filter((p) =>
+      p.size.toUpperCase().includes(size.toUpperCase())
+    );
+  }
+  if (breed) {
+    queries = queries.filter((p) =>
+      p.breed.toUpperCase().includes(breed.toUpperCase())
+    );
+  }
+  if (gender) {
+    queries = queries.filter((p) =>
+      p.gender.toUpperCase().includes(gender.toUpperCase())
+    );
+  }
+  if (health) {
+    queries = queries.filter((p) =>
+      p.health.toUpperCase().includes(health.toUpperCase())
+    );
+  }
+  if (castrated) {
+    queries = queries.filter((p) => p.castrated.includes(castrated));
+  }
+  if (vaccinated) {
+    queries = queries.filter((p) => p.vaccinated.includes(vaccinated));
+  }
+
+  let pets = await Pet.getPetByParams(queries);
+
+  res.send(pets);
+});
+router.post("/", async (req, res) => {
+  console.log(
+    "---------------------------------------------------------------"
+  );
+  let {
+    name,
+    animal,
+    age,
+    temperment,
+    color,
+    size,
+    breed,
+    gender,
+    health,
+    castrated,
+    vaccinated,
+    image,
+    description,
+    date,
+  } = req.query;
+
+  let newPet = {
+    name,
+    animal,
+    age,
+    temperment,
+    color,
+    size,
+    breed,
+    gender,
+    health,
+    castrated,
+    vaccinated,
+    image,
+    description,
+    date,
+  };
+  let doc = await Pet.savePet(newPet);
+  res.status(201), send(doc);
+  return;
+});
 
 module.exports = router;

@@ -51,3 +51,31 @@ Content-Type: application/json
 ###
 GET {{host}}/api/pets
 
+###
+GET {{host}}/api/pets/fabVQ4yDMY-3xbp6dE2Jp
+
+###
+GET {{host}}/api/pets?age=2
+
+###
+POST {{host}}/api/pets
+Content-Type: application/json
+
+{
+    "name": "Max",
+    "animal": "Horse",
+    "age": 2,
+    "temperment": "Sweet",
+    "color": "yellow?",
+    "size": "Medium",
+    "breed": "cartoon",
+    "gender": "Male",
+    "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
+    "castrated": true,
+    "vaccinated": false,
+    "image":
+      "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
+    "description": "completly wholesome boi",
+    "date": "30-04-2022"
+}
+
