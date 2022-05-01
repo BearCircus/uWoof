@@ -86,12 +86,17 @@ petSchema.statics.savePet = async (pet) => {
 
   return await petToSave.save();
 };
-
+petSchema.statics.getPetById = async (id) => {
+  return await Pet.findOne({ id });
+};
+petSchema.statics.getPetByParams = async (query) => {
+  return await Pet.find(query);
+};
 async function savePetManually() {
   let newPet = {
     id: nanoid(),
-    name: "Batman",
-    animal: "Bat",
+    name: "Odie",
+    animal: "Dog",
     age: 2,
     temperment: "calm",
     color: "black",
