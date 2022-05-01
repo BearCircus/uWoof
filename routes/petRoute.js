@@ -144,9 +144,6 @@ router.get("/", async (req, res) => {
   res.send(pets);
 });
 router.post("/", async (req, res) => {
-  console.log(
-    "---------------------------------------------------------------"
-  );
   let {
     name,
     animal,
@@ -162,8 +159,7 @@ router.post("/", async (req, res) => {
     image,
     description,
     date,
-  } = req.query;
-
+  } = req.body;
   let newPet = {
     name,
     animal,
@@ -180,9 +176,17 @@ router.post("/", async (req, res) => {
     description,
     date,
   };
+  console.log(newPet);
   let doc = await Pet.savePet(newPet);
-  res.status(201), send(doc);
-  return;
+  res.status(201).send(doc);
 });
+router.delete("/:id",async (req,res)=>{
+    let doc = await Pet.deletePetById(req.params.id);
+    if (doc) {
+        res.status(200).send(doc)
+        return;    
+    }
+    res.status(404).send({error: "Pet not found"})
+})
 
 module.exports = router;

@@ -92,6 +92,10 @@ petSchema.statics.getPetById = async (id) => {
 petSchema.statics.getPetByParams = async (query) => {
   return await Pet.find(query);
 };
+petSchema.statics.deletePetById=async (id)=>{
+    return await Pet.deleteOne({id})
+}
+
 async function savePetManually() {
   let newPet = {
     id: nanoid(),
