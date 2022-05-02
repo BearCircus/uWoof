@@ -7,7 +7,7 @@ GET {{host}}/
 GET {{host}}/api/users
 
 ###
-GET {{host}}/api/users/EiZv5UaVWK2dM1Ny-V9Li
+GET {{host}}/api/users/UmG8sKmXmdW3MN0OEubn6
 
 ###
 POST {{host}}/api/users

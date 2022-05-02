@@ -2,7 +2,7 @@ const express = require("express");
 const { User } = require("../db/User");
 const { checkUsername } = require("../middlewares/repeatedData");
 const { checkEmail } = require("../middlewares/repeatedData");
-const { auth } = require("../middlewares/auth");
+//const { auth } = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -45,8 +45,8 @@ router.get("/", async (req, res) => {
   res.send(usuarios);
 });
 
-router.post("/",auth,checkUsername,checkEmail, async (req, res) => {
-  // console.log("POST-USERS");
+router.post("/",checkUsername,checkEmail, async (req, res) => {
+  console.log("POST-USERS");
   let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
 
   if (name && lastname && username && password && phone && email && city && country && zip && state) {

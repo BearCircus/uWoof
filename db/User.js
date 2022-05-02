@@ -68,9 +68,9 @@ usersSchema.statics.getUsers = async (filtro) => {
 };
 
 usersSchema.statics.saveUser = async (user) => {
-  console.log("it gets to here");
+  //console.log("it gets to here");
   user.id = nanoid();
-  user.password = await getHash(user.password);
+  //user.password = await getHash(user.password);
   let userToSave = User(user);
 
   return await userToSave.save();
