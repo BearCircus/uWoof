@@ -58,19 +58,19 @@ GET {{host}}/api/pets/fabVQ4yDMY-3xbp6dE2Jp
 GET {{host}}/api/pets?age=2
 
 ###
-POST {{host}}/api/pets
+POST {{host}}/api/pets/UmG8sKmXmdW3MN0OEubn6
 Content-Type: application/json
 
 {
-    "name": "Max",
-    "animal": "Horse",
-    "age": 2,
-    "temperment": "Sweet",
-    "color": "yellow?",
-    "size": "Medium",
-    "breed": "cartoon",
-    "gender": "Male",
-    "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
+    "name": "Maik",
+    "animal": "Sea Lion",
+    "age": 21,
+    "temperment": "Thicc",
+    "color": "Brown",
+    "size": "Big ass animal",
+    "breed": "Maik",
+    "gender": "Unknown",
+    "health": "he chubby, he probs not healthy",
     "castrated": true,
     "vaccinated": false,
     "image":
@@ -80,5 +80,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/pets/wGBTF-6JoI4PTXAlZNXj5
+DELETE {{host}}/api/pets/_7rN1nG9tCcTIYF_eGTKx
 

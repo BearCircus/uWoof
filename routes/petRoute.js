@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Pet } = require("../db/Pet");
+const { User } = require("../db/User");
 
 router.get("/", async (req, res) => {
   let {
@@ -143,7 +144,8 @@ router.get("/", async (req, res) => {
 
   res.send(pets);
 });
-router.post("/", async (req, res) => {
+router.post("/:id", async (req, res) => {
+  let userID = await User.getUserId(req.params.id);
   let {
     name,
     animal,
@@ -161,6 +163,7 @@ router.post("/", async (req, res) => {
     date,
   } = req.body;
   let newPet = {
+    userID: userID.id,
     name,
     animal,
     age,
@@ -176,17 +179,18 @@ router.post("/", async (req, res) => {
     description,
     date,
   };
-  console.log(newPet);
+  //   console.log(userID);
+  //   console.log(newPet);
   let doc = await Pet.savePet(newPet);
   res.status(201).send(doc);
 });
-router.delete("/:id",async (req,res)=>{
-    let doc = await Pet.deletePetById(req.params.id);
-    if (doc) {
-        res.status(200).send(doc)
-        return;    
-    }
-    res.status(404).send({error: "Pet not found"})
-})
+router.delete("/:id", async (req, res) => {
+  let doc = await Pet.deletePetById(req.params.id);
+  if (doc) {
+    res.status(200).send(doc);
+    return;
+  }
+  res.status(404).send({ error: "Pet not found" });
+});
 
 module.exports = router;

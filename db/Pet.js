@@ -8,6 +8,11 @@ let petSchema = mongoose.Schema({
     unique: true,
     required: true,
   },
+  userID: {
+    type: String,
+    unique: false,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -66,11 +71,6 @@ let petSchema = mongoose.Schema({
   },
 });
 
-petSchema.statics.addPet = async (pet) => {
-  pet.id = nanoid();
-  let petToAdd = Pet(pet);
-};
-
 petSchema.statics.getPet = async (filter) => {
   let props = Object.keys(filter);
   props = props.map((p) => ({ [p]: filter[p] }));
@@ -92,39 +92,41 @@ petSchema.statics.getPetById = async (id) => {
 petSchema.statics.getPetByParams = async (query) => {
   return await Pet.find(query);
 };
-petSchema.statics.deletePetById=async (id)=>{
-    return await Pet.deleteOne({id})
-}
-
-async function savePetManually() {
-  let newPet = {
-    id: nanoid(),
-    name: "Odie",
-    animal: "Dog",
-    age: 2,
-    temperment: "calm",
-    color: "black",
-    size: "Small",
-    breed: "idk",
-    gender: "Male",
-    health: "healthy",
-    castrated: true,
-    vaccinated: false,
-    image:
-      "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
-    description: "Wholesome boi",
-    date: "30-04-2022",
-  };
-  let petToSave = Pet(newPet);
-  let resp = await petToSave.save();
-  console.log(resp);
-}
+petSchema.statics.deletePetById = async (id) => {
+  return await Pet.deleteOne({ id });
+};
+petSchema.statics.updatePet = async (idPet, params) => {
+  return await Pet.findByIdAndUpdate({ idPet }, { params });
+};
+// async function savePetManually() {
+//   let newPet = {
+//     id: nanoid(),
+//     name: "Odie",
+//     animal: "Dog",
+//     age: 2,
+//     temperment: "calm",
+//     color: "black",
+//     size: "Small",
+//     breed: "idk",
+//     gender: "Male",
+//     health: "healthy",
+//     castrated: true,
+//     vaccinated: false,
+//     image:
+//       "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
+//     description: "Wholesome boi",
+//     date: "30-04-2022",
+//   };
+//   let petToSave = Pet(newPet);
+//   let resp = await petToSave.save();
+//   console.log(resp);
+// }
 // savePetManually();
 
-async function getPetsManually() {
-  let pets = await Pet.find({}, { name: 1, animal: 1 }); //add tags you want to see
-  console.log(pets);
-}
+// async function getPetsManually() {
+//   let pets = await Pet.find({}, { name: 1, animal: 1 }); //add tags you want to see
+//   console.log(pets);
+// }
 // getPetsManually();
 const Pet = mongoose.model("Pet", petSchema);
 module.exports = { Pet };
