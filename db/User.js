@@ -1,7 +1,7 @@
+require("dotenv").config();
 const { mongoose } = require("./connectDataBase");
 const { nanoid } = require("nanoid");
 const { getHash } = require("../utils/crypt");
-
 let usersSchema = mongoose.Schema({
   id: {
     type: String,
@@ -70,7 +70,7 @@ usersSchema.statics.getUsers = async (filtro) => {
 usersSchema.statics.saveUser = async (user) => {
   //console.log("it gets to here");
   user.id = nanoid();
-  //user.password = await getHash(user.password);
+  user.password = await getHash(user.password);
   let userToSave = User(user);
 
   return await userToSave.save();
@@ -128,5 +128,16 @@ async function getUsers() {
 }
 
 //getUsers();
+/*
+*/
+async function updatePasswordAllUsers(){
+  let users = await User.find();
+  users.forEach(async usr=>{
+      usr.password =  await getHash(usr.password);
+      User.updateUser({id:usr.id,password:usr.password});
+  })
+}
+
+//updatePasswordAllUsers();
 
 module.exports = { User };
