@@ -1,6 +1,5 @@
 const { mongoose } = require("./connectDataBase");
 const { nanoid } = require("nanoid");
-const { User } = require("./User");
 
 let petSchema = mongoose.Schema({
   id: {
@@ -95,8 +94,8 @@ petSchema.statics.getPetByParams = async (query) => {
 petSchema.statics.deletePetById = async (id) => {
   return await Pet.deleteOne({ id });
 };
-petSchema.statics.updatePet = async (idPet, params) => {
-  return await Pet.findByIdAndUpdate({ idPet }, { params });
+petSchema.statics.updatePet = async (id, params) => {
+  return await Pet.findOneAndUpdate({ id }, params);
 };
 // async function savePetManually() {
 //   let newPet = {
