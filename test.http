@@ -4,21 +4,22 @@
 GET {{host}}/
 
 ###
-GET {{host}}/api/users
+GET {{host}}/api/register
 
 ###
-GET {{host}}/api/users/UmG8sKmXmdW3MN0OEubn6
+GET {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
 
 ###
-POST {{host}}/api/users
+POST {{host}}/api/register
 Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTYzMTE0NCwiZXhwIjoxNjUxNjMxNDQ0fQ.ugzOFJ3WjO3m_Wqf7ZnA18myKK4ZT2fWbPSTHapbqp8
 
 {
     "name": "Jaime",
     "lastname": "Escobedo",
     "username": "jrev",
-    "password": "passwordJWoof",
-    "phone": "3371026574",
+    "password": "passJWoof",
+    "phone": "3361804527",
     "email": "jaime@test.com",
     "city": "Guadalajara",
     "country": "Mexico",
@@ -27,24 +28,34 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/users/cQpqT_3EGJqTpv4jOfke5
-
+DELETE {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
 
 ###
-PUT {{host}}/api/users/EiZv5UaVWK2dM1Ny-V9Li
+PUT {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
 Content-Type: application/json
 
 {
     "name": "Jaime",
     "lastname": "Escobedo",
-    "username": "jrev",
+    "username": "Oss",
     "password": "passwordJWoof",
-    "phone": "3371026574",
+    "phone": "3371068269",
     "email": "jaime@test.com",
     "city": "Guadalajara",
     "country": "Mexico",
     "zip": "44360",
     "state": "Jalisco"
+}
+
+
+//Login
+###
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "email":"jessica@test.com",
+    "password":"passJSWoof"
 }
 
 //pets
