@@ -4,42 +4,42 @@
 GET {{host}}/
 
 ###
-GET {{host}}/api/users
+GET {{host}}/api/register
 
 ###
-GET {{host}}/api/users/Vwbm6jtxXp6ZybI4zfjWV
+GET {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
 
 ###
-POST {{host}}/api/users
+POST {{host}}/api/register
 Content-Type: application/json
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlZ3Ym02anR4WHA2WnliSTR6ZmpXViIsImVtYWlsIjoiamFpbWVAdGVzdC5jb20iLCJpYXQiOjE2NTE2MTIyODgsImV4cCI6MTY1MTYxMjU4OH0.vroo8I4B1Ed_56HJJHTV-QKNY9cXp3fqOBngydPUpys
-
-{
-    "name": "Jessica",
-    "lastname": "Donley",
-    "username": "jess",
-    "password": "passJSWoof",
-    "phone": "3361584095",
-    "email": "jessica@test.com",
-    "city": "San Pedro Tlaquepaque",
-    "country": "Mexico",
-    "zip": "45604",
-    "state": "Jalisco"
-}
-
-###
-DELETE {{host}}/api/users/FFsO0eXH1qm5Mdhq1qCfb
-
-###
-PUT {{host}}/api/users/Vwbm6jtxXp6ZybI4zfjWV
-Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTYzMTE0NCwiZXhwIjoxNjUxNjMxNDQ0fQ.ugzOFJ3WjO3m_Wqf7ZnA18myKK4ZT2fWbPSTHapbqp8
 
 {
     "name": "Jaime",
     "lastname": "Escobedo",
     "username": "jrev",
+    "password": "passJWoof",
+    "phone": "3361804527",
+    "email": "jaime@test.com",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "zip": "44360",
+    "state": "Jalisco"
+}
+
+###
+DELETE {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
+
+###
+PUT {{host}}/api/register/Vwbm6jtxXp6ZybI4zfjWV
+Content-Type: application/json
+
+{
+    "name": "Jaime",
+    "lastname": "Escobedo",
+    "username": "Oss",
     "password": "passwordJWoof",
-    "phone": "3371026574",
+    "phone": "3371068269",
     "email": "jaime@test.com",
     "city": "Guadalajara",
     "country": "Mexico",
@@ -54,8 +54,8 @@ POST {{host}}/api/login
 Content-Type: application/json
 
 {
-    "email":"jaime@test.com",
-    "password":"passwordJWoof"
+    "email":"jessica@test.com",
+    "password":"passJSWoof"
 }
 
 //pets

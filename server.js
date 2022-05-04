@@ -13,7 +13,7 @@ const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 
 
-app.use("/api/users", user);
+app.use("/api/register", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
 

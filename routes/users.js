@@ -7,7 +7,7 @@ const {auth} = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.query;
+  let {name,lastname,username,password,phone,email,city,country,zip,state,image} = req.query;
   let query = {};
 
   if (name) {
@@ -39,6 +39,9 @@ router.get("/", async (req, res) => {
   }
   if (state) {
     query.state = new RegExp(state, "i");
+  }
+  if (image) {
+    query.image = new RegExp(image, "i");
   }
 
   let usuarios = await User.getUsers(query);

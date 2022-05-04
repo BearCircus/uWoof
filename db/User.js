@@ -2,6 +2,7 @@ require("dotenv").config();
 const { mongoose } = require("./connectDataBase");
 const { nanoid } = require("nanoid");
 const { getHash } = require("../utils/crypt");
+
 let usersSchema = mongoose.Schema({
   id: {
     type: String,
