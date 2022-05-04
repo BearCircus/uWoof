@@ -52,19 +52,19 @@ Content-Type: application/json
 GET {{host}}/api/pets
 
 ###
-GET {{host}}/api/pets/fabVQ4yDMY-3xbp6dE2Jp
+GET {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
 
 ###
 GET {{host}}/api/pets?age=2
 
 ###
-POST {{host}}/api/pets/UmG8sKmXmdW3MN0OEubn6
+POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
 Content-Type: application/json
 
 {
-    "name": "Maik",
-    "animal": "Sea Lion",
-    "age": 21,
+    "name": "Pegro",
+    "animal": "Lion",
+    "age": 11,
     "temperment": "Thicc",
     "color": "Brown",
     "size": "Big ass animal",
@@ -77,6 +77,14 @@ Content-Type: application/json
       "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
     "description": "completly wholesome boi",
     "date": "30-04-2022"
+}
+
+###
+PUT {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+Content-Type: application/json
+
+{
+    "name":"Gabo"
 }
 
 ###
