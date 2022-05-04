@@ -63,25 +63,25 @@ Content-Type: application/json
 GET {{host}}/api/pets
 
 ###
-GET {{host}}/api/pets/fabVQ4yDMY-3xbp6dE2Jp
+GET {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
 
 ###
 GET {{host}}/api/pets?age=2
 
 ###
-POST {{host}}/api/pets
+POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
 Content-Type: application/json
 
 {
-    "name": "Max",
-    "animal": "Horse",
-    "age": 2,
-    "temperment": "Sweet",
-    "color": "yellow?",
-    "size": "Medium",
-    "breed": "cartoon",
-    "gender": "Male",
-    "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
+    "name": "Pegro",
+    "animal": "Lion",
+    "age": 11,
+    "temperment": "Thicc",
+    "color": "Brown",
+    "size": "Big ass animal",
+    "breed": "Maik",
+    "gender": "Unknown",
+    "health": "he chubby, he probs not healthy",
     "castrated": true,
     "vaccinated": false,
     "image":
@@ -91,5 +91,13 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/pets/wGBTF-6JoI4PTXAlZNXj5
+PUT {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+Content-Type: application/json
+
+{
+    "name":"Gabo"
+}
+
+###
+DELETE {{host}}/api/pets/_7rN1nG9tCcTIYF_eGTKx
 
