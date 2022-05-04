@@ -240,4 +240,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//todo get usando id de la mascota
+//todo get de las mascotas posteadas por cierto usaurio
+
 module.exports = router;

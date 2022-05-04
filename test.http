@@ -63,41 +63,42 @@ Content-Type: application/json
 GET {{host}}/api/pets
 
 ###
-GET {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 
 ###
-GET {{host}}/api/pets?age=2
+GET {{host}}/api/pets?name=maik
 
 ###
-POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
+POST {{host}}/api/pets/OuyQ3IKip9v0JDU13L-4O
 Content-Type: application/json
 
 {
-    "name": "Pegro",
-    "animal": "Lion",
-    "age": 11,
-    "temperment": "Thicc",
-    "color": "Brown",
-    "size": "Big ass animal",
-    "breed": "Maik",
-    "gender": "Unknown",
-    "health": "he chubby, he probs not healthy",
+    "name": "Dog1",
+    "animal": "Dog",
+    "age": 8,
+    "temperment": "Sweet",
+    "color": "Orange",
+    "size": "Medium",
+    "breed": "Golden",
+    "gender": "Female",
+    "health": "healthy",
     "castrated": true,
-    "vaccinated": false,
+    "vaccinated": true,
     "image":
       "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
     "description": "completly wholesome boi",
-    "date": "30-04-2022"
+    "date": "03-05-2022"
 }
 
 ###
-PUT {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+PUT {{host}}/api/pets/a90cpTq3HHWKONn8LUH87
 Content-Type: application/json
 
 {
-    "name":"Gabo"
+    "age":9,
+    "castrated":false
 }
 
 ###
-DELETE {{host}}/api/pets/_7rN1nG9tCcTIYF_eGTKx
+DELETE {{host}}/api/pets/a90cpTq3HHWKONn8LUH87
 
