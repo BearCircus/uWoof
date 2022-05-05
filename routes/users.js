@@ -50,7 +50,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/",auth,checkUsername,checkEmail, async (req, res) => {
-  console.log("POST-USERS");
+  //console.log("POST-USERS");
   let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
 
   if (name && lastname && username && password && phone && email && city && country && zip && state) {
@@ -86,7 +86,7 @@ router.get("/:id", async (req, res) => {
 });
 //User.getUserId("UmG8sKmXmdW3MN0OEubn6");
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",auth, async (req, res) => {
   let doc = await User.deleteUser(req.params.id);
 
   if (doc) {
@@ -97,7 +97,7 @@ router.delete("/:id", async (req, res) => {
   res.status(404).send({ error: "El usuario no fue encontrado" });
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   let user = await User.getUserId(req.params.id);
   let {
     name,
