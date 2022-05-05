@@ -11,11 +11,13 @@ app.use(express.json());
 const loginRoute = require("./routes/login")
 const user = require("./routes/users");
 const pets = require("./routes/petRoute");
+const chatRoute = require("./routes/chat-route");
 
 
 app.use("/api/register", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
+app.use("/api/chat", chatRoute);
 
 app.get("/", (req, res) => {
   res.send("¡WOOF!");
