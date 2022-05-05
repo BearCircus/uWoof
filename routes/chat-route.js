@@ -11,6 +11,7 @@ const router = express.Router();
 // 5. delete para borrar un chat especifico
 // 6. delete para un mensaje especifico
 
+//Obtiene a partir de un id dos arrays de los chats en los que el usuario aparece en la base de datos (como owner o guest).
 router.get('/', async(req, res) => {
     req.userid = "5498498s4fs";
     let chats = await Chat.getChats(req.userid);
@@ -52,6 +53,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+//Checa si el Usuario loggeado o el otro usuario del chat quieren ver o no el chat en su pagina de chat
 router.put('/:idPost', async (req, res) => {
     req.userid = "5498498s4fs";
     let {idOwner, idGuest} = req.body;
@@ -73,10 +75,11 @@ router.put('/:idPost', async (req, res) => {
     }
 })
 
+
+//Elimina mensajes especificos de un chat en especifico debido a su post
 router.delete('/:idPost/:idMessage', async (req, res) => {
     let msgToRemove = await Chat.getMessagesFromArray(req.params.idPost, req.params.idMessage);
     if(msgToRemove){
-
         let nChat = await Chat.update(
             {_id: msgToRemove._id},
             { $pull: { messages : { _id: mongoose.Types.ObjectId(req.params.idMessage)}}}
