@@ -102,7 +102,7 @@ async function getSpecificChatOwner(){
     }
 }
 
-getSpecificChatOwner();
+//getSpecificChatOwner();
 
 async function getSpecificChatGuest(){
     let chat = await Chat.findOne({idGuest: "5498498s4fs", idPost: "post 91"});

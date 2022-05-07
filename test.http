@@ -102,3 +102,8 @@ Content-Type: application/json
 ###
 DELETE {{host}}/api/pets/a90cpTq3HHWKONn8LUH87
 
+
+//CHAT
+
+###
+PUT {{host}}/api/chat/deactivate/ctXv5sWj9b2RjjlwGxDSR/pwoepwiiririf

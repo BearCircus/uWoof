@@ -1,6 +1,7 @@
 const express = require("express");
 const { mongoose } = require("mongoose");
 const { Chat } = require("../db/Chat");
+const { Pet } = require("../db/Pet");
 const router = express.Router();
 //const moment = require("moment");
 
@@ -11,24 +12,23 @@ router.get('/', async(req, res) => {
     res.send(chats);
 })
 
-router.post('/', async (req, res) => {
+router.post('/:idPost/:idReceptor', async (req, res) => {
     req.userid = "5498498s4fs";
     let idGuest = "";
 
-    let {idReceptor, idPost, msg} = req.body;
-    //let idOwner = Pet.getIdOwnerPost(idPost);
-
-    let idOwner = "5498498s4fs"; // harcodeado
+    let { msg } = req.body;
+    let petDoc = await Pet.getPetById(req.params.idPost);
+    let idOwner = petDoc.userID;
 
     if(req.userid == idOwner){
-        idGuest = idReceptor;
+        idGuest = req.params.idReceptor;
     }else{
         idGuest = req.userid;
     }
 
     let mensaje = {idSenderUser: req.userid, message: msg, date: Date.now()};
     
-    let doc = await Chat.getChat(idOwner, idGuest, idPost);
+    let doc = await Chat.getChat(idOwner, idGuest, req.params.idPost);
     console.log(doc);
 
     if(doc){
@@ -46,24 +46,37 @@ router.post('/', async (req, res) => {
 })
 
 //Checa si el Usuario loggeado o el otro usuario del chat quieren ver o no el chat en su pagina de chat
-router.put('/:idPost', async (req, res) => {
+router.put('/deactivate/:idPost/:idReceptor', async (req, res) => {
     req.userid = "5498498s4fs";
-    let {idOwner, idGuest} = req.body;
+    let petDoc = await Pet.getPetById(req.params.idPost);
+    console.log(petDoc);
 
-    if(idOwner == req.userid){
-        let doc = await Chat.getChat(req.userid, idGuest, req.params.idPost);
-        if(doc){
-            doc.ownerVisibleConversation = false;
-        }else{
-            console.log("Conversacion no encontrada");
-        }
+    if(!petDoc){
+        res.status(404).send({error: "No se encontro el post"});
+    }
+    console.log(petDoc.userID);
+
+    let idOwner = petDoc.userID;
+    let idGuest = "";
+
+    if(req.userid == idOwner){
+        idGuest = req.params.idReceptor;
     }else{
-        let doc = await Chat.getChat(idOwner, req.userid, req.params.idPost);
-        if(doc){
-            doc.guestVisibleConversation = false;
-        }else{
-            console.log("Conversacion no encontrada");
-        }
+        idGuest = req.userid;
+    }
+
+    let doc = await Chat.getChat(idOwner, idGuest, req.params.idPost);
+
+    if(doc){
+        let prop = idOwner == req.userid ? "ownerVisibleConversation" : "guestVisibleConversation";
+        let doc2 = await Chat.findOneAndUpdate(
+            {_id: doc._id},
+            { $set: { [prop] : false } },
+            {new: true}
+        )
+        res.send(doc2);
+    }else{
+        console.log("Conversacion no encontrada");
     }
 })
 
