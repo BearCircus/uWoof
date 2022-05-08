@@ -106,4 +106,20 @@ DELETE {{host}}/api/pets/a90cpTq3HHWKONn8LUH87
 //CHAT
 
 ###
-PUT {{host}}/api/chat/deactivate/ctXv5sWj9b2RjjlwGxDSR/pwoepwiiririf
+GET {{host}/api/chat
+
+###
+POST {{host}}/api/chat/ctXv5sWj9b2RjjlwGxDSR/otrouUisdjif5455641
+Content-Type: application/json
+
+{
+    "msg": "of course"
+}
+
+
+###
+PUT {{host}}/api/chat/deactivate/jV4NWN1FzkHqGCuluyH0g/jshai1235fd8s58
+
+
+###
+DELETE {{host}}/api/chat/ctXv5sWj9b2RjjlwGxDSR/6277d3bc42be41e74f31826c

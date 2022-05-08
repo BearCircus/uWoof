@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
 })
 
 router.post('/:idPost/:idReceptor', async (req, res) => {
-    req.userid = "5498498s4fs";
+    req.userid = "uwQhsej8dio8anABU1zqC";
     let idGuest = "";
 
     let { msg } = req.body;
@@ -32,14 +32,15 @@ router.post('/:idPost/:idReceptor', async (req, res) => {
     console.log(doc);
 
     if(doc){
-        let nChat = await Chat.update(
+        let nChat = await Chat.findOneAndUpdate(
             {_id: doc._id},
-            { $push: { messages: mensaje } }
+            { $push: { messages: mensaje } },
+            {new: true}
         )
         //let nChat = await doc.newMessage(mensaje);
         res.send(nChat);
     }else{
-        let newChat = {idOwner, idGuest, idPost, ownerVisibleConversation: true, guestVisibleConversation: true, messages: [mensaje]};
+        let newChat = {idOwner, idGuest, idPost: req.params.idPost, ownerVisibleConversation: true, guestVisibleConversation: true, messages: [mensaje]};
         let nChat = await Chat.newChat(newChat);
         res.send(nChat);
     }
@@ -47,7 +48,7 @@ router.post('/:idPost/:idReceptor', async (req, res) => {
 
 //Checa si el Usuario loggeado o el otro usuario del chat quieren ver o no el chat en su pagina de chat
 router.put('/deactivate/:idPost/:idReceptor', async (req, res) => {
-    req.userid = "5498498s4fs";
+    req.userid = "UmG8sKmXmdW3MN0OEubn6";
     let petDoc = await Pet.getPetById(req.params.idPost);
     console.log(petDoc);
 
@@ -61,8 +62,10 @@ router.put('/deactivate/:idPost/:idReceptor', async (req, res) => {
 
     if(req.userid == idOwner){
         idGuest = req.params.idReceptor;
-    }else{
+    }else if(idOwner == req.params.idReceptor){
         idGuest = req.userid;
+    }else{
+        console.log("Hemos tenido un error de identificadores");
     }
 
     let doc = await Chat.getChat(idOwner, idGuest, req.params.idPost);

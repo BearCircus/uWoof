@@ -17,7 +17,7 @@ async function chatsToHtml(data){
                 <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
             </div>
             <p class="name-time">
-                <span class="name">${chat.}</span>
+                <span class="name"></span>
                 <span class="time">15/02/2019</span>
             </p>
         </li>
