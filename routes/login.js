@@ -15,7 +15,7 @@ router.post('/',async(req,res)=>{
        if(result){
            //console.log("Segundo if")
            //Todo: generar token
-           let token = jwt.sign({id: doc.id, email},process.env.TOKEN_KEY, { expiresIn: 60*5 },)
+           let token = jwt.sign({id: doc.id, email, _id: doc._id},process.env.TOKEN_KEY, { expiresIn: 60*10 },)
         res.send({token})
       }else{
           res.status(400).send({error: "Password Incorrecto"})

@@ -19,6 +19,7 @@ function auth(req,res,next){
             }
             //console.log(payload.email);
             req.userId = payload.id;
+            req._id = payload._id;
             req.email = payload.email;
             next();
         }) 
