@@ -106,20 +106,21 @@ DELETE {{host}}/api/pets/a90cpTq3HHWKONn8LUH87
 //CHAT
 
 ###
-GET {{host}/api/chat
+GET {{host}}/api/chat
+
 
 ###
-POST {{host}}/api/chat/ctXv5sWj9b2RjjlwGxDSR/otrouUisdjif5455641
+POST {{host}}/api/chat/6271e7bb84866d60ba6a245e/62719adc9b009ec84c73a8c8
 Content-Type: application/json
 
 {
-    "msg": "of course"
+    "msg": "idk, you tell me!"
 }
 
 
 ###
-PUT {{host}}/api/chat/deactivate/jV4NWN1FzkHqGCuluyH0g/jshai1235fd8s58
+PUT {{host}}/api/chat/deactivate/6271e7bb84866d60ba6a245e/62719adc9b009ec84c73a8c8
 
 
 ###
-DELETE {{host}}/api/chat/ctXv5sWj9b2RjjlwGxDSR/6277d3bc42be41e74f31826c
+DELETE {{host}}/api/chat/62798917233e3410bfd32f0f

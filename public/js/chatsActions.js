@@ -1,6 +1,11 @@
 async function getChats(query){
-    const response = await fetch('http://127.0.0.1:5500/uWoof/public/Chat/messages.html', {
-        method: 'GET'
+    sessionStorage.setItem("token", "nfjsdngdsog");
+
+    const response = await fetch('/api/chat', {
+        method: 'GET',
+        headers: {
+            "x-auth": sessionStorage.getItem("token")
+        }
     });
 
     const data = await response.json();
@@ -14,7 +19,7 @@ async function chatsToHtml(data){
     divChats.innerHTML = data.map(chat => `
         <li class="person" data-chat="person1">
             <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                <img src=${} alt="Retail Admin">
             </div>
             <p class="name-time">
                 <span class="name"></span>
@@ -23,4 +28,8 @@ async function chatsToHtml(data){
         </li>
     `
     ).join("");
+}
+
+async function sendNewMessage(){
+    
 }

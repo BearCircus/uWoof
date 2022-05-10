@@ -13,6 +13,7 @@ const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 const chat = require("./routes/chat-route");
 
+app.use('/chat',express.static(__dirname + '/public/Chat'));
 
 app.use("/api/register", user);
 app.use("/api/login", loginRoute);

@@ -1,20 +1,25 @@
 const { mongoose } = require("./connectDataBase");
 //const moment = require("moment");
 const { nanoid } = require("nanoid");
+const { Pet } = require("./Pet");
+const { User } = require("./User");
 
 let chatsSchema = mongoose.Schema({
     idOwner: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: "User",
         required: true,
     },
 
     idGuest: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: "User",
         required: true,
     },
 
     idPost: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: "Pet",
         required: true
     },
 
@@ -44,10 +49,16 @@ let chatsSchema = mongoose.Schema({
     }]
 })
 
-//Funcion para obtener todos los chats del usuario como user y como owner
+//Funcion para obtener todos los chats del usuario como user y como owner (toda la informacion desde el usuario hasta la publicacion)
 chatsSchema.statics.getChats = async(idLog) => {
-    let ownerChats = await Chat.find({ idOwner: idLog });
-    let guestChats = await Chat.find({ idGuest: idLog });
+    let ownerChats = await Chat.find({ idOwner: idLog })
+                                .populate("idOwner", "name image lastname")
+                                .populate("idGuest", "name image lastname")
+                                .populate("idPost", "name");
+    let guestChats = await Chat.find({ idGuest: idLog })
+                                .populate("idOwner", "name image lastname")
+                                .populate("idGuest", "name image lastname")
+                                .populate("idPost", "name");
     return {ownerChats, guestChats};
 }
 
@@ -56,17 +67,13 @@ chatsSchema.statics.getChat = async(idOwner, idGuest, idPost) => {
     return await Chat.findOne({ idOwner, idGuest, idPost });
 }
 
-//Funcion para obtener un chat en especifico por busqueda del post y del usuario cuando es owner
-
-//Funcion para obtener un chat en especifico por busqueda del post y del usuario cuando es guest
-
 //Funcion para crear un chat nuevo
 chatsSchema.statics.newChat = async(obj) => {
     let chatToCreate = Chat(obj);
     return await chatToCreate.save();
 }
 
-chatsSchema.statics.getMessagesFromArray = async(idPost, idMsg) => {
+chatsSchema.statics.getMessageFromArray = async(idMsg) => {
     return await Chat.findOne({"messages._id": idMsg});
 }
 
@@ -93,24 +100,24 @@ const Chat = mongoose.model("chats", chatsSchema);
 // }
 //getChat();
 
-async function getSpecificChatOwner(){
-    let chat = await Chat.findOne({idOwner: "5498498s4fs", idPost: "post 5000"});
-    if(chat){
-        console.log(chat);
-    }else{
-        console.log("No se encontro el chat");
-    }
-}
+// async function getSpecificChatOwner(){
+//     let chat = await Chat.findOne({idOwner: "5498498s4fs", idPost: "post 5000"});
+//     if(chat){
+//         console.log(chat);
+//     }else{
+//         console.log("No se encontro el chat");
+//     }
+// }
 
-//getSpecificChatOwner();
+// //getSpecificChatOwner();
 
-async function getSpecificChatGuest(){
-    let chat = await Chat.findOne({idGuest: "5498498s4fs", idPost: "post 91"});
-    if(chat){
-        console.log(chat);
-    }else{
-        console.log("No se encontro el chat");
-    }
-}
+// async function getSpecificChatGuest(){
+//     let chat = await Chat.findOne({idGuest: "5498498s4fs", idPost: "post 91"});
+//     if(chat){
+//         console.log(chat);
+//     }else{
+//         console.log("No se encontro el chat");
+//     }
+// }
 
 module.exports = { Chat };
