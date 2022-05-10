@@ -1,3 +1,5 @@
 .env
-.\db\config.js
-
+db
+node_modules
+package-lock.json
+package-lock copy.json
