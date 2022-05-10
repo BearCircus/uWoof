@@ -40,7 +40,7 @@
       <!-- <a href="http://creative-tim.com"> -->
       <div class="logo-container">
         <div class="logo">
-          <a href="/Proyecto/Central/main.html"
+          <a href="/"
             ><img src="assets/img/new_logo.png"
           /></a>
         </div>
@@ -101,9 +101,20 @@
                                 id="wizardPicturePreview"
                                 title=""
                               />
-                              <input type="file" id="wizard-picture" />
+                              <input type="button" id="wizard-picture" />
                             </div>
-                            <h6>Choose Picture</h6>
+                            <div class="form-group">
+                              <label>Image URL<small></small></label>
+                              <input
+                                name="image"
+                                type="text"
+                                id="image"
+                                class="form-control"
+                                pattern="[a-zA-z ]+"
+                                placeholder="https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
+                              />
+                            </div>
+                            <!-- <h6>Choose Picture</h6> -->
                           </div>
                         </div>
                         <div class="col-sm-6">
@@ -112,6 +123,7 @@
                             <input
                               name="firstname"
                               type="text"
+                              id="firstName"
                               class="form-control"
                               pattern="[a-zA-z ]+"
                               placeholder="Andrew..."
@@ -122,6 +134,7 @@
                             <input
                               name="lastname"
                               type="text"
+                              id="lastName"
                               class="form-control"
                               pattern="[a-zA-z ]+"
                               placeholder="Smith..."
@@ -132,6 +145,7 @@
                             <input
                               name="username"
                               type="text"
+                              id="username"
                               class="form-control"
                               placeholder="AnSm"
                             />
@@ -141,6 +155,7 @@
                             <input
                               name="psswd"
                               type="password"
+                              id="password"
                               class="form-control"
                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                               minlength="8"
@@ -148,7 +163,7 @@
                               placeholder="********"
                             />
                           </div>
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                             <label
                               >Confirm Password <small>(required)</small></label
                             >
@@ -161,7 +176,7 @@
                               required
                               placeholder="********"
                             />
-                          </div>
+                          </div> -->
                         </div>
                         <div class="col-sm-10 col-sm-offset-1">
                           <div class="form-group">
@@ -169,6 +184,7 @@
                             <input
                               name="phone"
                               type="digits"
+                              id="phone"
                               class="form-control"
                               placeholder="3371927401"
                             />
@@ -178,6 +194,7 @@
                             <input
                               name="email"
                               type="email"
+                              id="email"
                               class="form-control"
                               pattern="[a-zA-z0-9.-_%+-]+@[a-zA-z0-9.-]+\.[a-z]{2,}$"
                               placeholder="andrew@test.com"
@@ -233,6 +250,7 @@
                             <label>City</label>
                             <input
                               type="text"
+                              id="city"
                               class="form-control"
                               placeholder="Guadalajara"
                             />
@@ -243,6 +261,7 @@
                             <label>Zip Code</label>
                             <input
                               type="text"
+                              id="zip"
                               class="form-control"
                               placeholder="44810"
                             />
@@ -250,20 +269,13 @@
                         </div>
                         <div class="col-sm-7 col-sm-offset-1">
                           <div class="form-group">
-                            <label>Country</label><br />
-                            <select name="country" class="form-control">
-                              <option value="Mexico">México</option>
-                              <option value="EUA">Estados Unidos</option>
-                              <option value="Peru">Perú</option>
-                              <option value="Canada">Canadá</option>
-                              <option value="Colombia">Colombia</option>
-                              <option value="Chile">Chile</option>
-                              <option value="Argentina">Argentina</option>
-                              <option value="Republica Dominicana">
-                                República Dominicana
-                              </option>
-                              <option value="...">...</option>
-                            </select>
+                            <label>Country</label>
+                            <input
+                              type="text"
+                              id="country"
+                              class="form-control"
+                              placeholder="Mexico"
+                            />
                           </div>
                         </div>
                         <div class="col-sm-3">
@@ -271,6 +283,7 @@
                             <label>State</label>
                             <input
                               type="text"
+                              id="state"
                               class="form-control"
                               placeholder="Jalisco"
                             />
@@ -287,14 +300,14 @@
                         name="next"
                         value="Next"
                         style="font-size: medium"
-                      />
-                      <a href=""
+                        />
+                        <a href="/"
                         ><input
-                          type="button"
-                          class="btn btn-finish btn-fill btn-warning btn-wd btn-sm"
-                          name="finish"
-                          value="Finish"
-                          style="font-size: medium"
+                        type="button"
+                        class="btn btn-finish btn-fill btn-warning btn-wd btn-sm"
+                        name="finish"
+                        value="Finish"
+                        style="font-size: medium"
                       /></a>
                     </div>
 
@@ -337,6 +350,8 @@
 
   <!--  Plugin for the Wizard -->
   <script src="assets/js/gsdk-bootstrap-wizard.js"></script>
+  
+  <script src="/js/usersRegister.js"></script>
 
   <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
   <script src="assets/js/jquery.validate.min.js"></script>

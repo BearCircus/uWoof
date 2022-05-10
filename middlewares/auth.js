@@ -1,9 +1,10 @@
 const jwt = require("jsonwebtoken");
+//const { User } = require("../db/User");
 
 function auth(req,res,next){
     let token = req.get('x-auth');
     if(token){
-        console.log(token);
+        //console.log(token);
         jwt.verify(token,process.env.TOKEN_KEY,(err,payload)=>{
             if(err){
                 if(err.name == "TokenExpiredError"){
@@ -16,9 +17,9 @@ function auth(req,res,next){
                 // console.log(err.name);
                 return;
             }
-
-            console.log(payload.email);
+            //console.log(payload.email);
             req.userId = payload.id;
+            req._id = payload._id;
             req.email = payload.email;
             next();
         }) 

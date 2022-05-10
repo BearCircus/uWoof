@@ -79,7 +79,11 @@ usersSchema.statics.saveUser = async (user) => {
 
 //User.schema.statics.saveUser();
 
-usersSchema.statics.getUserId = async (id) => {
+usersSchema.statics.getUserId = async (id, simplify = false) => {
+  if(simplify){
+    let project = {_id:0 ,username: 1, image:1, city: 1, state:1}
+    return await User.findOne({ id }, project);
+  }
   return await User.findOne({ id });
 };
 
