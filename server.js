@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const axios = require("axios");
 // const { mongoose } = require("./db/connectDataBase");
 const app = express();
 const cors = require("cors");
@@ -16,11 +17,10 @@ app.use("/chat",express.static(__dirname+'/public/images/Chat'));
 
 app.use(cors());
 app.use(express.json());
-const loginRoute = require("./routes/login")
+const loginRoute = require("./routes/login");
 const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 const chatRoute = require("./routes/chat-route");
-
 
 app.use("/api/register", user);
 app.use("/api/login", loginRoute);
