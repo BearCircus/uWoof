@@ -2,8 +2,6 @@ const express = require("express");
 const { User } = require("../db/User");
 const { checkUsername,checkEmail } = require("../middlewares/repeatedData");
 const {auth} = require("../middlewares/auth");
-//const { checkEmail } = require("../middlewares/repeatedData");
-//const { auth } = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -49,8 +47,8 @@ router.get("/", async (req, res) => {
   res.send(usuarios);
 });
 
-router.post("/",auth,checkUsername,checkEmail, async (req, res) => {
-  console.log("POST-USERS");
+router.post("/",checkUsername,checkEmail, async (req, res) => {
+  //console.log("POST-USERS");
   let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
 
   if (name && lastname && username && password && phone && email && city && country && zip && state) {
@@ -76,17 +74,26 @@ router.post("/",auth,checkUsername,checkEmail, async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
-  let user = await User.getUserId(req.params.id);
+router.get("/myinfo", auth, async (req, res) => {
+  let user = await User.getUserId(req.userId);
   if (user) {
     res.send(user);
   } else {
     res.status(404).send({ error: "Id de usuario no encontrado" });
   }
 });
+
+router.get("/owner/:id",async (req,res)=>{
+  let user = await User.getUserId(req.params.id, true);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+})
 //User.getUserId("UmG8sKmXmdW3MN0OEubn6");
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",auth, async (req, res) => {
   let doc = await User.deleteUser(req.params.id);
 
   if (doc) {
@@ -97,7 +104,7 @@ router.delete("/:id", async (req, res) => {
   res.status(404).send({ error: "El usuario no fue encontrado" });
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   let user = await User.getUserId(req.params.id);
   let {
     name,
