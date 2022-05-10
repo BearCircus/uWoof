@@ -7,22 +7,13 @@ const cors = require("cors");
 const port = 3000;
 // console.log(process.env.DB_USER);
 
-app.use(express.static(__dirname + "/public/Central"));
-app.use(
-  "/register",
-  express.static(
-    __dirname + "/public/Register/RegisterUser/bootstrap-wizard-master"
-  )
-);
-app.use(
-  "/reganimal",
-  express.static(
-    __dirname + "/public/Register/RegisterAnimal/bootstrap-wizard-master"
-  )
-);
-app.use("/profile", express.static(__dirname + "/public//Profile"));
-app.use("/post", express.static(__dirname + "/public/Post/PostJessica"));
-app.use("/chat", express.static(__dirname + "/public/images/Chat"));
+app.use(express.static(__dirname+'/public/Central'));
+app.use(express.static(__dirname+'/public'));
+app.use("/register",express.static(__dirname+'/public/Register/RegisterUser/bootstrap-wizard-master'));
+app.use("/reganimal",express.static(__dirname+'/public/Register/RegisterAnimal/bootstrap-wizard-master'));
+app.use("/profile",express.static(__dirname+'/public//Profile'));
+app.use("/post",express.static(__dirname+'/public/Post/PostJessica'));
+app.use("/chat",express.static(__dirname+'/public/images/Chat'));
 
 app.use(cors());
 app.use(express.json());

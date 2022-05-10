@@ -11,7 +11,7 @@ GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
 
 ###
 GET {{host}}/api/register/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjE0MDczOSwiZXhwIjoxNjUyMTQxMzM5fQ.SZaYxEnQPjjYwt3z1tflFa5QwXCIAxLVD8Nb85aBPVU
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIwNzA1MywiZXhwIjoxNjUyMjA3NjUzfQ.2Qlu72GahFSdEAcxzlSmdea2IpMY6gLgWYjN5M4Iuk4
 
 ###
 POST {{host}}/api/register
