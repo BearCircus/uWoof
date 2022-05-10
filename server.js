@@ -7,6 +7,7 @@ const port = 3000;
 // console.log(process.env.DB_USER);
 
 app.use(express.static(__dirname+'/public/Central'));
+app.use(express.static(__dirname+'/public'));
 app.use("/register",express.static(__dirname+'/public/Register/RegisterUser/bootstrap-wizard-master'));
 app.use("/reganimal",express.static(__dirname+'/public/Register/RegisterAnimal/bootstrap-wizard-master'));
 app.use("/profile",express.static(__dirname+'/public//Profile'));

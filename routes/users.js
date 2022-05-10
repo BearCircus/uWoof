@@ -64,12 +64,12 @@ router.post("/",checkUsername,checkEmail, async (req, res) => {
       zip,
       state,
     };
-    console.log(newUser);
+    //console.log(newUser);
     let doc = await User.saveUser(newUser);
     res.status(201).send(doc);
     return;
   } else {
-    res.status(400).send("Faltan datos de usuario");
+    res.status(400).send({error:"Faltan datos de usuario"});
     return;
   }
 });
