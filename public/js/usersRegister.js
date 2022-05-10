@@ -1,8 +1,8 @@
 async function registerUser(){
-    console.log("firstName")
+    event.preventDefault();
     let image = document.querySelector("#image").value;
-    let firstName = document.querySelector("#firstName").value;
-    let lastName = document.querySelector("#lastName").value;
+    let name = document.querySelector("#firstName").value;
+    let lastname = document.querySelector("#lastName").value;
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
     let phone = document.querySelector("#phone").value;
@@ -12,9 +12,11 @@ async function registerUser(){
     let country = document.querySelector("#country").value;
     let state = document.querySelector("#state").value;
     
+    //console.log( firstName,lastName,username,password,phone,email,city,country,zip,state,image)
+    
     let newUser = {
-        firstName,
-        lastName,
+        name,
+        lastname,
         username,
         password,
         phone,
@@ -25,18 +27,18 @@ async function registerUser(){
         state,
         image
     }
-    
+    //console.log(newUser);
     const resp = await fetch('/api/register',{
         method: 'POST',
-        header: {
+        headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newUser)
     });
     const info = await resp.json();
-    console.log(info)
+    //console.log(info)
     return info;
 }
 
-registerUser();
+//registerUser();
 
