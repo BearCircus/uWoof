@@ -31,8 +31,8 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/register/fqvxfP65dsIpYahh0uY82
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTc3MDIzNSwiZXhwIjoxNjUxNzcwNTM1fQ.bXbCJog7YIlT00Jz_gMnzJgmIoHf06gVa2BsC6XXb5w
+DELETE {{host}}/api/register/KI_Wbytx_mHHvjmndIZib
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ3MTUxMCwiZXhwIjoxNjUyNDcyMTEwfQ.c8JKA2ZqyDw3zP65FmrA9MrBYQsXdAXnSoKVFCsM35c
 
 
 ###
