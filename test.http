@@ -11,7 +11,7 @@ GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
 
 ###
 GET {{host}}/api/register/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIwNzA1MywiZXhwIjoxNjUyMjA3NjUzfQ.2Qlu72GahFSdEAcxzlSmdea2IpMY6gLgWYjN5M4Iuk4
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 
 ###
 POST {{host}}/api/register
@@ -67,12 +67,12 @@ GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 GET {{host}}/api/pets?userID=OuyQ3IKip9v0JDU13L-4O
 
 ###
-POST {{host}}/api/pets/12-2R_Ne1k4Tg-WJdzBky
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ1ODY5NSwiZXhwIjoxNjUyNDU5Mjk1fQ.0_pBOQz07qgHQ3E8VFbQAvC4zQdW0Tnipt2oSJbl8Bk
+POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 Content-Type: application/json
 
 {
-    "name": "Raquel",
+    "name": "Raquel3",
     "animal": "Doggie",
     "age": 5,
     "temperment": "Annoying",

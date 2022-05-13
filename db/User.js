@@ -80,8 +80,8 @@ usersSchema.statics.saveUser = async (user) => {
 //User.schema.statics.saveUser();
 
 usersSchema.statics.getUserId = async (id, simplify = false) => {
-  if(simplify){
-    let project = {_id:0 ,username: 1, image:1, city: 1, state:1}
+  if (simplify) {
+    let project = { _id: 0, username: 1, image: 1, city: 1, state: 1 };
     return await User.findOne({ id }, project);
   }
   return await User.findOne({ id });
@@ -90,6 +90,7 @@ usersSchema.statics.getUserId = async (id, simplify = false) => {
 usersSchema.statics.getProfileId = async (id) => {
   let project = {
     _id: 0,
+    id: 1,
     username: 1,
     image: 1,
     state: 1,
@@ -148,13 +149,13 @@ async function getUsers() {
 
 //getUsers();
 /*
-*/
-async function updatePasswordAllUsers(){
+ */
+async function updatePasswordAllUsers() {
   let users = await User.find();
-  users.forEach(async usr=>{
-      usr.password =  await getHash(usr.password);
-      User.updateUser({id:usr.id,password:usr.password});
-  })
+  users.forEach(async (usr) => {
+    usr.password = await getHash(usr.password);
+    User.updateUser({ id: usr.id, password: usr.password });
+  });
 }
 
 //updatePasswordAllUsers();
