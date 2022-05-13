@@ -64,14 +64,15 @@
         
         <!-- Main section-->
         <section  class="main">
+            
             <div class="px-4 px-lg-4 my-5">
                 <div style="justify-content: center;" class="row gx-4 gx-lg-7" id="main">
-                    <!-- <div style="justify-content: center;" class="col-lg-4 mainimg">
-                        <img style="justify-content: center" class="card-img-top" src="./images/mochi.jpg" alt="..." />
-                    </div> -->
+                    <div style="justify-content: center;" class="col-lg-4 mainimg" id="petPicture">
+                        <!-- image -->
+                    </div>
                     
-                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
-                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
+                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint" >
+                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder" id="petName"></h1>
                         <div style="white-space: nowrap; margin-bottom: 20px" id="tag">
                             <span id="tags">White</span>
                             <span id="tags">Young</span>
@@ -267,66 +268,18 @@
             <script>
                 async function getPost() {
                     let value=params.id
-                    const pet = await fetch("http://localhost:3000/api/pets/" + value.toString(), {
+                    let response = await fetch("http://localhost:3000/api/pets/" + value.toString(), {
                         method: "GET",
                     });
-                    console.log(await pet.json());
-                    let post=document.querySelector("#main");
-                    post.innerHTML=pet.map(m=>`
-                    <div style="justify-content: center;" class="col-lg-4 mainimg">
-                        <img style="justify-content: center" class="card-img-top" src="${m.image}" alt="..." />
-                    </div>
+                    const pet= await response.json()
+                    // console.log(pet);
+                    let petPicture=document.querySelector("#petPicture");
                     
-                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
-                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
-                        <div style="white-space: nowrap; margin-bottom: 20px" id="tag">
-                            <span id="tags">Color: ${m.color}</span>
-                            <span id="tags">Tmperment: ${m.temperment}</span>
-                            <span id="tags">Neutured: ${m.castrated}</span>
-                            <span id="tags">Healthy: ${m.vaccinated}</span>
-                            <span id="tags">Health: ${m.health}</span>
-                            <span id="tags">Healthy: ${m.vaccinated}</span>
-                        </div>
-                        <pclass="lead">${m.description}</pclass=>
-                        <hr>
-                        
-                        <span style="margin-bottom: 15px; justify-content: center;" class="row ">
-                            <span style="margin-right: 15px;"class="row col-6">
-                                <div style="font-size: 25px" class="card">
-                                    <h3 style="text-align: center;">About</h3>
-                                    <span style="margin-top: 5px">
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>${m.animal}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Age: <span>${m.age}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Gender: <span>${m.gender}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${m.breed}</span></p>
-                                    
-                                    </span>  
-                                </div>
-                                
-                            </span>
-                            <span style="justify-content: center;" class="row col-6">
-                                
-
-                                <div class="card">
-                                    <h3 style="text-align: center;">Profile</h3> 
-                                    <div class="upper"><img style="background-color: #e9a8b1;" src="" class="img-fluid"> </div>
-                                    <div class="user text-center">
-                                        <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div>
-                                    </div>
-                                    <div class="follow mt-5 text-center">
-                                        <h4>Jessica Donley</h4>
-                                        <span class="follow text-muted d-block mb-2">Guadalajara</span>
-                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </span>
-                        
-                        
-                    <hr>
-                    `)
+                    // console.log(petPicture);
+                    // console.log(pet.image);
+                    // console.log(typeof pet.image);
+                    petPicture.innerHTML=`<img style="justify-content: center" class="card-img-top" src="${pet.image}" alt="..." />`
+                    document.querySelector("#petName").outerHTML=`<h1 style="margin-bottom: 20px;" class="display-5 fw-bolder" id="petName">${pet.name}</h1>`
                     return pet;
                 }
                 const params = new Proxy(new URLSearchParams(window.location.search), {

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Pet } = require("../db/Pet");
 const { User } = require("../db/User");
+const { auth } = require("../middlewares/auth");
 
 // router.get("/", async (req, res) => {
 //   let {
@@ -131,7 +132,7 @@ router.get("/", async (req, res) => {
 
   res.send(pets);
 });
-router.post("/:id", async (req, res) => {
+router.post("/:id", auth, async (req, res) => {
   let userID = await User.getUserId(req.params.id);
   //todo add something in case id null
   let {
@@ -179,7 +180,7 @@ router.delete("/:id", async (req, res) => {
   res.status(404).send({ error: "Pet not found" });
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   let {
     name,
     animal,
