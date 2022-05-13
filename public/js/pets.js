@@ -12,7 +12,7 @@ async function getPets() {
       (m) => ` <div class="col-lg2 mb-4 ml-1">
                 <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
                     <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="/Profile">${m.userID}</a></i>
+                    <div class="username mb-2" title="user">Offered by: <a href="/Profile/general.html?id=${m.userID}">${m.userID}</a></i>
                         <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
                     </div>
                     <a href="/Post/PostJessica?id=${m.id}">

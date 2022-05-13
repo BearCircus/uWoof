@@ -1,11 +1,23 @@
 const express = require("express");
 const { User } = require("../db/User");
-const { checkUsername,checkEmail } = require("../middlewares/repeatedData");
-const {auth} = require("../middlewares/auth");
+const { checkUsername, checkEmail } = require("../middlewares/repeatedData");
+const { auth } = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let {name,lastname,username,password,phone,email,city,country,zip,state,image} = req.query;
+  let {
+    name,
+    lastname,
+    username,
+    password,
+    phone,
+    email,
+    city,
+    country,
+    zip,
+    state,
+    image,
+  } = req.query;
   let query = {};
 
   if (name) {
@@ -47,65 +59,8 @@ router.get("/", async (req, res) => {
   res.send(usuarios);
 });
 
-router.post("/",checkUsername,checkEmail, async (req, res) => {
+router.post("/", checkUsername, checkEmail, async (req, res) => {
   //console.log("POST-USERS");
-  let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
-
-  if (name && lastname && username && password && phone && email && city && country && zip && state) {
-    let newUser = {
-      name,
-      lastname,
-      username,
-      password,
-      phone,
-      email,
-      city,
-      country,
-      zip,
-      state,
-    };
-    //console.log(newUser);
-    let doc = await User.saveUser(newUser);
-    res.status(201).send(doc);
-    return;
-  } else {
-    res.status(400).send({error:"Faltan datos de usuario"});
-    return;
-  }
-});
-
-router.get("/myinfo", auth, async (req, res) => {
-  let user = await User.getUserId(req.userId);
-  if (user) {
-    res.send(user);
-  } else {
-    res.status(404).send({ error: "Id de usuario no encontrado" });
-  }
-});
-
-router.get("/owner/:id",async (req,res)=>{
-  let user = await User.getUserId(req.params.id, true);
-  if (user) {
-    res.send(user);
-  } else {
-    res.status(404).send({ error: "Id de usuario no encontrado" });
-  }
-})
-//User.getUserId("UmG8sKmXmdW3MN0OEubn6");
-
-router.delete("/:id",auth, async (req, res) => {
-  let doc = await User.deleteUser(req.params.id);
-
-  if (doc) {
-    res.send(doc);
-    return;
-  }
-
-  res.status(404).send({ error: "El usuario no fue encontrado" });
-});
-
-router.put("/:id", auth, async (req, res) => {
-  let user = await User.getUserId(req.params.id);
   let {
     name,
     lastname,
@@ -117,6 +72,98 @@ router.put("/:id", auth, async (req, res) => {
     country,
     zip,
     state,
+    image,
+  } = req.body;
+
+  if (
+    (name &&
+      lastname &&
+      username &&
+      password &&
+      phone &&
+      email &&
+      city &&
+      country &&
+      zip &&
+      state) ||
+    image
+  ) {
+    let newUser = {
+      name,
+      lastname,
+      username,
+      password,
+      phone,
+      email,
+      city,
+      country,
+      zip,
+      state,
+      image,
+    };
+    //console.log(newUser);
+    let doc = await User.saveUser(newUser);
+    res.status(201).send(doc);
+    return;
+  } else {
+    res.status(400).send({ error: "Faltan datos de usuario" });
+    return;
+  }
+});
+
+router.get("/myinfo", auth, async (req, res) => {
+  let user = await User.getProfileId(req.userId);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+});
+
+router.get("/owner/:id", async (req, res) => {
+  let user = await User.getUserId(req.params.id, true);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+});
+
+router.get("/ownerprof/:id", async (req, res) => {
+  let user = await User.getProfileId(req.params.id);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+});
+//User.getUserId("UmG8sKmXmdW3MN0OEubn6");
+
+router.delete("/:id", auth, async (req, res) => {
+  let doc = await User.deleteUser(req.params.id);
+
+  if (doc) {
+    res.send(doc);
+    return;
+  }
+
+  res.status(404).send({ error: "El usuario no fue encontrado" });
+});
+
+router.put("/", auth, async (req, res) => {
+  let user = await User.getUserId(req.userId);
+  let {
+    name,
+    lastname,
+    username,
+    password,
+    phone,
+    email,
+    city,
+    country,
+    zip,
+    state,
+    image,
   } = req.body;
 
   if (user) {
@@ -130,6 +177,7 @@ router.put("/:id", auth, async (req, res) => {
     user.country = country ? country : user.country;
     user.zip = zip ? zip : user.zip;
     user.state = state ? state : user.state;
+    user.image = image ? image : user.image;
 
     let doc = await User.updateUser(user);
     res.send(doc);
