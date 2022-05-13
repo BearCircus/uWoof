@@ -78,6 +78,7 @@ router.get("/:id", async (req, res) => {
 router.get("/", async (req, res) => {
   let {
     name,
+    userID,
     animal,
     age,
     temperment,
@@ -123,6 +124,9 @@ router.get("/", async (req, res) => {
   }
   if (vaccinated) {
     obj.vaccinated = vaccinated;
+  }
+  if (userID) {
+    obj.userID = userID;
   }
 
   // console.log(obj);

@@ -64,7 +64,7 @@ GET {{host}}/api/pets
 GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 
 ###
-GET {{host}}/api/pets?age=21
+GET {{host}}/api/pets?userID=OuyQ3IKip9v0JDU13L-4O
 
 ###
 POST {{host}}/api/pets/12-2R_Ne1k4Tg-WJdzBky
