@@ -79,6 +79,7 @@ usersSchema.statics.saveUser = async (user) => {
 
 //User.schema.statics.saveUser();
 
+<<<<<<< HEAD
 usersSchema.statics.getUserId = async (
   id,
   simplify = false,
@@ -86,11 +87,17 @@ usersSchema.statics.getUserId = async (
 ) => {
   if (simplify) {
     let project = { _id: 1, username: 1, image: 1, city: 1, state: 1 };
+=======
+usersSchema.statics.getUserId = async (id, simplify = false) => {
+  if(simplify){
+    let project = {_id:0 ,username: 1, image:1, city: 1, state:1}
+>>>>>>> b2e7c8f20d364c99192d7c42fd21d6d5c3ecba9e
     return await User.findOne({ id }, project);
   }
   return await User.findOne({ id });
 };
 
+<<<<<<< HEAD
 usersSchema.statics.getProfileId = async (id) => {
   let project = {
     _id: 0,
@@ -105,6 +112,8 @@ usersSchema.statics.getProfileId = async (id) => {
   return await User.findOne({ id }, project);
 };
 
+=======
+>>>>>>> b2e7c8f20d364c99192d7c42fd21d6d5c3ecba9e
 usersSchema.statics.deleteUser = async (id) => {
   return await User.findOneAndDelete({ id });
 };
@@ -152,6 +161,7 @@ async function getUsers() {
 
 //getUsers();
 /*
+<<<<<<< HEAD
  */
 async function updatePasswordAllUsers() {
   let users = await User.find();
@@ -159,6 +169,15 @@ async function updatePasswordAllUsers() {
     usr.password = await getHash(usr.password);
     User.updateUser({ id: usr.id, password: usr.password });
   });
+=======
+*/
+async function updatePasswordAllUsers(){
+  let users = await User.find();
+  users.forEach(async usr=>{
+      usr.password =  await getHash(usr.password);
+      User.updateUser({id:usr.id,password:usr.password});
+  })
+>>>>>>> b2e7c8f20d364c99192d7c42fd21d6d5c3ecba9e
 }
 
 //updatePasswordAllUsers();

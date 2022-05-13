@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .env
+=======
+db
+>>>>>>> b2e7c8f20d364c99192d7c42fd21d6d5c3ecba9e
 node_modules
 package-lock copy.json
 routes
