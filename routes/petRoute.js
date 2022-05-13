@@ -88,59 +88,46 @@ router.get("/", async (req, res) => {
     castrated,
     vaccinated,
   } = req.query;
-  let queries = pets.slice();
+  // console.log(req.query.name);
+  let obj = {};
   if (name) {
-    queries = queries.filter((p) =>
-      p.name.toUpperCase().includes(name.toUpperCase())
-    );
+    obj.name = name;
   }
   if (animal) {
-    queries = queries.filter((p) =>
-      p.animal.toUpperCase().includes(animal.toUpperCase())
-    );
+    obj.animal = animal;
   }
   if (age) {
-    console.log(age);
-    queries = queries.filter((p) => p.age == age);
+    obj.age = age;
   }
   if (temperment) {
-    queries = queries.filter((p) =>
-      p.temperment.toUpperCase().includes(temperment.toUpperCase())
-    );
+    obj.temperment = temperment;
   }
   if (color) {
-    queries = queries.filter((p) =>
-      p.color.toUpperCase().includes(color.toUpperCase())
-    );
+    obj.color = color;
   }
   if (size) {
-    queries = queries.filter((p) =>
-      p.size.toUpperCase().includes(size.toUpperCase())
-    );
+    obj.size = size;
   }
   if (breed) {
-    queries = queries.filter((p) =>
-      p.breed.toUpperCase().includes(breed.toUpperCase())
-    );
+    obj.breed = breed;
   }
   if (gender) {
-    queries = queries.filter((p) =>
-      p.gender.toUpperCase().includes(gender.toUpperCase())
-    );
+    obj.gender = gender;
   }
   if (health) {
-    queries = queries.filter((p) =>
-      p.health.toUpperCase().includes(health.toUpperCase())
-    );
+    obj.health = health;
   }
   if (castrated) {
-    queries = queries.filter((p) => p.castrated.includes(castrated));
+    obj.castrated = castrated;
   }
   if (vaccinated) {
-    queries = queries.filter((p) => p.vaccinated.includes(vaccinated));
+    obj.vaccinated = vaccinated;
   }
 
-  let pets = await Pet.getPetByParams(queries);
+  // console.log(obj);
+  let pets = await Pet.getPetByParams(obj);
+
+  // console.log(pets);
 
   res.send(pets);
 });
