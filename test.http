@@ -31,8 +31,8 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/register/fqvxfP65dsIpYahh0uY82
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTc3MDIzNSwiZXhwIjoxNjUxNzcwNTM1fQ.bXbCJog7YIlT00Jz_gMnzJgmIoHf06gVa2BsC6XXb5w
+DELETE {{host}}/api/register/KI_Wbytx_mHHvjmndIZib
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ3MTUxMCwiZXhwIjoxNjUyNDcyMTEwfQ.c8JKA2ZqyDw3zP65FmrA9MrBYQsXdAXnSoKVFCsM35c
 
 
 ###
@@ -68,15 +68,16 @@ GET {{host}}/api/pets?age=21
 
 ###
 POST {{host}}/api/pets/12-2R_Ne1k4Tg-WJdzBky
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ1ODY5NSwiZXhwIjoxNjUyNDU5Mjk1fQ.0_pBOQz07qgHQ3E8VFbQAvC4zQdW0Tnipt2oSJbl8Bk
 Content-Type: application/json
 
 {
-    "name": "Mariano",
-    "animal": "Dog",
+    "name": "Raquel",
+    "animal": "Doggie",
     "age": 5,
-    "temperment": "Sweet",
+    "temperment": "Annoying",
     "color": "White",
-    "size": "Medium",
+    "size": "Smol",
     "breed": "cartoon",
     "gender": "Male",
     "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
@@ -98,5 +99,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/pets/3jhOCpanTWvAK9XdRFI7k
+DELETE {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
 

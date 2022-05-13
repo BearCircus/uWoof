@@ -23,9 +23,9 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             
             <div style="margin-right: 6px" class="logo">
-                <a href="/"><img class="image_logo" src="./images/logowoof.png" /></a>
+                <a href="/Central/"><img class="image_logo" src="./images/logowoof.png" /></a>
             </div>
-            <a class="navbar-brand" href="/">Woof</a>
+            <a class="navbar-brand" href="/Central/">Woof</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,33 +64,36 @@
         
         <!-- Main section-->
         <section  class="main">
+            
             <div class="px-4 px-lg-4 my-5">
                 <div style="justify-content: center;" class="row gx-4 gx-lg-7" id="main">
-                    <!-- <div style="justify-content: center;" class="col-lg-4 mainimg">
-                        <img style="justify-content: center" class="card-img-top" src="./images/mochi.jpg" alt="..." />
-                    </div> -->
+                    <div style="justify-content: center;" class="col-lg-4 mainimg" id="petPicture">
+                        <!-- image -->
+                    </div>
                     
-                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
-                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
-                        <div style="white-space: nowrap; margin-bottom: 20px" id="tag">
-                            <span id="tags">White</span>
+                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint" >
+                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder" id="petName"></h1>
+                        <div style="white-space: nowrap; margin-bottom: 20px" id="petTags">
+                            <!-- <span id="tags">White</span>
                             <span id="tags">Young</span>
                             <span id="tags">Playful</span>
                             <span id="tags">Neutured</span>
-                            <span id="tags">Healthy</span>
+                            <span id="tags">Healthy</span> -->
                         </div>
-                        <pclass="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</pclass=>
+                        <div id="petDesc">
+                            
+                        </div>
                         <hr>
                         
                         <span style="margin-bottom: 15px; justify-content: center;" class="row ">
                             <span style="margin-right: 15px;"class="row col-6">
                                 <div style="font-size: 25px" class="card">
                                     <h3 style="text-align: center;">About</h3>
-                                    <span style="margin-top: 5px">
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>Cat</span></p>
+                                    <span style="margin-top: 5px" id="petOthers">
+                                        <!-- <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>Cat</span></p>
                                         <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Age: <span>3 years old</span></p>
                                         <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Gender: <span>Male</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>Himalayan</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>Himalayan</span></p> -->
                                     
                                     </span>  
                                 </div>
@@ -105,7 +108,7 @@
                                     <div class="user text-center">
                                         <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div>
                                     </div>
-                                    <div class="follow mt-5 text-center">
+                                    <div class="follow mt-5 text-center" id="profData">
                                         <h4>Jessica Donley</h4>
                                         <span class="follow text-muted d-block mb-2">Guadalajara</span>
                                         <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
@@ -126,37 +129,9 @@
         <div style="justify-content: center">
         <!--Comments-->
         <div class="row">
-            <div style="width: 50%; margin-left: 50px; margin-right: 120px; margin-bottom: 50px;" class="col-6 comments">
-                <div class="d-flex justify-content-center row">
-                    <div>
-                        <div class="d-flex flex-column comment-section">
-                            <div class="bg-white p-2">
-                                <div style ="margin-right: 5px" class="d-flex flex-row user-info"><img class="rounded-circle" src="./images/avatar.png" width="40">
-                                    <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">Jane</span><span class="date text-black-50">Shared publicly - Jan 2020</span></div>
-                                </div>
-                                <div class="mt-2">
-                                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="bg-white">
-                                <div class="d-flex flex-row fs-12">
-                                    <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
-                                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
-                                    <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Reply</span></div>
-                                </div>
-                            </div>
-                            <div style="background-color: rgba(207, 205, 205, 0.24);" class="p-2">
-                                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="./images/avatar.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                                <div class="mt-2 text-right btnpink">
-                                    <button class="btn btn-dark btn-sm shadow-none" type="button">Post comment</button>
-                                    <button class="btn btn-outline-dark btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="justify-content: center;" class="map col-4">
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59752.034223597235!2d-103.44967902089846!3d20.608379600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ad6363a15d99%3A0x35dfe443ec2fc6c6!2sInstituto%20Tecnol%C3%B3gico%20y%20de%20Estudios%20Superiores%20de%20Occidente%20(ITESO)!5e0!3m2!1sen!2smx!4v1647583663998!5m2!1sen!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
+            <div style="justify-content: center; position:relative; left:600px; bottom:40px" class="map col-4" id="userMap">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59752.034223597235!2d-103.44967902089846!3d20.608379600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ad6363a15d99%3A0x35dfe443ec2fc6c6!2sInstituto%20Tecnol%C3%B3gico%20y%20de%20Estudios%20Superiores%20de%20Occidente%20(ITESO)!5e0!3m2!1sen!2smx!4v1647583663998!5m2!1sen!2smx" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
         </div>
@@ -168,94 +143,7 @@
             
         <!-- Related items section-->
         
-        <section class="py-5 bg-light" ">
-            <div class="container px-4 px-lg-5 ">
-                <h2 class="fw-bolder mb-4">Similar Pets</h2>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center id= "simpets">
-                    <div class="col mb-5">
-                        <div style="border-top-left-radius: 60px; border-top-right-radius: 60px;" class="card h-100">
-                            <!-- Heart badge-->
-                            <div class="btnsmpets btn btn-sm btn-dark position-absolute" style=" top: 0.5rem; right: 0.5rem"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <!-- Product image-->
-                            <img style="margin-top: 0px; height: 150px;", class="card-img-top max" src="./images/African-dog-names-900x548.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Bonnie</h5>
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Pet</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div style=" border-top-left-radius: 20px; border-top-right-radius: 20px; "class="card h-100">
-                            <!-- Heart badge-->
-                            <div class="btnsmpets btn btn-sm btn-dark position-absolute" style="top: 0.5rem; right: 0.5rem"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <!-- Product image-->
-                            <img style="margin-top: 0px; height: 150px" class="card-img-top" src="./images/TAYLOR.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Luna</h5>
-                                    <!-- Product reviews-->  
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Pet</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div style="border-top-left-radius: 60px; border-top-right-radius: 60px;" class="card h-100">
-                            <!-- Heart badge-->
-                            <div class="btnsmpets btn btn-sm btn-dark position-absolute" style="top: 0.5rem; right: 0.5rem"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <!-- Product image-->
-                            <img style="margin-top: 0px; height: 150px" class="card-img-top" src="./images/cat-talk-eyes-553942-hero-df606397b6ff47b19f3ab98589c3e2ce.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sugar</h5>
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Pet</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div style="border-top-left-radius: 60px; border-top-right-radius: 60px;" class="card h-100">
-                            <!-- Heart badge-->
-                            <div class="btnsmpets btn btn-sm btn-dark position-absolute" style="top: 0.5rem; right: 0.5rem"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                            <!-- Product image-->
-                            <img style="margin-top: 0px; height: 150px" class="card-img-top" src="./images/ww.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Forrest</h5>
-                                    <!-- Product reviews-->
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Pet</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Woof 2022</p></div>
@@ -267,68 +155,61 @@
             <script>
                 async function getPost() {
                     let value=params.id
-                    const pet = await fetch("http://localhost:3000/api/pets/" + value.toString(), {
+                    let response = await fetch("http://localhost:3000/api/pets/" + value.toString(), {
                         method: "GET",
                     });
-                    console.log(await pet.json());
-                    let post=document.querySelector("#main");
-                    post.innerHTML=pet.map(m=>`
-                    <div style="justify-content: center;" class="col-lg-4 mainimg">
-                        <img style="justify-content: center" class="card-img-top" src="${m.image}" alt="..." />
-                    </div>
+                    const pet= await response.json()
+                    // console.log(pet);
                     
-                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
-                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
-                        <div style="white-space: nowrap; margin-bottom: 20px" id="tag">
-                            <span id="tags">Color: ${m.color}</span>
-                            <span id="tags">Tmperment: ${m.temperment}</span>
-                            <span id="tags">Neutured: ${m.castrated}</span>
-                            <span id="tags">Healthy: ${m.vaccinated}</span>
-                            <span id="tags">Health: ${m.health}</span>
-                            <span id="tags">Healthy: ${m.vaccinated}</span>
-                        </div>
-                        <pclass="lead">${m.description}</pclass=>
-                        <hr>
+                    
+                    // console.log(petPicture);
+                    // console.log(pet.image);
+                    // console.log(typeof pet.image);
+                    let neut="Not Neutered"
+                    if (pet.castrated) {
+                        neut="Neutered"
+                    }
+                    let vacc="Not Vaccinated"
+                    if (pet.vaccinated) {
+                        vacc="Vaccinated"
+                    }
+                    // console.log(pet.vaccinated);
+                    // console.log(vacc);
+                    // if (pet.age<) {
                         
-                        <span style="margin-bottom: 15px; justify-content: center;" class="row ">
-                            <span style="margin-right: 15px;"class="row col-6">
-                                <div style="font-size: 25px" class="card">
-                                    <h3 style="text-align: center;">About</h3>
-                                    <span style="margin-top: 5px">
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>${m.animal}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Age: <span>${m.age}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Gender: <span>${m.gender}</span></p>
-                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${m.breed}</span></p>
-                                    
-                                    </span>  
-                                </div>
-                                
-                            </span>
-                            <span style="justify-content: center;" class="row col-6">
-                                
+                    // }
+                    // atributos de la mascota
+                    document.querySelector("#petPicture").innerHTML=`<img style="justify-content: center" class="card-img-top" src="${pet.image}" alt="..." />`
+                    document.querySelector("#petName").outerHTML=`<h1 style="margin-bottom: 20px;" class="display-5 fw-bolder" id="petName">${pet.name}</h1>`
+                    document.querySelector("#petTags").innerHTML=`
+                            <span id="tags">${pet.color}</span>
+                            <span id="tags">${pet.temperment}</span>
+                            <span id="tags">${pet.size}</span>
+                            <span id="tags">${neut}</span>
+                            <span id="tags">${vacc}</span>`
+                            document.querySelector("#petDesc").innerHTML=`<pclass="lead">${pet.description}</pclass=>`
+                    document.querySelector("#petOthers").innerHTML=`
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>${pet.animal}</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Age: <span>${pet.age} years old</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Gender: <span>${pet.gender}</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${pet.breed}</span></p>`
+                            
+                    //obtenemos el usuario
+                    let res=await fetch("http://localhost:3000/api/register/owner/"+pet.userID.toString(),{
+                        method:"GET",
+                    })
+                    const user=await res.json();
+                    console.log(user);  
+                    document.querySelector("#profData").innerHTML=`
+                        <h4>${user.username}</h4>
+                         <span class="follow text-muted d-block mb-2">${user.city}</span>
+                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>`
 
-                                <div class="card">
-                                    <h3 style="text-align: center;">Profile</h3> 
-                                    <div class="upper"><img style="background-color: #e9a8b1;" src="" class="img-fluid"> </div>
-                                    <div class="user text-center">
-                                        <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div>
-                                    </div>
-                                    <div class="follow mt-5 text-center">
-                                        <h4>Jessica Donley</h4>
-                                        <span class="follow text-muted d-block mb-2">Guadalajara</span>
-                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </span>
-                        
-                        
-                    <hr>
-                    `)
+                    document.querySelector("#userMap").innerHTML=`<iframe class="map" src="https://www.google.com/maps/place/${user.city},+${user.state}/" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+                    
                     return pet;
                 }
+                
                 const params = new Proxy(new URLSearchParams(window.location.search), {
                     get: (searchParams, prop) => searchParams.get(prop),
                 });
