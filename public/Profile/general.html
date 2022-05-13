@@ -16,9 +16,9 @@
     <!-- Barra navegadora -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div style="margin-right: 6px" class="logo">
-            <a href="/Central/"><img class="image_logo" src="./Resources/Logo.png" /></a>
+            <a href="/Central"><img class="image_logo" src="./Resources/Logo.png" /></a>
           </div>
-        <a class="navbar-brand" href="/Central/">Woof</a>
+        <a class="navbar-brand" href="/Central">Woof</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,14 +57,14 @@
             <div class="col-lg-4">
                 <div class="profile-card-4 z-depth-3">
                     <div class="card">
-                        <div class="card-body text-center bg-colour rounded-top" id="profile1">
+                        <div class="card-body text-center bg-colour rounded-top" id="prof1">
                             <!-- <div class="user-box">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar">
                             </div>
                             <h5 class="mb-1 text-white">John Doe</h5> Nombre usuario -->
                             <!-- <h6 class="text-light">Es un gran ayudante</h6>Pequeña frase descriptiva -->
                         </div>
-                        <div class="card-body" id="prof">
+                        <div class="card-body" id="prof2">
                             <!-- <ul class="list-group shadow-none">
                                 <li class="list-group-item">
                                     <div class="list-details">
@@ -121,7 +121,7 @@
                             <li class="nav-item">
                                 <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">Profile</span></a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a href="javascript:void();" data-target="#posts" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Posts</span></a>
                             </li>
                             <li class="nav-item">
@@ -129,7 +129,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
-                            </li>
+                            </li> -->
                         </ul>
 
                         <!--profile info starts-->
@@ -162,12 +162,12 @@
                             </div>
                             
                             <!--Posts starts-->
-                        <div class="tab-pane" id="posts">   
+                        <!-- <div class="tab-pane" id="posts">   
                             <table class="table table-hover table-striped">
                                 <tbody>                                    
                                     <tr>
                                         <td>
-                                           <!--Aqui va una card-->
+                                           Aqui va una card
                                            <div class="card w-100">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Mochi</h5>
@@ -217,19 +217,19 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!--Aqui se pueden agregar mas posts a la tabla-->
+                                    Aqui se pueden agregar mas posts a la tabla
                                 </tbody> 
                             </table>
-                        </div>
+                        </div> -->
                         <!--Posts ends-->
 
                         <!--Saved Posts starts-->
-                        <div class="tab-pane" id="saved">   
+                        <!-- <div class="tab-pane" id="saved">   
                             <table class="table table-hover table-striped">
                                 <tbody>                                    
                                     <tr>
                                         <td>
-                                           <!--Aqui va una card-->
+                                           Aqui va una card
                                            <div class="card w-100">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Motociclon</h5>
@@ -315,11 +315,11 @@
                                     </tr>
                                 </tbody> 
                             </table>
-                        </div>
+                        </div> -->
                         <!--Saved Posts ends-->
 
                         <!--profile edit starts-->
-                        <div class="tab-pane" id="edit">
+                        <!-- <div class="tab-pane" id="edit">
                             <form >
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">First name</label>
@@ -352,12 +352,12 @@
                                     </div>
                                 </div>
                                 
-                                <!-- <div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Change profile</label>
                                     <div class="col-lg-9">
                                         <input class="form-control" type="file">
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                     <div class="col-lg-6">
@@ -392,12 +392,12 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
                                     <div class="col-lg-9">
                                         <input class="form-control" type="password" placeholder="Confirm Password" required>
                                     </div>
-                                </div> -->
+                                </div>
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
@@ -407,7 +407,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                         <!--profile edit ends-->
                     </div>
                 </div>
@@ -415,8 +415,17 @@
         </div>
     </div>
 
-    <script src="/js/usersProfile.js"></script>
-    <script src="../js/favoritesdom.js"></script>
+    <script >
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+                    get: (searchParams, prop) => searchParams.get(prop),
+        });
+        console.log(params.id)
+    </script>
+
+    <script src="/js/generalProfile.js"></script>
+    <!-- <script src="dirección+${m.iduser}"></script> -->
+    <!-- <script src="/js/usersProfile.js"></script> -->
+    <!-- <script src="../js/favoritesdom.js"></script> -->
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
