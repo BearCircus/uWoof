@@ -12,18 +12,22 @@ app.use("/register",express.static(__dirname+'/public/Register/RegisterUser/boot
 app.use("/reganimal",express.static(__dirname+'/public/Register/RegisterAnimal/bootstrap-wizard-master'));
 app.use("/profile",express.static(__dirname+'/public//Profile'));
 app.use("/post",express.static(__dirname+'/public/Post/PostJessica'));
-app.use("/chat",express.static(__dirname+'/public/images/Chat'));
+app.use('/chat',express.static(__dirname + '/public/Chat'));
 
 app.use(cors());
 app.use(express.json());
 const loginRoute = require("./routes/login")
 const user = require("./routes/users");
 const pets = require("./routes/petRoute");
+const favoriteRoute = require("./routes/Favorite-route")
+const chat = require("./routes/chat-route");
 
 
 app.use("/api/register", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
+app.use('/api/favorites', favoriteRoute);
+app.use("/api/chat", chat);
 
 // app.get("/", (req, res) => {
 //   res.send("¡WOOF!");

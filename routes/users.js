@@ -49,9 +49,9 @@ router.get("/", async (req, res) => {
 
 router.post("/",checkUsername,checkEmail, async (req, res) => {
   //console.log("POST-USERS");
-  let {name,lastname,username,password,phone,email,city,country,zip,state,} = req.body;
+  let {name,lastname,username,password,phone,email,city,country,zip,state,image} = req.body;
 
-  if (name && lastname && username && password && phone && email && city && country && zip && state) {
+  if (name && lastname && username && password && phone && email && city && country && zip && state || image) {
     let newUser = {
       name,
       lastname,
@@ -63,6 +63,7 @@ router.post("/",checkUsername,checkEmail, async (req, res) => {
       country,
       zip,
       state,
+      image
     };
     //console.log(newUser);
     let doc = await User.saveUser(newUser);
@@ -75,7 +76,7 @@ router.post("/",checkUsername,checkEmail, async (req, res) => {
 });
 
 router.get("/myinfo", auth, async (req, res) => {
-  let user = await User.getUserId(req.userId);
+  let user = await User.getProfileId(req.userId);
   if (user) {
     res.send(user);
   } else {
@@ -85,6 +86,15 @@ router.get("/myinfo", auth, async (req, res) => {
 
 router.get("/owner/:id",async (req,res)=>{
   let user = await User.getUserId(req.params.id, true);
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ error: "Id de usuario no encontrado" });
+  }
+})
+
+router.get("/ownerprof/:id",async (req,res)=>{
+  let user = await User.getProfileId(req.params.id);
   if (user) {
     res.send(user);
   } else {
@@ -104,8 +114,8 @@ router.delete("/:id",auth, async (req, res) => {
   res.status(404).send({ error: "El usuario no fue encontrado" });
 });
 
-router.put("/:id", auth, async (req, res) => {
-  let user = await User.getUserId(req.params.id);
+router.put("/", auth, async (req, res) => {
+  let user = await User.getUserId(req.userId);
   let {
     name,
     lastname,
@@ -117,6 +127,7 @@ router.put("/:id", auth, async (req, res) => {
     country,
     zip,
     state,
+    image
   } = req.body;
 
   if (user) {
@@ -130,6 +141,7 @@ router.put("/:id", auth, async (req, res) => {
     user.country = country ? country : user.country;
     user.zip = zip ? zip : user.zip;
     user.state = state ? state : user.state;
+    user.image = image ? image : user.image;
 
     let doc = await User.updateUser(user);
     res.send(doc);

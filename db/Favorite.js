@@ -3,6 +3,7 @@ const {nanoid} = require("nanoid");
 const { Pet } = require("./Pet");
 
 
+
 //Schema
 let favoritesSchema = mongoose.Schema({
     userID:{
@@ -10,7 +11,8 @@ let favoritesSchema = mongoose.Schema({
         
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
-        required: true
+        required: true,
+        unique: true
     },
     favorites:[{
         
@@ -26,38 +28,57 @@ let favoritesSchema = mongoose.Schema({
         comment: {
             type: String,
             required: true
-        }/*,
-        fecha: {
-            type: String,
-            required: true
-        }*/
-
+        }
     }]   
 })
-
 
 /*favoritesSchema.statics.getFavorites = async ()=>{
     return await Favorite.find();
 
 }*/
 
-
 //Falta poner más en name
 favoritesSchema.statics.getFavorites = async (userID)=>{
-    return await Favorite.findOne({userID}).populate({path:"favorites.publication",model:"Pet",select:"name, animal, age,  "})
+    return await Favorite.findOne({userID}).populate({path:"favorites.publication",model:"Pet",select:"name"})
 }
-//update y create (siempre antes de saveFavorite)
+
+
+favoritesSchema.statics.getdoc = async(userID)=>{
+    return await Favorite.findOne({userID: userID});
+    
+}
+
+/*favoritesSchema.statics.findFav = async(favID)=>{
+    return await Pet.findOne({"favorites.id": favID})
+}*/
+
+favoritesSchema.methods.updateData = async function(datos){
+    return await Favorite.findOneAndUpdate(
+                {_id:this._id},
+                {$set:datos},
+                {new: true}
+                );
+}
+
+
+favoritesSchema.methods.crearFavorites = async function(favoriteDoc){
+    let newFavorite = Favorite(favoriteDoc);
+    return await newFavorite.save()
+
+}
+
+
 //Modelo
 const Favorite = mongoose.model("Favorite", favoritesSchema);
 
 async function saveFavorite(){
     let newFavorite = {
-        userID: "626c7fd9fc04a3df7acbefcf",
+        userID: "62719b8c9b009ec84c73a8d6",
         favorites:[{
-            publication: "626d85d18b5ce7963be68a60",
+            publication: "6271e7bb84866d60ba6a245e",
             id: nanoid(),
-            comment: "texto 3"
-            //fecha: ""
+            comment: "Jessica 1"
+            
         }]
     
     }
@@ -69,6 +90,18 @@ async function saveFavorite(){
 }
 
 //saveFavorite();
+
+async function testNewFavorite(){
+    let doc = await Favorite.findOne({userID: '62719b8c9b009ec84c73a8d6'}).lean();
+    if(doc){
+        doc.favorites.push({publication: '6271e71ed581afd58f42e429', id: nanoid(), comment: 'Jessica 1'});
+        let updated = await Favorite.findOneAndUpdate({userID: '62719b8c9b009ec84c73a8d6'}, {$set: {favorites: doc.favorites}}, {new: true})
+        console.log(updated);
+    }
+}
+
+
+//testNewFavorite();
 
 async function getFavorites(){
     let favorites = await Favorite.find(/*{userID: "67890"},{_id:0,comment:1}*/);

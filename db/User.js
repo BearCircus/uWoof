@@ -79,13 +79,18 @@ usersSchema.statics.saveUser = async (user) => {
 
 //User.schema.statics.saveUser();
 
-usersSchema.statics.getUserId = async (id, simplify = false) => {
+usersSchema.statics.getUserId = async (id, simplify = false, profile=false) => {
   if(simplify){
-    let project = {_id:0 ,username: 1, image:1, city: 1, state:1}
+    let project = {_id:1 ,username: 1, image:1, city: 1, state:1}
     return await User.findOne({ id }, project);
   }
   return await User.findOne({ id });
 };
+
+usersSchema.statics.getProfileId = async (id) => {
+  let project = {_id:0, id:1, username: 1, image:1, state:1, phone:1, country:1, email:1, city:1}
+  return await User.findOne({ id }, project);
+}
 
 usersSchema.statics.deleteUser = async (id) => {
   return await User.findOneAndDelete({ id });

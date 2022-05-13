@@ -10,8 +10,12 @@ GET {{host}}/api/register
 GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
 
 ###
+GET {{host}}/api/register/ownerprof/iMmvaiObkPUXBVuUMIgPP
+
+
+###
 GET {{host}}/api/register/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIwNzA1MywiZXhwIjoxNjUyMjA3NjUzfQ.2Qlu72GahFSdEAcxzlSmdea2IpMY6gLgWYjN5M4Iuk4
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ3Mzg4OCwiZXhwIjoxNjUyNDc0NDg4fQ.TbB9jPj6ILRaYUa0rphqJVjSeRzbjld2A6zRHmNgfks
 
 ###
 POST {{host}}/api/register
@@ -36,9 +40,9 @@ x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWd
 
 
 ###
-PUT {{host}}/api/register/iMmvaiObkPUXBVuUMIgPP
+PUT {{host}}/api/register
 Content-Type: application/json
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTc3MDIzNSwiZXhwIjoxNjUxNzcwNTM1fQ.bXbCJog7YIlT00Jz_gMnzJgmIoHf06gVa2BsC6XXb5w
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjM3NjQ2MiwiZXhwIjoxNjUyMzc3MDYyfQ.hMbh9kiISGsrtaVj5iKnXCbM0vm7NAeO_n1lD00cM4A
 
 {
     "name": "Jess"
@@ -91,3 +95,41 @@ Content-Type: application/json
 ###
 DELETE {{host}}/api/pets/wGBTF-6JoI4PTXAlZNXj5
 
+//Favorites
+###
+GET {{host}}/api/favorites
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIyODE4OSwiZXhwIjoxNjUyMjI4Nzg5fQ.TLFhnwhNlj_selXfzgyn6Bhjyb0cqBdYoOAVsSAk6ME
+
+
+###
+POST {{host}}/api/favorites/6270b37718ceeddc240c91fa
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjE5MjAxMiwiZXhwIjoxNjUyMTkyNjEyfQ.xgEKHwo7c0YUUt7afQaoF-wWhjz4opzKWpDVW7UbzLI
+
+
+{
+    "comment": "test put jessica"
+}
+
+###
+DELETE {{host}}/api/favorites/6272c259c0f3548ca5808129
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjE5MjAxMiwiZXhwIjoxNjUyMTkyNjEyfQ.xgEKHwo7c0YUUt7afQaoF-wWhjz4opzKWpDVW7UbzLI
+
+
+//CHAT pruebas
+
+###
+GET {{host}}/api/chat
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjM3MzQ0OCwiZXhwIjoxNjUyMzc0MDQ4fQ.RUIg2IOFa8OvNYDQhyta7NYaIjpxhrnoKbECSdhaac0
+
+###
+POST {{host}}/api/chat/627b55c73f8eb08e070bb383/62719adc9b009ec84c73a8c8
+x-auth:
+
+
+###
+PUT {{host}}/api/chat/deactivate/6271e7bb84866d60ba6a245e/62719adc9b009ec84c73a8c8
+
+
+###
+DELETE {{host}}/api/chat/62798917233e3410bfd32f0f
