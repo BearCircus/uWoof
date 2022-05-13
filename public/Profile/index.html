@@ -57,14 +57,14 @@
             <div class="col-lg-4">
                 <div class="profile-card-4 z-depth-3">
                     <div class="card">
-                        <div class="card-body text-center bg-colour rounded-top">
-                            <div class="user-box">
+                        <div class="card-body text-center bg-colour rounded-top" id="profile">
+                            <!-- <div class="user-box">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar">
                             </div>
-                            <h5 class="mb-1 text-white">John Doe</h5> <!--Nombre usuario-->
-                            <h6 class="text-light">Es un gran ayudante</h6><!--Pequeña frase descriptiva-->
+                            <h5 class="mb-1 text-white">John Doe</h5> Nombre usuario -->
+                            <!-- <h6 class="text-light">Es un gran ayudante</h6>Pequeña frase descriptiva -->
                         </div>
-                        <div class="card-body">
+                        <!-- <div class="card-body">
                             <ul class="list-group shadow-none">
                                 <li class="list-group-item">
                                     <div class="list-details">
@@ -85,7 +85,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!--Aqui puedes poner redes sociales debajo de la info de usuario izq.-->
                     </div>
                 </div>
@@ -114,12 +114,34 @@
                             <div class="tab-pane active show" id="profile">
                                 <h5 class="mb-3">User Profile</h5>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="card-body" id="profile2">
+                                        <!-- <ul class="list-group shadow-none">
+                                            <li class="list-group-item">
+                                                <div class="list-details">
+                                                    <small>Mobile Number: </small>
+                                                    <span>+52 33 1974 5420</span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="list-details">
+                                                    <small>Email Address: </small>
+                                                    <span>john.doe@iteso.mx</span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="list-details">
+                                                    <small>Ubication: </small>
+                                                    <span>Jalisco, Mexico</span>
+                                                </div>
+                                            </li>
+                                        </ul> -->
+                                    </div>
+                                    <!-- <div class="col-md-6">
                                         <h6>Description</h6>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus doloremque cumque corporis. Reprehenderit voluptas autem, quia ea odit soluta nemo!
                                         </p>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-md-6">
                                         <h6>Favorite Animal Tags</h6>
@@ -316,11 +338,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Image</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text"  pattern="[a-zA-z0-9.-_%+-]+@[a-zA-z0-9.-]+\.[a-z]{2,}$" placeholder="https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png">
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Change profile</label>
                                     <div class="col-lg-9">
                                         <input class="form-control" type="file">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                     <div class="col-lg-6">
@@ -355,12 +384,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
                                     <div class="col-lg-9">
                                         <input class="form-control" type="password" placeholder="Confirm Password" required>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
@@ -378,7 +407,7 @@
         </div>
     </div>
 
-    <script src="/js/usersRegister.js"></script>
+    <script src="/js/usersProfile.js"></script>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

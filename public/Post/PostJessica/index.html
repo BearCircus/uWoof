@@ -15,6 +15,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+       
         
     </head>
     <body>
@@ -64,10 +65,10 @@
         <!-- Main section-->
         <section  class="main">
             <div class="px-4 px-lg-4 my-5">
-                <div style="justify-content: center;" class="row gx-4 gx-lg-7">
-                    <div style="justify-content: center;" class="col-lg-4 mainimg">
+                <div style="justify-content: center;" class="row gx-4 gx-lg-7" id="main">
+                    <!-- <div style="justify-content: center;" class="col-lg-4 mainimg">
                         <img style="justify-content: center" class="card-img-top" src="./images/mochi.jpg" alt="..." />
-                    </div>
+                    </div> -->
                     
                     <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
                         <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
@@ -107,7 +108,7 @@
                                     <div class="follow mt-5 text-center">
                                         <h4>Jessica Donley</h4>
                                         <span class="follow text-muted d-block mb-2">Guadalajara</span>
-                                        <button class="mb-2 btn btn-dark btn-sm">Follow</button>
+                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
                                         
                                     </div>
                                 </div>
@@ -263,5 +264,76 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+            <script>
+                async function getPost() {
+                    let value=params.id
+                    const pet = await fetch("http://localhost:3000/api/pets/" + value.toString(), {
+                        method: "GET",
+                    });
+                    console.log(await pet.json());
+                    let post=document.querySelector("#main");
+                    post.innerHTML=pet.map(m=>`
+                    <div style="justify-content: center;" class="col-lg-4 mainimg">
+                        <img style="justify-content: center" class="card-img-top" src="${m.image}" alt="..." />
+                    </div>
+                    
+                    <div style="margin-right: 50px; max-width: 90%;"class="col-lg-7 maint">
+                        <h1 style="margin-bottom: 20px;" class="display-5 fw-bolder">Mochi</h1>
+                        <div style="white-space: nowrap; margin-bottom: 20px" id="tag">
+                            <span id="tags">Color: ${m.color}</span>
+                            <span id="tags">Tmperment: ${m.temperment}</span>
+                            <span id="tags">Neutured: ${m.castrated}</span>
+                            <span id="tags">Healthy: ${m.vaccinated}</span>
+                            <span id="tags">Health: ${m.health}</span>
+                            <span id="tags">Healthy: ${m.vaccinated}</span>
+                        </div>
+                        <pclass="lead">${m.description}</pclass=>
+                        <hr>
+                        
+                        <span style="margin-bottom: 15px; justify-content: center;" class="row ">
+                            <span style="margin-right: 15px;"class="row col-6">
+                                <div style="font-size: 25px" class="card">
+                                    <h3 style="text-align: center;">About</h3>
+                                    <span style="margin-top: 5px">
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Animal: <span>${m.animal}</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Age: <span>${m.age}</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Gender: <span>${m.gender}</span></p>
+                                        <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${m.breed}</span></p>
+                                    
+                                    </span>  
+                                </div>
+                                
+                            </span>
+                            <span style="justify-content: center;" class="row col-6">
+                                
+
+                                <div class="card">
+                                    <h3 style="text-align: center;">Profile</h3> 
+                                    <div class="upper"><img style="background-color: #e9a8b1;" src="" class="img-fluid"> </div>
+                                    <div class="user text-center">
+                                        <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div>
+                                    </div>
+                                    <div class="follow mt-5 text-center">
+                                        <h4>Jessica Donley</h4>
+                                        <span class="follow text-muted d-block mb-2">Guadalajara</span>
+                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </span>
+                        
+                        
+                    <hr>
+                    `)
+                    return pet;
+                }
+                const params = new Proxy(new URLSearchParams(window.location.search), {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                });
+                getPost();
+
+            </script>
     </body>
 </html>

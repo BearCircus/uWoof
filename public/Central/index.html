@@ -104,8 +104,8 @@
                 <div class="container h-100">
                     <div class="d-flex justify-content-center h-100">
                         <div class="searchbar">
-                            <input class="search_input" type="text" name="" placeholder="Search...">
-                            <a href="" class="search_icon"><i class="fas fa-search"></i></a>
+                            <input id="buscador" class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="" class="search_icon" id="boton"><i class="fas fa-search"></i></a>
                         </div>
                     </div>
                 </div>
@@ -117,99 +117,8 @@
     <!-- Content -->
 
     <div class="container" id="cards">
-        <div class="row">
-            <!-- Primera tarjeta -->
-            
-                <div class="col-lg2 mb-4 ml-1">
-                    <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                        <div class="line"> </div>
-                        <div class="username mb-2" title="user1">Offered by: <a href="../Profile">@user1</a></i>
-                            <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                        </div>
-                        <a href="/post">
-                        <br>
-                        <img class="card-img-top cardImage" src="../Post/PostJessica/images/mochi.jpg" alt="Card image cap">
-                        </a>
-                          <h5 class="card-title">Fabulous Cat</h5>
-                          <p class="card-text ml-1">"I'm Mochi, the best cat in the world, just look at my fluffiness, I'm all you need."</div>        
-                </div>
-            
-            <div class="col-lg2 mb-4 ml-1">
-                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                    <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
-                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                    </div>
-                    <a href="../Post/PostJessica/">
-                    <br>
-                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
-                    </a>
-                      <h5 class="card-title">Small Good Boi</h5>
-                    
-                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
-                </div>        
-            </div>
-            <div class="col-lg2 mb-4 ml-1">
-                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                    <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
-                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                    </div>
-                    <a href="/post">
-                    <br>
-                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
-                    </a>
-                      <h5 class="card-title">Small Good Boi</h5>
-                    
-                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
-                </div>        
-            </div>
-            <div class="col-lg2 mb-4 ml-1">
-                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                    <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
-                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                    </div>
-                    <a href="/post">
-                    <br>
-                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
-                    </a>
-                      <h5 class="card-title">Small Good Boi</h5>
-                    
-                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
-                </div>        
-            </div>
-            <div class="col-lg2 mb-4 ml-1">
-                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                    <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
-                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                    </div>
-                    <a href="/post">
-                    <br>
-                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
-                    </a>
-                      <h5 class="card-title">Small Good Boi</h5>
-                    
-                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
-                </div>        
-            </div>
-            <div class="col-lg2 mb-4 ml-1">
-                <div class="card mt-5 ml-1 mr-1" id="crd" title="pet">
-                    <div class="line"> </div>
-                    <div class="username mb-2" title="user1">Offered by: <a href="">@user1</a></i>
-                        <i class="fas fa-ellipsis-vertical" aria-hidden="true"></i>
-                    </div>
-                    <a href="/post">
-                    <br>
-                    <img class="card-img-top cardImage" src="./images/pet1.jpg" alt="Card image cap">
-                    </a>
-                      <h5 class="card-title">Small Good Boi</h5>
-                    
-                      <p class="card-text ml-1">"Hey, my name is Robin, I'm looking for a family that wants to play with me, I'm very playfull and I love to bark, woof woof!!</p>
-                </div>        
-            </div>
-            
+        <div class="row" id="prods">
+            <!--  Tarjeta -->
         </div>
     </div>
     
@@ -271,7 +180,7 @@
     <script src="../js/loginUsers.js"></script>
 
     <!-- Optional JavaScript -->
-    <!-- <script src="../js/pets.js"></script> -->
+    <script src="../js/pets.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
