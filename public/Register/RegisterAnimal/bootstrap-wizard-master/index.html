@@ -45,9 +45,7 @@
     <!-- <a href="http://creative-tim.com"> Mandar llamar a página inicial -->
       <div class="logo-container">
         <div class="logo">
-          <a href="/Central/"
-            ><img src="assets/img/new_logo.png"
-          /></a>
+          <a href="/Central/"><img src="assets/img/new_logo.png" /></a>
         </div>
         <div class="brand" id="woof">WOOF</div>
       </div>
@@ -122,59 +120,18 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
-                              class="custom-select"
-                              name="animal"
-                              id="animal"
+                            <label for=""
+                              >What type of animal is your pet?</label
                             >
-                              <option
-                                selected
-                                style="font-size: medium"
-                                disabled="disabled"
-                              >
-                                Animal
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Dog
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Cat
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Bird
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Rabbit
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Reptile
-                              </option>
-                            </select>
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="animal" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select class="custom-select" name="age" id="age">
-                              <option
-                                selected
-                                style="font-size: medium"
-                                disabled="disabled"
-                              >
-                                Age
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Pup/Kitten
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Young
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Adult
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Senior
-                              </option>
-                            </select>
+                            <label for="">How old is your pet?</label>
+                            <div class="form-group">
+                              <input id="age" type="number" min="0" max="30" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
                             <label for=""></label>
@@ -211,8 +168,8 @@
                             </select>
                           </div>
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
+                            <label for="">What's your pet's color</label>
+                            <!-- <select
                               class="custom-select"
                               name="color"
                               id="color"
@@ -248,7 +205,10 @@
                               <option value="" style="font-size: medium">
                                 Mixed
                               </option>
-                            </select>
+                            </select> -->
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="color" min="3" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
                             <label for=""></label>
@@ -278,35 +238,10 @@
                             </select>
                           </div>
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
-                              class="custom-select"
-                              name="breed"
-                              id="breed"
-                            >
-                              <option
-                                selected
-                                style="font-size: medium"
-                                disabled="disabled"
-                              >
-                                Breed
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Maltese
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Singaporea
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Chihuahua
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Huskydoodle
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Labradoodle
-                              </option>
-                            </select>
+                            <label for="">What's the breed?</label>
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="breed" min="3" />
+                            </div>
                           </div>
                           <div class="form-group" name="gender" id="gender">
                             <label for="" style="font-size: medium"
@@ -358,33 +293,40 @@
                               >
                             </div>
                           </div>
-                          <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
-                              class="custom-select"
-                              name="health"
-                              id="health"
+                          <div class="form-group" name="gender" id="health">
+                            <label for="" style="font-size: medium"
+                              >Health</label
                             >
-                              <option
-                                selected
+                            <div class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value="option1"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="inlineRadio1"
                                 style="font-size: medium"
-                                disabled="disabled"
+                                >Healthy</label
                               >
-                                Health
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Healthy
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Sick
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Recovery
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Pregnant
-                              </option>
-                            </select>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="inlineRadioOptions"
+                                id="inlineRadio1"
+                                value="option1"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="inlineRadio1"
+                                style="font-size: medium"
+                                >Not Healthy (Rescued)</label
+                              >
+                            </div>
                           </div>
                           <div
                             class="form-group"
@@ -483,7 +425,7 @@
                     </div>
                     <div class="tab-pane" id="account">
                       <h4 class="info-text">
-                        Would yoy like to add more images?
+                        Would you like to add more images?
                       </h4>
                       <div class="row">
                         <div class="col-sm-10 col-sm-offset-1">
@@ -636,6 +578,7 @@
     src="assets/js/jquery.bootstrap.wizard.js"
     type="text/javascript"
   ></script>
+  <script src="/Proyecto/public/js/registerPet.js"></script>
 
   <!--  Plugin for the Wizard -->
   <script src="assets/js/gsdk-bootstrap-wizard.js"></script>
