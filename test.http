@@ -7,7 +7,7 @@ GET {{host}}/
 GET {{host}}/api/user
 
 ###
-GET {{host}}/api/user/owner/iMmvaiObkPUXBVuUMIgPP
+GET {{host}}/api/user/owner/uwQhsej8dio8anABU1zqC
 
 ###
 GET {{host}}/api/user/myinfo
