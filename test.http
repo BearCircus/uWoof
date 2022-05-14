@@ -11,7 +11,7 @@ GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
 
 ###
 GET {{host}}/api/register/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIwNzA1MywiZXhwIjoxNjUyMjA3NjUzfQ.2Qlu72GahFSdEAcxzlSmdea2IpMY6gLgWYjN5M4Iuk4
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 
 ###
 POST {{host}}/api/register
@@ -67,12 +67,12 @@ GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 GET {{host}}/api/pets?userID=OuyQ3IKip9v0JDU13L-4O
 
 ###
-POST {{host}}/api/pets/12-2R_Ne1k4Tg-WJdzBky
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ1ODY5NSwiZXhwIjoxNjUyNDU5Mjk1fQ.0_pBOQz07qgHQ3E8VFbQAvC4zQdW0Tnipt2oSJbl8Bk
+POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 Content-Type: application/json
 
 {
-    "name": "Raquel",
+    "name": "Raquel3",
     "animal": "Doggie",
     "age": 5,
     "temperment": "Annoying",
@@ -100,4 +100,29 @@ Content-Type: application/json
 
 ###
 DELETE {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+
+
+// CHAT
+
+###
+GET {{host}}/api/chat
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU5NDAzLCJleHAiOjE2NTI0NjAwMDN9.Uac1g_QkUm9HPbp-031pgj7F4NshSfWFsNXHOA6C5ck
+
+###
+POST {{host}}/api/chat/6271e71ed581afd58f42e429/62719b4b9b009ec84c73a8d0
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU2MDA3LCJleHAiOjE2NTI0NTY2MDd9.CvmIzH_Hcfg0t448PREX7ulwigjhkidp3I1SqC4dnq0
+
+
+###
+PUT {{host}}/api/chat/627e706d8140c9b59994a84f
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyLTJSX05lMWs0VGctV0pkekJreSIsImVtYWlsIjoibWVzc2lAdGVzdC5jb20iLCJfaWQiOiI2MjdkNDQ1N2RiMWQ2NDIyYTk2OGU4OTMiLCJpYXQiOjE2NTI0NjU4MDMsImV4cCI6MTY1MjQ2NjQwM30.bgO1J-HMOmD76_WqsnFmOb_BijEUvqSoeWYaHyw5Z1Y
+
+{
+    "msg": "hola bicho, como estas hermano? como te va en manchester?"
+}
+
+
+###
+DELETE {{host}}/api/chat/627eb81869cfcb9e2bf6bcb4
 
