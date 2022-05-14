@@ -132,7 +132,7 @@ router.get("/", async (req, res) => {
   // console.log(obj);
   let pets = await Pet.getPetByParams(obj);
 
-  // console.log(pets);
+  //console.log(pets[0].name);
 
   res.send(pets);
 });
@@ -175,7 +175,7 @@ router.post("/:id", auth, async (req, res) => {
   let doc = await Pet.savePet(newPet);
   res.status(201).send(doc);
 });
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   let doc = await Pet.deletePetById(req.params.id);
   if (doc) {
     res.status(200).send(doc);
