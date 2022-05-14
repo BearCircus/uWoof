@@ -35,7 +35,7 @@ const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 const chatRoute = require("./routes/chat-route");
 
-app.use("/api/register", user);
+app.use("/api/user", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
 app.use("/api/chat", chatRoute);

@@ -4,17 +4,17 @@
 GET {{host}}/
 
 ###
-GET {{host}}/api/register
+GET {{host}}/api/user
 
 ###
-GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
+GET {{host}}/api/user/owner/iMmvaiObkPUXBVuUMIgPP
 
 ###
-GET {{host}}/api/register/myinfo
+GET {{host}}/api/user/myinfo
 x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 
 ###
-POST {{host}}/api/register
+POST {{host}}/api/user
 Content-Type: application/json
 
 {
@@ -31,12 +31,12 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/register/KI_Wbytx_mHHvjmndIZib
+DELETE {{host}}/api/user/KI_Wbytx_mHHvjmndIZib
 x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ3MTUxMCwiZXhwIjoxNjUyNDcyMTEwfQ.c8JKA2ZqyDw3zP65FmrA9MrBYQsXdAXnSoKVFCsM35c
 
 
 ###
-PUT {{host}}/api/register/iMmvaiObkPUXBVuUMIgPP
+PUT {{host}}/api/user
 Content-Type: application/json
 x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTc3MDIzNSwiZXhwIjoxNjUxNzcwNTM1fQ.bXbCJog7YIlT00Jz_gMnzJgmIoHf06gVa2BsC6XXb5w
 
