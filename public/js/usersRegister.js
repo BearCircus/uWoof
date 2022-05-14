@@ -28,7 +28,7 @@ async function registerUser() {
     image,
   };
   //console.log(newUser);
-  const resp = await fetch("/api/register", {
+  const resp = await fetch("/api/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
