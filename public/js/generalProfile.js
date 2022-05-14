@@ -1,7 +1,8 @@
-async function getGeneralInfoUser() {
-  const resp = await fetch("/api/user/ownerprof/" + params.id, {
-    method: "GET",
-  });
+
+async function getGeneralInfoUser(){
+    const resp = await fetch('/api/user/ownerprof/'+params.id,{
+        method: 'GET'
+    });
 
   const info = await resp.json();
   //return info;
