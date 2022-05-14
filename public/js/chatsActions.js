@@ -150,12 +150,18 @@ function specificChatHTML(chat, owner){
 
 //Funcion que contiene la forma del mensaje del otro usuario en html
 function msg_html(msg, side, user){
+    let url =
+    "https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png";
+
+    if (user.image) {
+        url = user.image;
+    }
 
     if(side == "left"){
         return `
             <li class="chat-${side}">
                 <div class="chat-avatar">
-                    <img src=${user.image} alt="Retail Admin">
+                    <img src=${url} alt="Retail Admin">
                     <div class="chat-name">${user.name} ${user.lastname}</div>
                 </div>
 
@@ -170,7 +176,7 @@ function msg_html(msg, side, user){
                 <div class="chat-text">${msg.message}</div>
 
                 <div class="chat-avatar">
-                    <img src=${user.image} alt="Retail Admin">
+                    <img src=${url} alt="Retail Admin">
                     <div class="chat-name">${user.name} ${user.lastname}</div>
                 </div>
                 <button type="button" class="btn btn-outline-info" onclick="deleteMessage(${msg._id})">X</button>
