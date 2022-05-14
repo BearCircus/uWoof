@@ -199,7 +199,7 @@
                                         <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${pet.breed}</span></p>`
                             
                     //obtenemos el usuario
-                    let res=await fetch("http://localhost:3000/api/register/owner/"+pet.userID.toString(),{
+                    let res=await fetch("http://localhost:3000/api/user/owner/"+pet.userID.toString(),{
                         method:"GET",
                     })
                     const user=await res.json();
