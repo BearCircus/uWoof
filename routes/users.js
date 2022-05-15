@@ -58,7 +58,6 @@ router.get("/", async (req, res) => {
 
   res.send(usuarios);
 });
-
 router.post("/", checkUsername, checkEmail, async (req, res) => {
   //console.log("POST-USERS");
   let {
