@@ -64,7 +64,7 @@ GET {{host}}/api/pets/
 GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 
 ###
-GET {{host}}/api/pets?userID=iMmvaiObkPUXBVuUMIgPP
+GET {{host}}/api/pets?animal=Dog
 
 ###
 POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
