@@ -15,9 +15,9 @@ async function getChats(query) {
 
 //Funcion obtiene los arreglos de los chats, identifica donde iran y llama la funcion con la estructura html
 async function chatsToHtml(data) {
-  console.log(data);
+  // console.log(data);
   let divChats = document.querySelector("ul#chats");
-  console.log(divChats);
+  // console.log(divChats);
 
   divChats.innerHTML = data.ownerChats
     .map((chat) => chatToHTMLBanner(chat, true))
@@ -50,7 +50,7 @@ function chatToHTMLBanner(chat, owner) {
 
 //todo: guardar el chatId, encontrar el chat del que se quiere actuar y mandarlo
 function selectChat(chatId, owner) {
-  console.log(chatId);
+  // console.log(chatId);
   sessionStorage.setItem("chatId", chatId);
   let selectedChat = "";
   let chats = JSON.parse(sessionStorage.getItem("chats"));
@@ -61,7 +61,7 @@ function selectChat(chatId, owner) {
     selectedChat = chats.guestChats.find((chat) => chat._id == chatId);
   }
 
-  console.log(selectedChat);
+  // console.log(selectedChat);
   let divMensajesChat = document.querySelector("#chatEspecifico");
   divMensajesChat.innerHTML = specificChatHTML(selectedChat, owner);
 }
@@ -71,7 +71,7 @@ async function sendNewMessage() {
   let message = {
     msg: document.getElementById("inputMessage").value,
   };
-  console.log(message);
+  // console.log(message);
 
   const resp = await fetch("/api/chat/" + sessionStorage.getItem("chatId"), {
     method: "PUT",
@@ -83,25 +83,24 @@ async function sendNewMessage() {
   });
 
   const result = await resp.json();
-  console.log(result);
+  // console.log(result);
   window.setInterval(location.reload(), 500);
 }
 
 async function buscarChat() {
   event.preventDefault();
   let divBuscador = document.getElementById("busqueda").value;
-  console.log(divBuscador);
+  // console.log(divBuscador);
   let data = await getChats(divBuscador);
   chatsToHtml(data);
 }
 
 //Funcion para organizar las funciones de chat
-
 async function start() {
   const queryString = window.location.search;
   const parameters = new URLSearchParams(queryString);
   const value = parameters.get("id");
-  console.log(value);
+  // console.log(value);
   let chatId = "";
   if (value) {
     chatId = await processToChat(value);
@@ -113,7 +112,6 @@ async function start() {
     selectChat(chatId, false);
   }
 }
-
 start();
 
 //Funcion para crear un chat si no existe al hacer clic a send message
@@ -127,7 +125,7 @@ async function processToChat(postId) {
   });
 
   const chat = await resp.json();
-  console.log(chat);
+  // console.log(chat);
   return chat._id;
   //selectChat(chat._id, false);
 }
@@ -201,7 +199,7 @@ function msg_html(msg, side, user) {
 }
 
 async function deleteMessage(msg_id) {
-  console.log(msg_id);
+  // console.log(msg_id);
   const resp = await fetch("api/chat/" + msg_id, {
     method: "DELETE",
   });

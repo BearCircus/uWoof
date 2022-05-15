@@ -45,7 +45,7 @@ async function getPost() {
                                         <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${pet.breed}</span></p>`;
 
   //obtenemos el usuario
-  console.log(pet.userID);
+  // console.log(pet.userID);
   let res = await fetch("/api/user/owner/" + pet.userID.toString(), {
     method: "GET",
   });

@@ -62,7 +62,7 @@ favoritesSchema.methods.updateData = async function(datos){
 
 favoritesSchema.statics.crearFavorites = async function(favoriteDoc){
     let newFavorite = Favorite(favoriteDoc);
-    console.log(favoriteDoc);
+    // console.log(favoriteDoc);
     return await newFavorite.save()
 
 }
@@ -85,7 +85,7 @@ async function saveFavorite(){
     let favoriteToSave = Favorite(newFavorite);
 
     let resp = await favoriteToSave.save();
-    console.log(resp);
+    // console.log(resp);
 
 }
 
@@ -96,7 +96,7 @@ async function testNewFavorite(){
     if(doc){
         doc.favorites.push({publication: '6271e71ed581afd58f42e429', id: nanoid(), comment: 'Jessica 1'});
         let updated = await Favorite.findOneAndUpdate({userID: '62719b8c9b009ec84c73a8d6'}, {$set: {favorites: doc.favorites}}, {new: true})
-        console.log(updated);
+        // console.log(updated);
     }
 }
 
@@ -105,7 +105,7 @@ async function testNewFavorite(){
 
 async function getFavorites(){
     let favorites = await Favorite.find(/*{userID: "67890"},{_id:0,comment:1}*/);
-    console.log(favorites);
+    // console.log(favorites);
 }
 
 //getFavorites();
