@@ -96,6 +96,7 @@ async function buscarChat() {
 }
 
 //Funcion para organizar las funciones de chat
+
 async function start() {
   const queryString = window.location.search;
   const parameters = new URLSearchParams(queryString);
@@ -112,6 +113,7 @@ async function start() {
     selectChat(chatId, false);
   }
 }
+
 start();
 
 //Funcion para crear un chat si no existe al hacer clic a send message
