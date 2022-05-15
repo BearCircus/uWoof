@@ -13,27 +13,27 @@ async function register() {
   let postCastrated = document.querySelector("#castrated").value;
   let postVacc = document.querySelector("#vaccinated").value;
   let postDesc = document.querySelector("#postDesc").value;
-  let streetPost = document.querySelector("#street").value;
-  let streetNumbPost = document.querySelector("#streetNumb").value;
-  let cityPost = document.querySelector("#city").value;
-  let countryPost = document.querySelector("#country").value;
+  // let streetPost = document.querySelector("#street").value;
+  // let streetNumbPost = document.querySelector("#streetNumb").value;
+  // let cityPost = document.querySelector("#city").value;
+  // let countryPost = document.querySelector("#country").value;
 
-  console.log(postImage);
-  console.log(postAnimal);
-  console.log("postAge", postAge);
-  console.log("postTemp", postTemp);
-  console.log("color", postColor);
-  console.log("size", postSize);
-  console.log("breed", postBreed);
-  console.log("gend", postGender);
-  console.log("hp", postHealth);
-  console.log("cast", postCastrated);
-  console.log("vacc", postVacc);
-  console.log("desc", postDesc);
-  console.log("street", streetPost);
-  console.log("street", streetNumbPost);
-  console.log("city", cityPost);
-  console.log("country", countryPost);
+  // console.log(postImage);
+  // console.log(postAnimal);
+  // console.log("postAge", postAge);
+  // console.log("postTemp", postTemp);
+  // console.log("color", postColor);
+  // console.log("size", postSize);
+  // console.log("breed", postBreed);
+  // console.log("gend", postGender);
+  // console.log("hp", postHealth);
+  // console.log("cast", postCastrated);
+  // console.log("vacc", postVacc);
+  // console.log("desc", postDesc);
+  // console.log("street", streetPost);
+  // console.log("street", streetNumbPost);
+  // console.log("city", cityPost);
+  // console.log("country", countryPost);
 
   let neut = true;
   if (Number(postCastrated) == 0) {
