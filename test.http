@@ -18,15 +18,15 @@ POST {{host}}/api/user
 Content-Type: application/json
 
 {
-    "name": "Asis",
-    "lastname": "Vazquez",
-    "username": "Asis_Vazquez",
-    "password": "Estoesmipsw10",
-    "phone": "3319745420",
-    "email": "asis.vazquez@iteso.com",
+    "name": "Jaime",
+    "lastname": "Escobedo",
+    "username": "jrev",
+    "password": "passJWoof",
+    "phone": "3361804527",
+    "email": "jaime@test.com",
     "city": "Guadalajara",
     "country": "Mexico",
-    "zip": "44780",
+    "zip": "44360",
     "state": "Jalisco"
 }
 
@@ -51,8 +51,8 @@ POST {{host}}/api/login
 Content-Type: application/json
 
 {
-    "email":"asis.vazquez@iteso.com",
-    "password":"Estoesmipsw10"
+    "email":"jessica@test.com",
+    "password":"passJSWoof"
 }
 
 
@@ -77,17 +77,16 @@ Content-Type: application/json
     "age": 5,
     "temperment": "Annoying",
     "color": "White",
-    "size": "Small",
-    "breed": "Chihuahua",
+    "size": "Smol",
+    "breed": "cartoon",
     "gender": "Male",
-    "health": "Healthy",
+    "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
     "castrated": true,
-    "vaccinated": true,
+    "vaccinated": false,
     "image":
-      "https://previews.123rf.com/images/adogslifephoto/adogslifephoto1611/adogslifephoto161100070/65836297-lindo-peque%C3%B1o-perro-chihuahua-blanco-con-patas-en-la-rodilla-de-una-persona.jpg",
-    "description": "Es un poderoso y amigable compañero",
-    "date": "12-05-2022"
-
+      "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
+    "description": "Es el perro de messi",
+    
 }
 
 ###
@@ -107,7 +106,7 @@ x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWd
 
 ###
 GET {{host}}/api/chat
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjU2NjA4OSwiZXhwIjoxNjUyNTY2Njg5fQ.erZc21JMSKSYS6gNje6TUXic5uNfkybko0wXmmNxozk
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU5NDAzLCJleHAiOjE2NTI0NjAwMDN9.Uac1g_QkUm9HPbp-031pgj7F4NshSfWFsNXHOA6C5ck
 
 ###
 POST {{host}}/api/chat/6271e71ed581afd58f42e429/62719b4b9b009ec84c73a8d0
