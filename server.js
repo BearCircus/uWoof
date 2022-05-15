@@ -4,7 +4,7 @@ const axios = require("axios");
 // const { mongoose } = require("./db/connectDataBase");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 3000 / "Central";
+const port = process.env.PORT || 3000;
 // console.log(process.env.DB_USER);
 
 // app.use(express.static(__dirname + "/public"));
