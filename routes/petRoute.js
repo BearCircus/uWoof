@@ -171,7 +171,11 @@ router.post("/:id", auth, async (req, res) => {
     description,
   };
   let doc = await Pet.savePet(newPet);
-  res.status(201).send(doc);
+  if (doc) {
+    res.status(201).send(doc);
+  } else {
+    res.status(404).send({ error: "missing params" });
+  }
 });
 router.delete("/:id", auth, async (req, res) => {
   let doc = await Pet.deletePetById(req.params.id);

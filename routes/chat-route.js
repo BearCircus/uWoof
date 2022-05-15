@@ -15,11 +15,11 @@ router.get("/", auth, async (req, res) => {
 
 router.post("/:idPost", auth, async (req, res) => {
   let petDoc = await Pet.findById(req.params.idPost);
-  console.log(petDoc);
+  // console.log(petDoc);
 
   let pet = JSON.parse(JSON.stringify(petDoc));
-  console.log(pet);
-  console.log(pet.userID);
+  // console.log(pet);
+  // console.log(pet.userID);
 
   let userDoc = await User.findOne({ id: pet.userID });
 
@@ -74,14 +74,14 @@ router.put("/:idChat", auth, async (req, res) => {
 //Checa si el Usuario loggeado o el otro usuario del chat quieren ver o no el chat en su pagina de chat
 router.put("/deactivate/:idPost/:idReceptor", auth, async (req, res) => {
   let petDoc = await Pet.findById(req.params.idPost);
-  console.log(petDoc);
+  // console.log(petDoc);
 
   if (!petDoc) {
     res.status(404).send({ error: "No se encontro el post" });
   }
 
   let userDoc = await User.findOne({ userID: petDoc.userID });
-  console.log(userDoc);
+  // console.log(userDoc);
 
   let idOwner = userDoc._id;
   let idGuest = "";
@@ -91,7 +91,7 @@ router.put("/deactivate/:idPost/:idReceptor", auth, async (req, res) => {
   } else if (idOwner == req.params.idReceptor) {
     idGuest = req._id;
   } else {
-    console.log("Hemos tenido un error de identificadores");
+    // console.log("Hemos tenido un error de identificadores");
   }
 
   let doc = await Chat.getChat(idOwner, idGuest, req.params.idPost);
@@ -108,15 +108,15 @@ router.put("/deactivate/:idPost/:idReceptor", auth, async (req, res) => {
     );
     res.send(doc2);
   } else {
-    console.log("Conversacion no encontrada");
+    // console.log("Conversacion no encontrada");
   }
 });
 
 //Elimina mensajes especificos de un chat en especifico debido a su post
 router.delete("/:idMessage", async (req, res) => {
-  console.log(req.params.idMessage);
+  // console.log(req.params.idMessage);
   let msgToRemove = await Chat.getMessageFromArray(req.params.idMessage);
-  console.log(msgToRemove);
+  // console.log(msgToRemove);
 
   let msg_id = msgToRemove._id;
 
