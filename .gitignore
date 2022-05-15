@@ -1,4 +1,5 @@
 .env
-node_modules
+/db
+/node_modules
 package-lock copy.json
 package-lock.json
