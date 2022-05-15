@@ -147,7 +147,6 @@
             
         <!-- Related items section-->
         
-        
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Woof 2022</p></div>
@@ -156,6 +155,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script src="/public/js/chatsActions.js"></script>
             <script>
                 async function getPost() {
                     let value=params.id
@@ -199,43 +200,28 @@
                                         <p style="padding: 5px; border-radius: 6px; color: white; background-color: rgba(15, 31, 77, 0.795)">Breed: <span>${pet.breed}</span></p>`
                             
                     //obtenemos el usuario
-                    console.log(pet.userID);
-                    let res=await fetch("http://localhost:3000/api/user/owner/"+pet.userID.toString(),{
+                    let res=await fetch("/api/user/owner/"+pet.userID.toString(),{
                         method:"GET",
                     })
                     const user=await res.json();
-                    
-                    document.querySelector("#profImage").innerHTML=`<div class="profile"> <img style="max-height: 200px" src="${user.image}" class="rounded-circle" width="80"> </div>`
+                    console.log(user);  
                     document.querySelector("#profData").innerHTML=`
                         <h4>${user.username}</h4>
                          <span class="follow text-muted d-block mb-2">${user.city}</span>
-                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>`
+                        <a class="mb-2 btn btn-dark btn-sm" href="/chat?id=${pet._id}">Begin Chat</a>`
 
                     //to do map
-                    // document.querySelector("#userMap").innerHTML=`<iframe class="map" src="https://www.google.com/maps/place/${user.city},+${user.state}/" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+                    document.querySelector("#userMap").innerHTML=`<iframe class="map" src="https://www.google.com/maps/place/${user.city},+${user.state}/" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
                     
                     return pet;
                 }
-                async function processToChat(post_id){
-                    let ownerId = post_id.userID;
-                    console.log(ownerId);
-                                
-                    let receptor_id = await getUsersToFind(ownerId);
-                    console.log(receptor_id);
-                                
-                    await fetch ('/api/chat/' + post_id + '/' + receptor_id, {
-                        method: 'POST',
-                        headers: {
-                            "x-auth": sessionStorage.getItem("token"),
-                            'Content-Type': 'application/json'
-                        }
-                    })
-}
+                
                 const params = new Proxy(new URLSearchParams(window.location.search), {
                     get: (searchParams, prop) => searchParams.get(prop),
                 });
                 getPost();
 
             </script>
+
     </body>
 </html>

@@ -64,10 +64,6 @@ let petSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  date: {
-    type: String,
-    required: true,
-  },
 });
 
 petSchema.statics.getPet = async (filter) => {

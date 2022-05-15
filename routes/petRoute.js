@@ -153,7 +153,6 @@ router.post("/:id", auth, async (req, res) => {
     vaccinated,
     image,
     description,
-    date,
   } = req.body;
   let newPet = {
     userID: userID.id,
@@ -170,7 +169,6 @@ router.post("/:id", auth, async (req, res) => {
     vaccinated,
     image,
     description,
-    date,
   };
   let doc = await Pet.savePet(newPet);
   res.status(201).send(doc);
@@ -199,7 +197,6 @@ router.put("/:id", auth, async (req, res) => {
     vaccinated,
     image,
     description,
-    date,
   } = req.body;
   let newObj = {
     name,
@@ -215,7 +212,6 @@ router.put("/:id", auth, async (req, res) => {
     vaccinated,
     image,
     description,
-    date,
   };
   for (const key in newObj) {
     if (newObj[key] == undefined) {

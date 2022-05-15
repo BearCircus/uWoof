@@ -5,77 +5,79 @@ const { Pet } = require("./Pet");
 const { User } = require("./User");
 
 let chatsSchema = mongoose.Schema({
-    idOwner: {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
+  idOwner: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+
+  idGuest: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+
+  idPost: {
+    type: mongoose.Types.ObjectId,
+    ref: "Pet",
+    required: true,
+  },
+
+  ownerVisibleConversation: {
+    type: Boolean,
+    required: true,
+  },
+
+  guestVisibleConversation: {
+    type: Boolean,
+    required: true,
+  },
+
+  messages: [
+    {
+      idSenderUser: {
+        type: String,
         required: true,
+      },
+
+      message: {
+        type: String,
+      },
+
+      date: {
+        type: String,
+      },
     },
-
-    idGuest: {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
-        required: true,
-    },
-
-    idPost: {
-        type: mongoose.Types.ObjectId,
-        ref: "Pet",
-        required: true
-    },
-
-    ownerVisibleConversation: {
-        type: Boolean,
-        required: true
-    },
-
-    guestVisibleConversation: {
-        type: Boolean,
-        required: true
-    },
-
-    messages: [{
-        idSenderUser: {
-            type: String,
-            required: true
-        },
-
-        message: {
-            type: String
-        },
-
-        date: {
-            type: String
-        }
-    }]
-})
+  ],
+});
 
 //Funcion para obtener todos los chats del usuario como user y como owner (toda la informacion desde el usuario hasta la publicacion)
-chatsSchema.statics.getChats = async(idLog) => {
-    let ownerChats = await Chat.find({ idOwner: idLog })
-                                .populate("idOwner", "name image lastname")
-                                .populate("idGuest", "name image lastname")
-                                .populate("idPost", "name image animal");
-    let guestChats = await Chat.find({ idGuest: idLog })
-                                .populate("idOwner", "name image lastname")
-                                .populate("idGuest", "name image lastname")
-                                .populate("idPost", "name image animal");
-    return {ownerChats, guestChats};
-}
+chatsSchema.statics.getChats = async (idLog) => {
+  let ownerChats = await Chat.find({ idOwner: idLog })
+    .populate("idOwner", "name image lastname")
+    .populate("idGuest", "name image lastname")
+    .populate("idPost", "name image animal");
+  let guestChats = await Chat.find({ idGuest: idLog })
+    .populate("idOwner", "name image lastname")
+    .populate("idGuest", "name image lastname")
+    .populate("idPost", "name image animal");
+  return { ownerChats, guestChats };
+};
 
 //Funcion para obtener una conversacion del usuario, para los mensajes
-chatsSchema.statics.getChat = async(idOwner, idGuest, idPost) => {
-    return await Chat.findOne({ idOwner, idGuest, idPost });
-}
+chatsSchema.statics.getChat = async (idOwner, idGuest, idPost) => {
+  return await Chat.findOne({ idOwner, idGuest, idPost });
+};
 
 //Funcion para crear un chat nuevo
-chatsSchema.statics.newChat = async(obj) => {
-    let chatToCreate = Chat(obj);
-    return await chatToCreate.save();
-}
+chatsSchema.statics.newChat = async (obj) => {
+  let chatToCreate = Chat(obj);
+  return await chatToCreate.save();
+};
 
-chatsSchema.statics.getMessageFromArray = async(idMsg) => {
-    return await Chat.findOne({"messages._id": idMsg});
-}
+chatsSchema.statics.getMessageFromArray = async (idMsg) => {
+  return await Chat.findOne({ "messages._id": idMsg });
+};
 
 const Chat = mongoose.model("chats", chatsSchema);
 
