@@ -1,6 +1,6 @@
 async function getPost() {
   let value = params.id;
-  let response = await fetch("/api/pets/" + value.toString(), {
+  let response = await fetch("/api/pets/" + value, {
     method: "GET",
   });
   const pet = await response.json();
@@ -46,12 +46,9 @@ async function getPost() {
 
   //obtenemos el usuario
   console.log(pet.userID);
-  let res = await fetch(
-    "http://localhost:3000/api/user/owner/" + pet.userID.toString(),
-    {
-      method: "GET",
-    }
-  );
+  let res = await fetch("/api/user/owner/" + pet.userID.toString(), {
+    method: "GET",
+  });
   const user = await res.json();
   let url =
     "https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png";
@@ -65,27 +62,12 @@ async function getPost() {
   document.querySelector("#profData").innerHTML = `
                         <h4>${user.username}</h4>
                          <span class="follow text-muted d-block mb-2">${user.city}</span>
-                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>`;
+                        <a class="mb-2 btn btn-dark btn-sm" href="/Chat?id=${pet._id}">Begin Chat</a>`;
 
   //to do map
   // document.querySelector("#userMap").innerHTML=`<iframe class="map" src="https://www.google.com/maps/place/${user.city},+${user.state}/" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
 
   return pet;
-}
-async function processToChat(post_id) {
-  let ownerId = post_id.userID;
-  console.log(ownerId);
-
-  let receptor_id = await getUsersToFind(ownerId);
-  console.log(receptor_id);
-
-  await fetch("/api/chat/" + post_id + "/" + receptor_id, {
-    method: "POST",
-    headers: {
-      "x-auth": sessionStorage.getItem("token"),
-      "Content-Type": "application/json",
-    },
-  });
 }
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),

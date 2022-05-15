@@ -96,41 +96,39 @@ async function buscarChat() {
 }
 
 //Funcion para organizar las funciones de chat
-async function start(){
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get('id');
-    console.log(value);
-    let chatId = "";
-    if(value){
-        chatId = await processToChat(value);
-    }
-    let data = await getChats();
-    chatsToHtml(data);
-    sessionStorage.setItem("chats", JSON.stringify(data));
-    if(chatId){
-        selectChat(chatId, false);
-    }
-
+async function start() {
+  const queryString = window.location.search;
+  const parameters = new URLSearchParams(queryString);
+  const value = parameters.get("id");
+  console.log(value);
+  let chatId = "";
+  if (value) {
+    chatId = await processToChat(value);
+  }
+  let data = await getChats();
+  chatsToHtml(data);
+  sessionStorage.setItem("chats", JSON.stringify(data));
+  if (chatId) {
+    selectChat(chatId, false);
+  }
+}
 start();
 
 //Funcion para crear un chat si no existe al hacer clic a send message
-async function processToChat(postId){
+async function processToChat(postId) {
+  let resp = await fetch("/api/chat/" + postId, {
+    method: "POST",
+    headers: {
+      "x-auth": sessionStorage.getItem("token"),
+      "Content-Type": "application/json",
+    },
+  });
 
-    let resp = await fetch ('/api/chat/' + postId, {
-        method: 'POST',
-        headers: {
-            "x-auth": sessionStorage.getItem("token"),
-            'Content-Type': 'application/json'
-        }
-    })
-
-    const chat = await resp.json();
-    console.log(chat);
-    return chat._id;
-    //selectChat(chat._id, false);
+  const chat = await resp.json();
+  console.log(chat);
+  return chat._id;
+  //selectChat(chat._id, false);
 }
-
 
 //Funcion que contiene la esctrucura de los chats con los mensajes (dentro del ul)
 function specificChatHTML(chat, owner) {
