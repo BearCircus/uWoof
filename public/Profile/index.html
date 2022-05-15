@@ -127,7 +127,7 @@
                                 <a href="javascript:void();" data-target="#posts" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Posts</span></a>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:void();" data-target="#saved" data-toggle="pill" class="nav-link" onclick="getFavorites()"><i class="icon-envelope-open"></i> <span class="hidden-xs">Saved</span></a>
+                                <a href="javascript:void();" data-target="#saved" data-toggle="pill" class="nav-link" onclick="showFavorites()"><i class="icon-envelope-open"></i> <span class="hidden-xs">Saved</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
@@ -227,94 +227,13 @@
 
                         <!--Saved Posts starts-->
                         <div class="tab-pane" id="saved">   
-                            <table class="table table-hover table-striped">
-                                <tbody>                                    
-                                    <tr>
-                                        <td>
-                                           <!--Aqui va una card-->
-                                           <div class="card w-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Motociclon</h5>
-                                                    <div class="post-animal-tags">
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
-                                                    </div>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam sed quod, nobis quibusdam dolorum voluptatum autem quae distinctio.</p>
-                                                    <a href="#" class="btn btn-style">Go to post</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="card w-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <div class="post-animal-tags">
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
-                                                    </div>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                    <a href="#" class="btn btn-style">Go to post</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="card w-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <div class="post-animal-tags">
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
-                                                    </div>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                    <a href="#" class="btn btn-style">Go to post</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="card w-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <div class="post-animal-tags">
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
-                                                    </div>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                    <a href="#" class="btn btn-style">Go to post</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="card w-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <div class="post-animal-tags">
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cat</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Cute</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">Playful</a>
-                                                        <a href="javascript:void();" class="badge badge-colour badge-pill">little</a>
-                                                    </div>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                    <a href="#" class="btn btn-style">Go to post</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                            <table id="myTable" class="table table-hover table-striped">
+                                <div style="text-align: center; position: relative;" class="input-wrapper">
+                                    <input type="text" id="myInput" onkeyup="filterFav()" placeholder="Buscar por nombre..">
+                                </div>
+ 
+                                <tbody id="favCard">                                    
+                                               
                                 </tbody> 
                             </table>
                         </div>

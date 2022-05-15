@@ -33,11 +33,13 @@ const loginRoute = require("./routes/login");
 const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 const chatRoute = require("./routes/chat-route");
+const favoriteRoute = require("./routes/Favorite-route")
 
 app.use("/api/user", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
 app.use("/api/chat", chatRoute);
+app.use('/api/favorites',favoriteRoute);
 
 // app.get("/", (req, res) => {
 //   res.send("¡WOOF!");

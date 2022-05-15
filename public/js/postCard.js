@@ -43,8 +43,10 @@ async function getPost() {
   //return info;
 }
 
+
 function deletePost(id) {
   let res = fetch("/api/pets/" + id, {
+
     method: "DELETE",
     headers: {
       "x-auth": sessionStorage.getItem("token"),

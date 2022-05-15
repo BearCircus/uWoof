@@ -7,7 +7,7 @@ async function getGeneralInfoUser(){
   const info = await resp.json();
   //return info;
 
-  console.log(info);
+  //console.log(info);
 
   let url =
     "https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png";
