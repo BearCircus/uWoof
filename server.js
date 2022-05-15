@@ -24,7 +24,7 @@ app.use(express.static(__dirname + "/public"));
 // app.use("/profile", express.static(__dirname + "/public//Profile"));
 // app.use("/post", express.static(__dirname + "/public/Post/PostJessica"));
 // app.use("/chat", express.static(__dirname + "/public/Chat"));
-// app.use("/register",express.static(__dirname+'/public/Register/RegisterUser/bootstrap-wizard-master'));
+app.use("/register",express.static(__dirname+'/public/Register/RegisterUser/bootstrap-wizard-master'));
 // app.use("/reganimal",express.static(__dirname+'/public/Register/RegisterAnimal/bootstrap-wizard-master'));
 
 app.use(cors());
