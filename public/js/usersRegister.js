@@ -1,5 +1,5 @@
 async function registerUser() {
-  event.preventDefault();
+  //event.preventDefault();
   let image = document.querySelector("#image").value;
   let name = document.querySelector("#firstName").value;
   let lastname = document.querySelector("#lastName").value;
@@ -28,7 +28,7 @@ async function registerUser() {
     image,
   };
   //console.log(newUser);
-  const resp = await fetch("/api/register", {
+  const resp = await fetch("/api/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -36,6 +36,9 @@ async function registerUser() {
     body: JSON.stringify(newUser),
   });
   const info = await resp.json();
+
+  
+
   //console.log(info)
   return info;
 }

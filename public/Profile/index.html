@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/Central/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About us</a>
@@ -38,6 +38,8 @@
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
+                <li style="font-size: 25px; display: block; padding-left: 5px">
+                    <a style="color: #d28237" href="/chat"><i data-target="modelId" class="fa fa-comment-dots" aria-hidden="true"></i></a>
             </ul>
             <form class="form-inline my-2 my-lg-0 search_bar">
                 <div class="container h-100">
@@ -136,15 +138,15 @@
                         <div class="tab-content p-3">
                             <div class="tab-pane active show" id="profile">
                                 <h5 class="mb-3">User Profile</h5>
+                                
                                 <div class="row">
-                                    
                                     <!-- <div class="col-md-6">
                                         <h6>Description</h6>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus doloremque cumque corporis. Reprehenderit voluptas autem, quia ea odit soluta nemo!
                                         </p>
                                     </div> -->
-
+                                    
                                     <div class="col-md-6">
                                         <h6>Favorite Animal Tags</h6>
                                         <a href="javascript:void();" class="badge badge-colour badge-pill">dog</a>
@@ -164,10 +166,10 @@
                             <!--Posts starts-->
                         <div class="tab-pane" id="posts">   
                             <table class="table table-hover table-striped">
-                                <tbody>                                    
-                                    <tr id="postCard">
+                                <tbody id="postCard">                                    
+                                    <!-- <tr >
                                         <td>
-                                           <!--Aqui va una card-->
+                                           Aqui va una card
                                            <div class="card w-100">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Mochi</h5>
@@ -182,8 +184,8 @@
                                                 </div>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr> -->
+                                    <!-- <tr>
                                         <td>
                                             <div class="card w-100">
                                                 <div class="card-body">
@@ -216,7 +218,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                     <!--Aqui se pueden agregar mas posts a la tabla-->
                                 </tbody> 
                             </table>

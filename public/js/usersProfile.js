@@ -1,5 +1,5 @@
 async function getInfoUserPublication() {
-  const resp = await fetch("/api/register/myinfo", {
+  const resp = await fetch("/api/user/myinfo", {
     method: "GET",
     headers: {
       "x-auth": sessionStorage.getItem("token"),
@@ -57,7 +57,7 @@ async function showProfileInfo() {
 showProfileInfo();
 
 async function updateUser() {
-  console.log("Update");
+  //console.log("Update");
   event.preventDefault();
 
   let name = document.querySelector("#name").value;
@@ -87,7 +87,7 @@ async function updateUser() {
   };
 
   //console.log(updatedUser)
-  const resp = await fetch("/api/register", {
+  const resp = await fetch("/api/user", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -97,7 +97,7 @@ async function updateUser() {
   });
 
   const info = await resp.json();
-  console.log(info);
+  //console.log(info);
   return info;
 }
 

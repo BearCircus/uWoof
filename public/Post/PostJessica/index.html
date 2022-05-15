@@ -8,6 +8,8 @@
         <title>Shop Item - Start Bootstrap Template</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
         <script src="https://use.fontawesome.com/041f69a0c9.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
         
         <!-- Bootstrap icons-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -33,7 +35,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/Central/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
@@ -41,10 +43,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My account</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="">Profile</a>
                             <a class="dropdown-item" href="#">Logout</a>
                         </div>
                     </li>
+                    <li style="font-size: 25px; display: block; padding-left: 5px">
+                        <a style="color: #d28237" href="/chat"><i data-target="modelId" class="fa fa-comment-dots" aria-hidden="true"></i></a>
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0 search_bar">
@@ -105,13 +109,13 @@
                                 <div class="card">
                                     <h3 style="text-align: center;">Profile</h3> 
                                     <div class="upper"><img style="background-color: #e9a8b1;" src="" class="img-fluid"> </div>
-                                    <div class="user text-center">
-                                        <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div>
+                                    <div class="user text-center" id="profImage">
+                                        <!-- <div class="profile"> <img style="max-height: 200px" src="./images/jesspp.jpeg" class="rounded-circle" width="80"> </div> -->
                                     </div>
                                     <div class="follow mt-5 text-center" id="profData">
-                                        <h4>Jessica Donley</h4>
+                                        <!-- <h4>Jessica Donley</h4>
                                         <span class="follow text-muted d-block mb-2">Guadalajara</span>
-                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button>
+                                        <button class="mb-2 btn btn-dark btn-sm" onclick="processToChat()" href="/chat">Begin Chat</button> -->
                                         
                                     </div>
                                 </div>
@@ -142,7 +146,6 @@
         
             
         <!-- Related items section-->
-        
         
         <!-- Footer-->
         <footer class="py-5 bg-dark">
