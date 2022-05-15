@@ -13,7 +13,7 @@ router.get('/', auth, async(req, res) => {
     res.send(chats);
 })
 
-router.post('/:idPost/:idReceptor', auth, async(req, res) => {
+router.post('/:idPost', auth, async(req, res) => {
     let petDoc = await Pet.findById(req.params.idPost);
     console.log(petDoc);
 
@@ -21,17 +21,12 @@ router.post('/:idPost/:idReceptor', auth, async(req, res) => {
     console.log(pet);
     console.log(pet.userID);
 
-
     let userDoc = await User.findOne({id: pet.userID});
 
     let idOwner = userDoc._id;
     let idGuest = "";
 
-    if(req._id == idOwner){
-        idGuest = req.params.idReceptor;
-    }else{
-        idGuest = req._id;
-    }
+    idGuest = req._id;
 
     let doc = await Chat.getChat(idOwner, idGuest, req.params.idPost);
 

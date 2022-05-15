@@ -91,40 +91,39 @@ async function buscarChat(){
 
 //Funcion para organizar las funciones de chat
 async function start(){
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get('id');
+    console.log(value);
+    let chatId = "";
+    if(value){
+        chatId = await processToChat(value);
+    }
     let data = await getChats();
     chatsToHtml(data);
     sessionStorage.setItem("chats", JSON.stringify(data));
+    if(chatId){
+        selectChat(chatId, false);
+    }
 }
 
 start();
 
 //Funcion para crear un chat si no existe al hacer clic a send message
-async function processToChat(post_id){
-    let ownerId = post_id.userID;
-    console.log(ownerId);
+async function processToChat(postId){
 
-    let receptor_id = await getUsersToFind(ownerId);
-    console.log(receptor_id);
-
-    await fetch ('/api/chat/' + post_id + '/' + receptor_id, {
+    let resp = await fetch ('/api/chat/' + postId, {
         method: 'POST',
         headers: {
             "x-auth": sessionStorage.getItem("token"),
             'Content-Type': 'application/json'
         }
     })
-}
 
-//Funcion que obtiene todos los usuarios
-async function getUsersToFind(ownerId){
-    const response = await fetch('/api/register', {
-        method: 'GET',
-    });
-
-    const data = await response.json();
-
-    let obj = data.find(idOwner => idOwner.id == ownerId);
-    return obj._id;
+    const chat = await resp.json();
+    console.log(chat);
+    return chat._id;
+    //selectChat(chat._id, false);
 }
 
 //Funcion que contiene la esctrucura de los chats con los mensajes (dentro del ul)

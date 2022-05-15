@@ -18,15 +18,15 @@ POST {{host}}/api/register
 Content-Type: application/json
 
 {
-    "name": "Jaime",
-    "lastname": "Escobedo",
-    "username": "jrev",
-    "password": "passJWoof",
-    "phone": "3361804527",
-    "email": "jaime@test.com",
+    "name": "Asis",
+    "lastname": "Vazquez",
+    "username": "Asis_Vazquez",
+    "password": "Estoesmipsw10",
+    "phone": "3319745420",
+    "email": "asis.vazquez@iteso.com",
     "city": "Guadalajara",
     "country": "Mexico",
-    "zip": "44360",
+    "zip": "44780",
     "state": "Jalisco"
 }
 
@@ -51,8 +51,8 @@ POST {{host}}/api/login
 Content-Type: application/json
 
 {
-    "email":"jessica@test.com",
-    "password":"passJSWoof"
+    "email":"asis.vazquez@iteso.com",
+    "password":"Estoesmipsw10"
 }
 
 
@@ -67,26 +67,26 @@ GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 GET {{host}}/api/pets?userID=OuyQ3IKip9v0JDU13L-4O
 
 ###
-POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
+POST {{host}}/api/pets/Dm5w9k8IfhnUAxjgZmJmx
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRtNXc5azhJZmhuVUF4amdabUpteCIsImVtYWlsIjoiYXNpcy52YXpxdWV6QGl0ZXNvLmNvbSIsIl9pZCI6IjYyODA2NjBmYTllNmFmZmI1ZDk3MDQxNCIsImlhdCI6MTY1MjU4Mjg5MCwiZXhwIjoxNjUyNTgzNDkwfQ.-sot6ag3IvBaPCUPoYtsk83R4RIQiIooqG6EONx4BTE
 Content-Type: application/json
 
 {
-    "name": "Raquel3",
-    "animal": "Doggie",
-    "age": 5,
-    "temperment": "Annoying",
+    "name": "Luis",
+    "animal": "Dog",
+    "age": 4,
+    "temperment": "Funny",
     "color": "White",
-    "size": "Smol",
-    "breed": "cartoon",
+    "size": "Small",
+    "breed": "Chihuahua",
     "gender": "Male",
-    "health": "unhealthy, mofo eats lassagna, how come he be healthy?",
+    "health": "Healthy",
     "castrated": true,
-    "vaccinated": false,
+    "vaccinated": true,
     "image":
-      "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
-    "description": "Es el perro de messi",
-    "date": "30-04-2022"
+      "https://previews.123rf.com/images/adogslifephoto/adogslifephoto1611/adogslifephoto161100070/65836297-lindo-peque%C3%B1o-perro-chihuahua-blanco-con-patas-en-la-rodilla-de-una-persona.jpg",
+    "description": "Es un poderoso y amigable compañero",
+    "date": "12-05-2022"
 }
 
 ###
@@ -106,7 +106,7 @@ DELETE {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
 
 ###
 GET {{host}}/api/chat
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU5NDAzLCJleHAiOjE2NTI0NjAwMDN9.Uac1g_QkUm9HPbp-031pgj7F4NshSfWFsNXHOA6C5ck
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjU2NjA4OSwiZXhwIjoxNjUyNTY2Njg5fQ.erZc21JMSKSYS6gNje6TUXic5uNfkybko0wXmmNxozk
 
 ###
 POST {{host}}/api/chat/6271e71ed581afd58f42e429/62719b4b9b009ec84c73a8d0
