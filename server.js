@@ -4,7 +4,7 @@ const axios = require("axios");
 // const { mongoose } = require("./db/connectDataBase");
 const app = express();
 const cors = require("cors");
-const port = 3000;
+const port = process.env.PORT || 3000;
 // console.log(process.env.DB_USER);
 
 // app.use(express.static(__dirname + "/public"));
@@ -33,13 +33,13 @@ const loginRoute = require("./routes/login");
 const user = require("./routes/users");
 const pets = require("./routes/petRoute");
 const chatRoute = require("./routes/chat-route");
-const favoriteRoute = require("./routes/Favorite-route")
+const favoriteRoute = require("./routes/Favorite-route");
 
 app.use("/api/user", user);
 app.use("/api/login", loginRoute);
 app.use("/api/pets", pets);
 app.use("/api/chat", chatRoute);
-app.use('/api/favorites',favoriteRoute);
+app.use("/api/favorites", favoriteRoute);
 
 // app.get("/", (req, res) => {
 //   res.send("¡WOOF!");
