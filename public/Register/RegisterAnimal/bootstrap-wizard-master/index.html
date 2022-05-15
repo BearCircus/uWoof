@@ -45,9 +45,7 @@
     <!-- <a href="http://creative-tim.com"> Mandar llamar a página inicial -->
       <div class="logo-container">
         <div class="logo">
-          <a href="/"
-            ><img src="assets/img/new_logo.png"
-          /></a>
+          <a href="/Central/"><img src="assets/img/new_logo.png" /></a>
         </div>
         <div class="brand" id="woof">WOOF</div>
       </div>
@@ -105,66 +103,41 @@
                                 id="wizardPicturePreview"
                                 title=""
                               />
-                              <input type="file" id="wizard-picture" />
+                              <input type="button" id="wizard-picture" />
                             </div>
-                            <h6>Choose Picture</h6>
+                            <div class="form-group">
+                              <label>Image URL<small></small></label>
+                              <input
+                                name="image"
+                                type="text"
+                                id="image"
+                                class="form-control"
+                                pattern="[a-zA-z ]+"
+                                placeholder="https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
+                              />
+                            </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
-                              class="custom-select"
-                              name="animal"
-                              id="animal"
-                            >
-                              <option
-                                selected
-                                style="font-size: medium"
-                                disabled="disabled"
-                              >
-                                Animal
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Dog
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Cat
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Bird
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Rabbit
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Reptile
-                              </option>
-                            </select>
+                            <label for="">What's your pet's name?</label>
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="name" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select class="custom-select" name="age" id="age">
-                              <option
-                                selected
-                                style="font-size: medium"
-                                disabled="disabled"
-                              >
-                                Age
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Pup/Kitten
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Young
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Adult
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Senior
-                              </option>
-                            </select>
+                            <label for=""
+                              >What type of animal is your pet?</label
+                            >
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="animal" />
+                            </div>
+                          </div>
+                          <div class="form-group" style="font-size: medium">
+                            <label for="">How old is your pet?</label>
+                            <div class="form-group">
+                              <input id="age" type="number" min="0" max="30" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
                             <label for=""></label>
@@ -180,29 +153,32 @@
                               >
                                 Temperment
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Neutral" style="font-size: medium">
                                 Neutral
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Passive" style="font-size: medium">
                                 Passive
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Relaxed" style="font-size: medium">
                                 Relaxed
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Playful" style="font-size: medium">
                                 Playful
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Shy" style="font-size: medium">
                                 Shy
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option
+                                value="Aggressive"
+                                style="font-size: medium"
+                              >
                                 Aggressive
                               </option>
                             </select>
                           </div>
                           <div class="form-group" style="font-size: medium">
-                            <label for=""></label>
-                            <select
+                            <label for="">What's your pet's color</label>
+                            <!-- <select
                               class="custom-select"
                               name="color"
                               id="color"
@@ -238,7 +214,10 @@
                               <option value="" style="font-size: medium">
                                 Mixed
                               </option>
-                            </select>
+                            </select> -->
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="color" min="3" />
+                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
                             <label for=""></label>
@@ -250,109 +229,65 @@
                               >
                                 Size
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option
+                                value="Extra Small"
+                                style="font-size: medium"
+                              >
                                 Extra Small
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Small" style="font-size: medium">
                                 Small
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Medium" style="font-size: medium">
                                 Medium
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Large" style="font-size: medium">
                                 Large
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option
+                                value="Extra Large"
+                                style="font-size: medium"
+                              >
                                 Extra Large
                               </option>
                             </select>
                           </div>
                           <div class="form-group" style="font-size: medium">
+                            <label for="">What's the breed?</label>
+                            <div class="form-group" id="">
+                              <input type="text" name="" id="breed" min="3" />
+                            </div>
+                          </div>
+                          <div class="form-group" style="font-size: medium">
                             <label for=""></label>
                             <select
                               class="custom-select"
-                              name="breed"
-                              id="breed"
+                              name="size"
+                              id="gender"
                             >
                               <option
                                 selected
                                 style="font-size: medium"
                                 disabled="disabled"
                               >
-                                Breed
+                                Gender
                               </option>
-                              <option value="" style="font-size: medium">
-                                Maltese
+                              <option value="Female" style="font-size: medium">
+                                Female
                               </option>
-                              <option value="" style="font-size: medium">
-                                Singaporea
+                              <option value="Male" style="font-size: medium">
+                                Male
                               </option>
-                              <option value="" style="font-size: medium">
-                                Chihuahua
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Huskydoodle
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Labradoodle
+                              <option value="Unknown" style="font-size: medium">
+                                Unknown
                               </option>
                             </select>
-                          </div>
-                          <div class="form-group" name="gender" id="gender">
-                            <label for="" style="font-size: medium"
-                              >Gender</label
-                            >
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio1"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
-                                style="font-size: medium"
-                                >Female</label
-                              >
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio1"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
-                                style="font-size: medium"
-                                >Male</label
-                              >
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio1"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
-                                style="font-size: medium"
-                                >Unknown</label
-                              >
-                            </div>
                           </div>
                           <div class="form-group" style="font-size: medium">
                             <label for=""></label>
                             <select
                               class="custom-select"
-                              name="health"
+                              name="size"
                               id="health"
                             >
                               <option
@@ -362,97 +297,66 @@
                               >
                                 Health
                               </option>
-                              <option value="" style="font-size: medium">
+                              <option value="Healthy" style="font-size: medium">
                                 Healthy
                               </option>
-                              <option value="" style="font-size: medium">
-                                Sick
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Recovery
-                              </option>
-                              <option value="" style="font-size: medium">
-                                Pregnant
+                              <option
+                                value="Non Healthy (Rescued)"
+                                style="font-size: medium"
+                              >
+                                Non healthy (Rescued)
                               </option>
                             </select>
                           </div>
-                          <div
-                            class="form-group"
-                            name="castrated"
-                            id="castrated"
-                          >
-                            <label for="" style="font-size: medium"
-                              >Castrated</label
+                          <div class="form-group" style="font-size: medium">
+                            <label for=""></label>
+                            <select
+                              class="custom-select"
+                              name="size"
+                              id="castrated"
                             >
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions2"
-                                id="inlineRadio2"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
+                              <option
+                                selected
                                 style="font-size: medium"
-                                >Yes</label
+                                disabled="disabled"
                               >
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions2"
-                                id="inlineRadio2"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
+                                Neutered
+                              </option>
+                              <option
+                                value="neutered"
                                 style="font-size: medium"
-                                >No</label
                               >
-                            </div>
+                                Yes
+                              </option>
+                              <option
+                                value="not neutered"
+                                style="font-size: medium"
+                              >
+                                No
+                              </option>
+                            </select>
                           </div>
-                          <div
-                            class="form-group"
-                            name="vaccinated"
-                            id="vaccinated"
-                          >
-                            <label for="" style="font-size: medium"
-                              >Vaccinated</label
+                          <div class="form-group" style="font-size: medium">
+                            <label for=""></label>
+                            <select
+                              class="custom-select"
+                              name="size"
+                              id="vaccinated"
                             >
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions3"
-                                id="inlineRadio3"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
+                              <option
+                                selected
                                 style="font-size: medium"
-                                >Yes</label
+                                disabled="disabled"
                               >
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions3"
-                                id="inlineRadio3"
-                                value="option1"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="inlineRadio1"
-                                style="font-size: medium"
-                                >No</label
-                              >
-                            </div>
+                                Vaccinated
+                              </option>
+                              <option value="1" style="font-size: medium">
+                                Yes
+                              </option>
+                              <option value="0" style="font-size: medium">
+                                No
+                              </option>
+                            </select>
                           </div>
                           <!-- <div class="form-group">
                                         <label>First Name <small>(required)</small></label>
@@ -473,44 +377,17 @@
                     </div>
                     <div class="tab-pane" id="account">
                       <h4 class="info-text">
-                        Would yoy like to add more images?
+                        Would you like to add a short description?
                       </h4>
                       <div class="row">
-                        <div class="col-sm-10 col-sm-offset-1">
-                          <div class="col-sm-4">
-                            <div class="choice" data-toggle="wizard-checkbox">
-                              <input
-                                type="checkbox"
-                                name="jobb"
-                                value="Design"
-                              />
-                              <div class="icon">
-                                <i class="fa fa-paw"></i>
-                              </div>
-                              <!-- <h6>Design</h6> -->
-                            </div>
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="choice" data-toggle="wizard-checkbox">
-                              <input type="checkbox" name="jobb" value="Code" />
-                              <div class="icon">
-                                <i class="fa fa-plus-circle"></i>
-                                <!-- <i class="fa fa-terminal"></i> -->
-                              </div>
-                              <h6>Pictures</h6>
-                            </div>
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="choice" data-toggle="wizard-checkbox">
-                              <input
-                                type="checkbox"
-                                name="jobb"
-                                value="Develop"
-                              />
-                              <div class="icon">
-                                <i class="fa fa-bell"></i>
-                              </div>
-                              <!-- <h6>Develop</h6> -->
+                        <div id="description">
+                          <div class="col-sm-12">
+                            <div class="form-group">
+                              <textarea
+                                type="text"
+                                id="postDesc"
+                                placeholder="Tell us about your pet"
+                              ></textarea>
                             </div>
                           </div>
                         </div>
@@ -528,6 +405,7 @@
                               type="text"
                               class="form-control"
                               placeholder="Anillo Perif. Sur Manuel Gómez Morín "
+                              id="street"
                             />
                           </div>
                         </div>
@@ -538,6 +416,7 @@
                               type="text"
                               class="form-control"
                               placeholder="8585"
+                              id="streetNumb"
                             />
                           </div>
                         </div>
@@ -548,13 +427,18 @@
                               type="text"
                               class="form-control"
                               placeholder="San Pedro Tlaquepaque"
+                              id="city"
                             />
                           </div>
                         </div>
                         <div class="col-sm-5">
                           <div class="form-group">
                             <label>Country</label><br />
-                            <select name="country" class="form-control">
+                            <select
+                              name="country"
+                              class="form-control"
+                              id="country"
+                            >
                               <option value="Mexico">México</option>
                               <option value="EUA">Estados Unidos</option>
                               <option value="Peru">Perú</option>
@@ -587,6 +471,7 @@
                         name="finish"
                         value="Finish"
                         style="font-size: medium"
+                        onclick="register()"
                       />
                     </div>
 
@@ -626,6 +511,7 @@
     src="assets/js/jquery.bootstrap.wizard.js"
     type="text/javascript"
   ></script>
+  <script src="./registerPet.js"></script>
 
   <!--  Plugin for the Wizard -->
   <script src="assets/js/gsdk-bootstrap-wizard.js"></script>

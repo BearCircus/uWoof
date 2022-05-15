@@ -16,7 +16,7 @@ async function userLogin(){
     });
     //console.log(resp);
     const info = await resp.json();
-    console.log(info)
+    //console.log(info)
     sessionStorage.setItem("token",info.token);
     return info;
 }

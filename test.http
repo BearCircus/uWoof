@@ -4,17 +4,17 @@
 GET {{host}}/
 
 ###
-GET {{host}}/api/register
+GET {{host}}/api/user
 
 ###
-GET {{host}}/api/register/owner/iMmvaiObkPUXBVuUMIgPP
+GET {{host}}/api/user/owner/uwQhsej8dio8anABU1zqC
 
 ###
-GET {{host}}/api/register/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjIwNzA1MywiZXhwIjoxNjUyMjA3NjUzfQ.2Qlu72GahFSdEAcxzlSmdea2IpMY6gLgWYjN5M4Iuk4
+GET {{host}}/api/user/myinfo
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjUwNTExMSwiZXhwIjoxNjUyNTA1NzExfQ.22MclTcR0yyWUDQzr8mCdYfYopQMtJ3mn-J2OOO3mAE
 
 ###
-POST {{host}}/api/register
+POST {{host}}/api/user
 Content-Type: application/json
 
 {
@@ -31,14 +31,14 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/register/KI_Wbytx_mHHvjmndIZib
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ3MTUxMCwiZXhwIjoxNjUyNDcyMTEwfQ.c8JKA2ZqyDw3zP65FmrA9MrBYQsXdAXnSoKVFCsM35c
+DELETE {{host}}/api/user/fayMA_rpag03ieUkeb7IE
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjUwMzg2MCwiZXhwIjoxNjUyNTA0NDYwfQ.mAipsb6vk3qfcOWDOTvyItpOTYwomm2pirFcXYShkJw
 
 
 ###
-PUT {{host}}/api/register/iMmvaiObkPUXBVuUMIgPP
+PUT {{host}}/api/user
 Content-Type: application/json
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsImlhdCI6MTY1MTc3MDIzNSwiZXhwIjoxNjUxNzcwNTM1fQ.bXbCJog7YIlT00Jz_gMnzJgmIoHf06gVa2BsC6XXb5w
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ5ODg0OSwiZXhwIjoxNjUyNDk5NDQ5fQ.BbU_C_SWnKt-nyO0X5NHzLN-skGQzXoTn-IE0Dn8fNM
 
 {
     "name": "Jess"
@@ -58,21 +58,21 @@ Content-Type: application/json
 
 //pets
 ###
-GET {{host}}/api/pets
+GET {{host}}/api/pets/
 
 ###
 GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
 
 ###
-GET {{host}}/api/pets?userID=OuyQ3IKip9v0JDU13L-4O
+GET {{host}}/api/pets?animal=Dog
 
 ###
-POST {{host}}/api/pets/12-2R_Ne1k4Tg-WJdzBky
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ1ODY5NSwiZXhwIjoxNjUyNDU5Mjk1fQ.0_pBOQz07qgHQ3E8VFbQAvC4zQdW0Tnipt2oSJbl8Bk
+POST {{host}}/api/pets/iMmvaiObkPUXBVuUMIgPP
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjQ4MzQ3MCwiZXhwIjoxNjUyNDg0MDcwfQ.om-w-tJoy5ObJ1njlvfVMk-LVfY0iYGS5da8DRqkURY
 Content-Type: application/json
 
 {
-    "name": "Raquel",
+    "name": "Raquel3",
     "animal": "Doggie",
     "age": 5,
     "temperment": "Annoying",
@@ -86,7 +86,7 @@ Content-Type: application/json
     "image":
       "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
     "description": "Es el perro de messi",
-    "date": "30-04-2022"
+    
 }
 
 ###
@@ -99,5 +99,30 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
+DELETE {{host}}/api/pets/G_RdGu2_ojwaxwCPfaYyl
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjU2MjM1MywiZXhwIjoxNjUyNTYyOTUzfQ.VkL7bOaVtPqFHvj-H6k3nyQWI8Dr1DNV17xjdtFZ3mA
+
+// CHAT
+
+###
+GET {{host}}/api/chat
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU5NDAzLCJleHAiOjE2NTI0NjAwMDN9.Uac1g_QkUm9HPbp-031pgj7F4NshSfWFsNXHOA6C5ck
+
+###
+POST {{host}}/api/chat/6271e71ed581afd58f42e429/62719b4b9b009ec84c73a8d0
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjUwNTExMSwiZXhwIjoxNjUyNTA1NzExfQ.22MclTcR0yyWUDQzr8mCdYfYopQMtJ3mn-J2OOO3mAE
+
+
+###
+PUT {{host}}/api/chat/627e706d8140c9b59994a84f
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyLTJSX05lMWs0VGctV0pkekJreSIsImVtYWlsIjoibWVzc2lAdGVzdC5jb20iLCJfaWQiOiI2MjdkNDQ1N2RiMWQ2NDIyYTk2OGU4OTMiLCJpYXQiOjE2NTI0NjU4MDMsImV4cCI6MTY1MjQ2NjQwM30.bgO1J-HMOmD76_WqsnFmOb_BijEUvqSoeWYaHyw5Z1Y
+
+{
+    "msg": "hola bicho, como estas hermano? como te va en manchester?"
+}
+
+
+###
+DELETE {{host}}/api/chat/627eb81869cfcb9e2bf6bcb4
 
