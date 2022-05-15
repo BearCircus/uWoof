@@ -13,14 +13,12 @@ async function getPost() {
   });
   let pet = await resPet.json();
   //console.log(pet)
-
-  //let pet = [];
-  //pet.push(pets);
-  //console.log(pet[4].name);
   //console.log(user)
 
-  document.querySelector("#postCard").innerHTML = pet.map((m) => 
-    `<tr>
+  document.querySelector("#postCard").innerHTML = pet
+    .map(
+      (m) =>
+        `<tr>
       <td>
            <!--Aqui va una card-->
            <div class="card w-100">
@@ -35,27 +33,23 @@ async function getPost() {
                     </div>
                         <p class="card-text">${m.description}</p>
                     <a href="/Post/PostJessica?id=${m.id}" class="btn btn-style">Go to post</a>
-                    <a href="" id="delete" class="btn btn-danger" onclick="deletePost(${m.id})">Delete</a>
+                    <input type="button" value="Delete"id="delete" class="btn btn-danger" onclick="deletePost('${m.id}')"></input>
                 </div>
             </div>
       </td>
     <tr>`
-  ).join("");
+    )
+    .join("");
   //return info;
 }
 
-async function deletePost(id){
-  console.log(id)
-  document.getElementById("delete")
-
-  const resp = await fetch("/api/pets/"+id, {
+function deletePost(id) {
+  let res = fetch("/api/pets/" + id, {
     method: "DELETE",
     headers: {
-      "x-auth": sessionStorage.getItem("token")
-    }
+      "x-auth": sessionStorage.getItem("token"),
+    },
   });
-  
-
 }
 
 getPost();

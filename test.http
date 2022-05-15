@@ -58,7 +58,7 @@ Content-Type: application/json
 
 //pets
 ###
-GET {{host}}/api/pets
+GET {{host}}/api/pets/
 
 ###
 GET {{host}}/api/pets/NvqtJxSNcgf_rEvfV4w6r
@@ -86,7 +86,7 @@ Content-Type: application/json
     "image":
       "https://image.shutterstock.com/image-photo/red-male-cat-walking-towards-600w-138599810.jpg",
     "description": "Es el perro de messi",
-    "date": "30-04-2022"
+    
 }
 
 ###
@@ -99,8 +99,8 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/pets/jV4NWN1FzkHqGCuluyH0g
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlczByRjg4aEtvZ3dnd3Q4WUFzWSIsImVtYWlsIjoiY3I3QHRlc3QuY29tIiwiX2lkIjoiNjI3ZDQ0OTZhOWRiMjVhYTY2N2JjOTdiIiwiaWF0IjoxNjUyNDU5NDAzLCJleHAiOjE2NTI0NjAwMDN9.Uac1g_QkUm9HPbp-031pgj7F4NshSfWFsNXHOA6C5ck
+DELETE {{host}}/api/pets/G_RdGu2_ojwaxwCPfaYyl
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjU2MjM1MywiZXhwIjoxNjUyNTYyOTUzfQ.VkL7bOaVtPqFHvj-H6k3nyQWI8Dr1DNV17xjdtFZ3mA
 
 // CHAT
 

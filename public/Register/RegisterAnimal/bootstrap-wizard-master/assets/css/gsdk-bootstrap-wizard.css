@@ -36,17 +36,35 @@
   background-color: #ac9068;
   color: #f5f1e6;
 }
-#gender {
-  color: #574c2a;
+#name {
+  background-color: #ac9068;
+  color: #f5f1e6;
 }
-#health {
-  color: #574c2a;
-}
-#castrated {
-  color: #574c2a;
-}
+
 #vaccinated {
   color: #574c2a;
+}
+#postDesc {
+  background-color: white;
+  height: 180px;
+  width: 595px;
+}
+#castrated {
+  background-color: #ac9068;
+  color: #f5f1e6;
+}
+
+#health {
+  background-color: #ac9068;
+  color: #f5f1e6;
+}
+#gender {
+  background-color: #ac9068;
+  color: #f5f1e6;
+}
+#vaccinated {
+  background-color: #ac9068;
+  color: #f5f1e6;
 }
 
 #woof {
