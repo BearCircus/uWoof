@@ -11,7 +11,7 @@ GET {{host}}/api/user/owner/uwQhsej8dio8anABU1zqC
 
 ###
 GET {{host}}/api/user/myinfo
-x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjUwNTExMSwiZXhwIjoxNjUyNTA1NzExfQ.22MclTcR0yyWUDQzr8mCdYfYopQMtJ3mn-J2OOO3mAE
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlNbXZhaU9ia1BVWEJWdVVNSWdQUCIsImVtYWlsIjoiamVzc2ljYUB0ZXN0LmNvbSIsIl9pZCI6IjYyNzE5YjhjOWIwMDllYzg0YzczYThkNiIsImlhdCI6MTY1MjU3NzI1NywiZXhwIjoxNjUyNTc3ODU3fQ.qgRwgWqY1I7BMTZFlXBEYRFcvzI6rrHlL16t_FBTCVI
 
 ###
 POST {{host}}/api/user

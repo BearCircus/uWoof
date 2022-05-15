@@ -45,7 +45,7 @@ async function getPost() {
 }
 
 async function deletePost(id){
-  console.log(id)
+  //console.log(id)
   document.getElementById("delete")
 
   const resp = await fetch("/api/pets/"+id, {

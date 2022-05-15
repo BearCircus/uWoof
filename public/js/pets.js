@@ -3,7 +3,7 @@ async function getPets() {
   const res = await fetch("http://localhost:3000/api/pets/" + query, {
     method: "GET",
   });
-  console.log(query);
+  //console.log(query);
   const data = await res.json();
   let crd = document.querySelector("#prods");
 
@@ -20,7 +20,9 @@ async function getPets() {
                     <img class="card-img-top cardImage" src="${m.image}" alt="Card image cap">
                     </a>
                       <h5 class="card-title">${m.name}</h5>
-                    
+                      <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#modelId" onclick="getpubID('${m._id}')">
+                      Add Favorite
+                    </button>
                       <p class="card-text ml-1">"${m.description}</p>
                 </div>        
             </div>`
@@ -37,3 +39,9 @@ input.addEventListener("keyup", function (event) {
 });
 
 getPets();
+
+function getpubID(pubID){
+  sessionStorage.setItem("pubID", pubID);
+  //console.log("pubID");
+  //console.log(pubID);
+}
